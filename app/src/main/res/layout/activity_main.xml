@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical" android:background="#F2F0F0">
+
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="0dip"
+                                                 android:layout_weight="1">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dip"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="0dp"
+            android:background="#F9F9F9"
+            android:elevation="1dip"
+            android:visibility="visible"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="#ffffff"/>
+</android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="38dip"
+        android:elevation="5dip"
+        android:background="#F9F9F9"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="20dip"
+            android:id="@+id/imgHome"
+            android:layout_weight="0.33"
+            android:src="@drawable/home_black"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="20dip"
+            android:id="@+id/imageView5"
+            android:layout_weight="0.33"
+            android:src="@drawable/searc"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="20dip"
+            android:id="@+id/imageView6"
+            android:layout_weight="0.33"
+            android:src="@drawable/add"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="20dip"
+            android:id="@+id/imageView13"
+            android:layout_weight="0.33"
+            android:src="@drawable/star"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="20dip"
+            android:id="@+id/imgPersonalPage"
+            android:layout_weight="0.33"
+            android:src="@drawable/use"/>
+
+    </LinearLayout>
+</LinearLayout>
