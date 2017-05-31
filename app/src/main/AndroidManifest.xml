@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.netpood.admin.netpoodapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.netpood.admin.netpoodapp">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+
+
 
     <application
         android:name=".Base"
@@ -17,6 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PersonalPage">
+        </activity>
+        <activity android:name=".CameraDemoActivity">
         </activity>
     </application>
 

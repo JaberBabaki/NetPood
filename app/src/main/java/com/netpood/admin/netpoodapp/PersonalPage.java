@@ -17,6 +17,7 @@ public class PersonalPage extends UAppCompatActivity {
 
   public class Ui {
     ImageView imgPersonalPage;
+    ImageView imgAddPost;
     ImageView imgHome;
     ViewPager viewPager;
     TabLayout tabLayout;

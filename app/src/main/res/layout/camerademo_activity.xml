@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="38dip"
+        android:background="#F9F9F9"
+        android:elevation="5dip"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="20dip"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="4dip"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/error"/>
+
+        <com.netpood.admin.framework.widget.NewControlTextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:id="@+id/view9"
+            android:layout_weight="1"
+            android:text="photo"
+            android:textColor="#000000"
+            android:gravity="right"
+            android:layout_marginRight="16dip"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="bottom">
+
+        <SurfaceView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/surfaceView"
+            android:layout_weight="0.5"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="left|center">
+
+                <ImageView
+                    android:layout_width="24dip"
+                    android:layout_height="24dip"
+                    android:id="@+id/flipCamera"
+                    android:layout_marginLeft="16dip"
+                    android:src="@drawable/reload"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center|right">
+
+                <ImageView
+                    android:layout_width="24dip"
+                    android:layout_height="34dip"
+                    android:id="@+id/flash"
+                    android:layout_marginRight="16dip"
+                    android:src="@drawable/flash"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dip"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="64dip"
+                android:layout_height="wrap_content"
+                android:id="@+id/captureImage"
+                android:src="@drawable/aperturee"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="48dip"
+            android:layout_gravity="center_horizontal"
+            android:gravity="bottom">
+
+            <com.netpood.admin.framework.widget.NewControlTextView
+                android:layout_width="0dip"
+                android:layout_height="34dip"
+                android:id="@+id/view10"
+                android:layout_weight="0.5"
+                android:text="GALLERY"
+                android:textColor="#000000"
+                android:gravity="center"/>
+
+            <com.netpood.admin.framework.widget.NewControlTextView
+                android:layout_width="0dip"
+                android:layout_height="34dip"
+                android:id="@+id/view11"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="PHOTO"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

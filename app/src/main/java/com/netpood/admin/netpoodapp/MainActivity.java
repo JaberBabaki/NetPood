@@ -17,6 +17,7 @@ public class MainActivity extends UAppCompatActivity {
 
   public class Ui {
     ImageView imgPersonalPage;
+    ImageView imgAddPost;
     ViewPager viewPager;
     TabLayout tabLayout;
   }
@@ -38,7 +39,7 @@ public class MainActivity extends UAppCompatActivity {
       .noTitlebar()
       .noActionbar()
       .statusBar()
-      .contentView(R.layout.activity_main)
+      .contentView(R.layout.activity_main_a)
       .extractUi(ui)
       .build();
 
@@ -48,6 +49,17 @@ public class MainActivity extends UAppCompatActivity {
            public void onClick(View v) {
 
              Intent intent = new Intent(Base.getCurrentActivity(), PersonalPage.class);
+             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+             ActivityCompat.finishAffinity(Base.getCurrentActivity());
+             Base.getCurrentActivity().startActivity(intent);
+            }
+            });
+    ui.imgAddPost.setOnClickListener(
+      new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+             Intent intent = new Intent(Base.getCurrentActivity(), CameraDemoActivity.class);
              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
              ActivityCompat.finishAffinity(Base.getCurrentActivity());
              Base.getCurrentActivity().startActivity(intent);
