@@ -60,9 +60,7 @@ public class MainActivity extends UAppCompatActivity {
            public void onClick(View v) {
 
              Intent intent = new Intent(Base.getCurrentActivity(), CameraDemoActivity.class);
-             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-             ActivityCompat.finishAffinity(Base.getCurrentActivity());
-             Base.getCurrentActivity().startActivity(intent);
+              Base.getCurrentActivity().startActivity(intent);
             }
             });
 

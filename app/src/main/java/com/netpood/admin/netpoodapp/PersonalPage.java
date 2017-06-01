@@ -49,6 +49,16 @@ public class PersonalPage extends UAppCompatActivity {
                               });
 
 
+    ui.imgAddPost.setOnClickListener(
+      new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+          Intent intent = new Intent(Base.getCurrentActivity(), CameraDemoActivity.class);
+          Base.getCurrentActivity().startActivity(intent);
+        }
+      });
+
 
   }
 

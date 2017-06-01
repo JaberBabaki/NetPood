@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".CameraDemoActivity">
         </activity>
+        <activity android:name=".EditCamera">
+        </activity>
     </application>
 
 </manifest>

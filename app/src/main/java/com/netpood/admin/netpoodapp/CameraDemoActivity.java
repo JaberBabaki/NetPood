@@ -1,23 +1,16 @@
 package com.netpood.admin.netpoodapp;
 
 import android.app.AlertDialog.Builder;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.CompressFormat;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.ErrorCallback;
 import android.hardware.Camera.Parameters;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.provider.MediaStore.Images;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Surface;
@@ -28,15 +21,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.netpood.admin.framework.activity.UAppCompatActivity;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.List;
 
 public class CameraDemoActivity extends UAppCompatActivity implements Callback, OnClickListener {
@@ -57,7 +46,16 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
     SurfaceView surfaceView;
   }
 
-
+  @Override
+  protected void onPause()
+  {
+    super.onPause();
+    if (camera != null) {
+      camera.stopPreview();
+      camera.release();
+      camera = null;
+    }
+  }
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -244,61 +242,11 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       @Override
       public void onPictureTaken(byte[] data, Camera camera) {
         try {
-          // convert byte array into bitmap
-          Bitmap loadedImage = null;
-          Bitmap rotatedBitmap = null;
-          loadedImage = BitmapFactory.decodeByteArray(data, 0,data.length);
 
-          // rotate Image
-          Matrix rotateMatrix = new Matrix();
-          rotateMatrix.postRotate(rotation);
-          rotatedBitmap = Bitmap.createBitmap(loadedImage, 0, 0, loadedImage.getWidth(), loadedImage.getHeight(), rotateMatrix, false);
-          String state = Environment.getExternalStorageState();
-          File folder = null;
-          if (state.contains(Environment.MEDIA_MOUNTED)) {
-            folder = new File(Environment
-              .getExternalStorageDirectory() + "/Demo");
-          } else {
-            folder = new File(Environment
-              .getExternalStorageDirectory() + "/Demo");
-          }
-
-          boolean success = true;
-          if (!folder.exists()) {
-            success = folder.mkdirs();
-          }
-          if (success) {
-            java.util.Date date = new java.util.Date();
-            imageFile = new File(folder.getAbsolutePath()
-              + File.separator
-              + new Timestamp(date.getTime()).toString()
-              + "Image.jpg");
-
-            imageFile.createNewFile();
-          } else {
-            Toast.makeText(getBaseContext(), "Image Not saved",
-              Toast.LENGTH_SHORT).show();
-            return;
-          }
-
-          ByteArrayOutputStream ostream = new ByteArrayOutputStream();
-
-          // save image into gallery
-          rotatedBitmap.compress(CompressFormat.JPEG, 100, ostream);
-
-          FileOutputStream fout = new FileOutputStream(imageFile);
-          fout.write(ostream.toByteArray());
-          fout.close();
-          ContentValues values = new ContentValues();
-
-          values.put(Images.Media.DATE_TAKEN,
-            System.currentTimeMillis());
-          values.put(Images.Media.MIME_TYPE, "image/jpeg");
-          values.put(MediaStore.MediaColumns.DATA,
-            imageFile.getAbsolutePath());
-
-          CameraDemoActivity.this.getContentResolver().insert(
-            Images.Media.EXTERNAL_CONTENT_URI, values);
+          Intent intent = new Intent(Base.getCurrentActivity(), EditCamera.class);
+          intent.putExtra("PIC",data);
+          intent.putExtra("ROR",rotation);
+          Base.getCurrentActivity().startActivity(intent);
 
         } catch (Exception e) {
           e.printStackTrace();
@@ -309,8 +257,7 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
   }
 
   private void flipCamera() {
-    int id = (cameraId == CameraInfo.CAMERA_FACING_BACK ? CameraInfo.CAMERA_FACING_FRONT
-      : CameraInfo.CAMERA_FACING_BACK);
+    int id = (cameraId == CameraInfo.CAMERA_FACING_BACK ? CameraInfo.CAMERA_FACING_FRONT : CameraInfo.CAMERA_FACING_BACK);
     if (!openCamera(id)) {
       alertCameraDialog();
     }

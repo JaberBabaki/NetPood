@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="38dip"
+        android:gravity="left|center"
+        android:elevation="5dip">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="left|center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="24dip"
+                android:id="@+id/imageView4"
+                android:src="@drawable/left_arrow_b"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="34dip"
+                android:layout_height="24dip"
+                android:id="@+id/imageView6"
+                android:src="@drawable/brightness"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33"
+            android:gravity="center">
+
+            <com.netpood.admin.framework.widget.NewControlTextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/view12"
+                android:text="Next"
+                android:textColor="#000000"
+                android:textSize="17dip"
+                android:gravity="center|right"
+                android:layout_marginRight="16dip"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:id="@+id/imgEditPic"
+            android:src="@drawable/b"
+            android:scaleType="fitXY"
+            android:layout_weight="0.7"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="0.3">
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
