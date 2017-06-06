@@ -5,12 +5,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.SurfaceView;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.netpood.admin.framework.activity.UAppCompatActivity;
-import com.netpood.admin.framework.widget.BitmapProcessing;
 
 /**
  * Created by jaberALU on 01/06/2017.
@@ -23,7 +21,17 @@ public class EditCamera extends UAppCompatActivity {
 
   public class Ui {
     ImageView imgEditPic;
-    Button button;
+
+    LinearLayout lay1;
+    LinearLayout lay2;
+    LinearLayout lay3;
+    LinearLayout lay4;
+
+    ImageView img1;
+    ImageView img2;
+    ImageView img3;
+    ImageView img4;
+
     ImageView flash;
     ImageView captureImage;
     SurfaceView surfaceView;
@@ -61,15 +69,12 @@ public class EditCamera extends UAppCompatActivity {
 
     ui.imgEditPic.setImageBitmap(rotatedBitmap);
 
-    ui.button.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
+    //ui.img2.setImageBitmap( BitmapProcessing.grayscale(rotatedBitmap));
+    //ui.img1.setImageBitmap( BitmapProcessing.emboss(rotatedBitmap));
+    // ui.img3.setImageBitmap( BitmapProcessing.grayscale(rotatedBitmap));
+   //ui.img4.setImageBitmap( BitmapProcessing.sepia(rotatedBitmap));
 
-        ui.imgEditPic.setImageBitmap( BitmapProcessing.emboss(rotatedBitmap));
 
-
-      }
-    });
 
 
   }

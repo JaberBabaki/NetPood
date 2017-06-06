@@ -56,7 +56,7 @@
                 android:textSize="17dip"
                 android:gravity="center|right"
                 android:layout_marginRight="16dip"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -81,11 +81,111 @@
             android:layout_weight="0.3"
             android:gravity="center">
 
-            <Button
-                android:layout_width="120dip"
-                android:layout_height="48dip"
-                android:text="New Button"
-                android:id="@+id/button"/>
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/horizontalScrollView">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay1">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img1"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view13"
+                            android:text="T1"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay2">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img2"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view14"
+                            android:text="T2"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay3">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img3"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view15"
+                            android:text="3"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay4">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img4"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view16"
+                            android:text="3"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
     </LinearLayout>
 
