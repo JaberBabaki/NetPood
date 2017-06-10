@@ -134,7 +134,7 @@ public class UAppCompatActivity extends AppCompatActivity {
 
           //Log.i("LOG", "id : "+name );
           int id =  UBase.get().getResources().getIdentifier(name, "id",  UBase.get().getPackageName());
-          Log.i("LOG", "id: "+id);
+          Log.i("LOG", "id control : "+id);
           try {
             field.set(ui, activity.findViewById(id));
           } catch (IllegalAccessException e) {

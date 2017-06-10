@@ -160,22 +160,114 @@
 
                     </LinearLayout>
                     <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="8dip"
+                    android:gravity="center"
+                    android:id="@+id/lay4">
+
+                    <ImageView
+                        android:layout_width="128dip"
+                        android:layout_height="128dip"
+                        android:id="@+id/img4"/>
+
+                    <com.netpood.admin.framework.widget.NewControlTextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/view16"
+                        android:text="3"
+                        android:textColor="#000000"
+                        android:gravity="center"/>
+
+
+                </LinearLayout>
+                    <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_margin="8dip"
                         android:gravity="center"
-                        android:id="@+id/lay4">
+                        android:id="@+id/lay5">
 
                         <ImageView
                             android:layout_width="128dip"
                             android:layout_height="128dip"
-                            android:id="@+id/img4"/>
+                            android:id="@+id/img5"/>
 
                         <com.netpood.admin.framework.widget.NewControlTextView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/view16"
+                            android:id="@+id/view17"
+                            android:text="3"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay6">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img6"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view18"
+                            android:text="3"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay7">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img7"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view19"
+                            android:text="3"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dip"
+                        android:gravity="center"
+                        android:id="@+id/lay8">
+
+                        <ImageView
+                            android:layout_width="128dip"
+                            android:layout_height="128dip"
+                            android:id="@+id/img8"/>
+
+                        <com.netpood.admin.framework.widget.NewControlTextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view20"
                             android:text="3"
                             android:textColor="#000000"
                             android:gravity="center"/>

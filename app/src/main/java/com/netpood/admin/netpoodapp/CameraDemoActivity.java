@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.ErrorCallback;
@@ -25,7 +27,10 @@ import android.widget.ImageView;
 import com.netpood.admin.framework.activity.UAppCompatActivity;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 
 public class CameraDemoActivity extends UAppCompatActivity implements Callback, OnClickListener {
@@ -243,8 +248,37 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       public void onPictureTaken(byte[] data, Camera camera) {
         try {
 
+          Calendar calendar = Calendar.getInstance();
+          String year = calendar.get(Calendar.YEAR)+"";
+          String month = calendar.get(Calendar.MONTH)+"";
+          String day = calendar.get(Calendar.DAY_OF_MONTH)+"";
+          String hour = calendar.get(Calendar.HOUR_OF_DAY)+"";
+          String min = calendar.get(Calendar.MINUTE)+"";
+          String sec = calendar.get(Calendar.SECOND)+"";
+          String nameImage=year+month+day+hour+min+sec+"netpood.png";
+
+          Bitmap loadedImage = BitmapFactory.decodeByteArray(data, 0, data.length);
+          File image = new File(Base.getDIR_PICTURE(), nameImage);
+
+          try {
+            FileOutputStream outStream = new FileOutputStream(image);
+            loadedImage.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+            outStream.flush();
+            outStream.close();
+          }catch (FileNotFoundException e) {
+               Log.i("FiL","no create");
+          }catch (IOException e) {
+               Log.i("FiL","no create");
+          }
+
+          /*ByteArrayOutputStream stream = new ByteArrayOutputStream();
+          loadedImage.compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+             Base.getPic=stream;
+             Base.rotation=rotation;*/
+
           Intent intent = new Intent(Base.getCurrentActivity(), EditCamera.class);
-          intent.putExtra("PIC",data);
+          intent.putExtra("PIC",nameImage);
           intent.putExtra("ROR",rotation);
           Base.getCurrentActivity().startActivity(intent);
 

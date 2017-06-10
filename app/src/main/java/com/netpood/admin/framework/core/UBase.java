@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -16,6 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.File;
+
 public class UBase extends Application {
   private static Context context;
   private static Activity currentActivity;
@@ -24,6 +27,9 @@ public class UBase extends Application {
   private static Handler handler;
   private static DisplayMetrics displayMetrics;
   private static UBase base;
+  private static String  DIR_SDCARD;
+  private static String  DIR_PATH;
+  private static String  DIR_PICTURE;
 
   @Override
   public void onCreate() {
@@ -39,10 +45,30 @@ public class UBase extends Application {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
       transitionInflater = TransitionInflater.from(context);
     }
+
+    DIR_SDCARD= Environment.getExternalStorageDirectory().getAbsolutePath();
+    DIR_PATH       = DIR_SDCARD + "/netpood/";
+    DIR_PICTURE      = DIR_PATH+"/picture";
+    File dir = new File(DIR_PATH);
+    if(!dir.exists()) {
+      dir.mkdir();
+      File dir2 = new File(DIR_PICTURE);
+      dir2.mkdir();
+    }
+
   }
 
   public static UBase get() {
     return base;
+  }
+  public static String getDIR_SDCARD() {
+    return DIR_SDCARD;
+  }
+  public static String getDIR_PATH() {
+    return DIR_PATH;
+  }
+  public static String getDIR_PICTURE() {
+    return DIR_PICTURE;
   }
 
   public static Context getContext() {
