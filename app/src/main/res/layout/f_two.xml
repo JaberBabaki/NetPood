@@ -97,6 +97,11 @@
                 android:layout_marginRight="4dip"
                 android:layout_marginBottom="4dip"
                 android:src="@drawable/send"/>
+
+            <com.netpood.admin.framework.widget.StartPointSeekBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/view22"/>
         </LinearLayout>
 
         <ImageView

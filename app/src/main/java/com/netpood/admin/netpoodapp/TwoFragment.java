@@ -20,6 +20,9 @@ public class TwoFragment extends Fragment{
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    // StartPointSeekBar a=(StartPointSeekBar) getView().findViewById(R.id.view22);
+
+
   }
 
   @Override

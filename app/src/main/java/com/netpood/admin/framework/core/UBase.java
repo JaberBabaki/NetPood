@@ -48,7 +48,7 @@ public class UBase extends Application {
 
     DIR_SDCARD= Environment.getExternalStorageDirectory().getAbsolutePath();
     DIR_PATH       = DIR_SDCARD + "/netpood/";
-    DIR_PICTURE      = DIR_PATH+"/picture";
+    DIR_PICTURE      = DIR_PATH+"picture";
     File dir = new File(DIR_PATH);
     if(!dir.exists()) {
       dir.mkdir();
