@@ -79,15 +79,12 @@
         android:layout_height="match_parent"
         android:visibility="visible">
 
-        <ImageView
+        <jp.co.cyberagent.android.gpuimage.GPUImageView
             android:id="@+id/imgEditPic"
-            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
             android:layout_height="0dip"
-            android:src="@drawable/image"
-            android:layout_below="@+id/layoutmain"
-            android:layout_above="@+id/horizontalScrollView"
-            android:layout_weight="1"
-            android:scaleType="fitXY"/>
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:orientation="vertical"
@@ -239,55 +236,20 @@
                         <com.netpood.admin.framework.widget.NewControlTextView
                             android:layout_width="fill_parent"
                             android:layout_height="20dip"
-                            android:id="@+id/view13"
-                            android:text="Black"
+                            android:id="@+id/v"
+                            android:text="Normal"
                             android:textColor="#000000"
                             android:gravity="center"/>
 
                         <ImageView
-                            android:id="@+id/effect_black"
+                            android:id="@+id/normal"
                             android:layout_width="fill_parent"
                             android:layout_height="0dip"
                             android:padding="2dp"
                             android:onClick="buttonClicked"
-                            android:src="@drawable/effect_black"
-                            android:scaleType="fitXY"
                             android:layout_weight="1"/>
 
                     </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:gravity="center"
-                            android:id="@+id/lay2"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            android:visibility="gone">
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view14"
-                                android:text="Boost"
-                                android:textColor="#000000"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_boost_3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_boost_3"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-
-
-                        </LinearLayout>
 
                         <LinearLayout
                             android:orientation="vertical"
@@ -304,13 +266,13 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view15"
-                                android:text="Brightness"
+                                android:text="Amaro"
                                 android:textColor="#000000"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_brightness"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/amaro"
+                                android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
                                 android:onClick="buttonClicked"
@@ -336,13 +298,13 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view16"
-                                android:text="ColorDepth"
+                                android:text="Brannan"
                                 android:textColor="#000000"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_color_depth_32"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/brannan"
+                                android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
                                 android:onClick="buttonClicked"
@@ -368,12 +330,12 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view17"
-                                android:text="ColorDepth64"
+                                android:text="Earlybird"
                                 android:textColor="#000000"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_color_depth_64"
+                                android:id="@+id/earlybird"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -401,12 +363,12 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view18"
-                                android:text="Contrast"
+                                android:text="Hefe"
                                 android:textColor="#000000"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_contrast"
+                                android:id="@+id/hefe"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -416,227 +378,6 @@
                                 android:layout_weight="1"/>
 
 
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:gravity="center"
-                            android:id="@+id/lay7"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            android:visibility="gone">
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view19"
-                                android:text="Ebboss"
-                                android:textColor="#000000"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_emboss"
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_emboss"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:gravity="center"
-                            android:id="@+id/lay8"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            android:visibility="gone">
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view20"
-                                android:text="Engrave"
-                                android:textColor="#000000"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_engrave"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_engrave"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay9"
-                            android:visibility="gone"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view23"
-                                android:text="Boost1"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_boost_1"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_boost_1"
-                                android:visibility="gone"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay10"
-                            android:visibility="gone"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view24"
-                                android:text="Boost2"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_boost_2"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_boost_2"
-                                android:visibility="gone"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay11"
-                            android:visibility="gone"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view25"
-                                android:text="ColorBlue"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_color_blue"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_color_blue"
-                                android:visibility="gone"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay12"
-                            android:visibility="gone"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view26"
-                                android:text="ColorGreen"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_color_green"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_color_green"
-                                android:visibility="gone"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay13"
-                            android:visibility="gone"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view27"
-                                android:text="ColorRed"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_color_red"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_color_red"
-                                android:visibility="gone"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -654,11 +395,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view28"
-                                android:text="Flea"
+                                android:text="Hudson"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_flea"
+                                android:id="@+id/hudson"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -683,11 +424,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view29"
-                                android:text="Gamma"
+                                android:text="Lnkwell"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_gamma"
+                                android:id="@+id/lnkwell"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -712,11 +453,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view30"
-                                android:text="GaussianBlue"
+                                android:text="Lomo"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_gaussian_blue"
+                                android:id="@+id/lomo"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -741,11 +482,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view31"
-                                android:text="GrayScale"
+                                android:text="Lord"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_grayscale"
+                                android:id="@+id/lordKelvin"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -770,11 +511,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view32"
-                                android:text="Hue"
+                                android:text="Nashvill"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_hue"
+                                android:id="@+id/nashvill"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -799,11 +540,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view33"
-                                android:text="Invert"
+                                android:text="Rise"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_invert"
+                                android:id="@+id/rise"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -828,45 +569,16 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view34"
-                                android:text="MeanRemove"
+                                android:text="Sierra"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_mean_remove"
+                                android:id="@+id/sierra"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
                                 android:onClick="buttonClicked"
                                 android:src="@drawable/effect_mean_remove"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay21"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            android:visibility="gone">
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view35"
-                                android:text="roundCorner"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_round_corner"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_round_corner"
                                 android:scaleType="fitXY"
                                 android:layout_weight="1"/>
                         </LinearLayout>
@@ -886,11 +598,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view36"
-                                android:text="Saturation"
+                                android:text="Sutro"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_saturation"
+                                android:id="@+id/sutro"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -915,11 +627,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view37"
-                                android:text="Sepia"
+                                android:text="Toaster"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_sepia"
+                                android:id="@+id/toaster"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -944,11 +656,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view38"
-                                android:text="SepiaBlue"
+                                android:text="Valencia"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_sepia_blue"
+                                android:id="@+id/valencia"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -973,11 +685,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view39"
-                                android:text="SepiaGreen"
+                                android:text="Walden"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_sepia_green"
+                                android:id="@+id/walden"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -1002,11 +714,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view40"
-                                android:text="ShedingCyan"
+                                android:text="Xproll"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_sheding_cyan"
+                                android:id="@+id/xproll"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -1031,11 +743,11 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="20dip"
                                 android:id="@+id/view41"
-                                android:text="ShedingGreen"
+                                android:text="1977"
                                 android:gravity="center"/>
 
                             <ImageView
-                                android:id="@+id/effect_sheding_green"
+                                android:id="@+id/n1977"
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dip"
                                 android:padding="2dp"
@@ -1045,121 +757,7 @@
                                 android:layout_weight="1"/>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay28"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view42"
-                                android:text="ShedingYellow"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_sheding_yellow"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_sheding_yellow"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay29"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view43"
-                                android:text="Smooth"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_smooth"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_smooth"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay30"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view44"
-                                android:text="Tint"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_tint"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_tint"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="128dip"
-                            android:layout_height="140dip"
-                            android:id="@+id/lay31"
-                            android:layout_marginLeft="2dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip"
-                            android:layout_marginBottom="4dip"
-                            >
-
-                            <com.netpood.admin.framework.widget.NewControlTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="20dip"
-                                android:id="@+id/view45"
-                                android:text="WaterMark"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:id="@+id/effect_watermark"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:src="@drawable/effect_watermark"
-                                android:scaleType="fitXY"
-                                android:layout_weight="1"/>
-                        </LinearLayout>123
+                        123
                     </LinearLayout>
 
                 </LinearLayout>
@@ -1173,13 +771,13 @@
                 android:id="@+id/laySeekBar"
                 android:visibility="gone">
 
-                <com.netpood.admin.framework.widget.StartPointSeekBar
+                <SeekBar
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dip"
                     android:id="@+id/sek"
-                    android:layout_marginLeft="16dip"
-                    android:layout_marginRight="16dip"/>
-
+                    android:elevation="4dip"
+                    android:contextClickable="true"
+                    android:backgroundTint="@color/abc_background_cache_hint_selector_material_dark"/>
             </LinearLayout>
 
             <LinearLayout

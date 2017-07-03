@@ -13,15 +13,14 @@ import com.netpood.admin.framework.activity.UAppCompatActivity;
 
 public class MainActivity extends UAppCompatActivity {
 
+  ImageView imgPersonalPage;
+  ImageView imgAddPost;
+  ViewPager viewPager;
+  TabLayout tabLayout;
   private Ui ui;
 
   public class Ui {
-    ImageView imgPersonalPage;
-    ImageView imgAddPost;
-    ViewPager viewPager;
-    TabLayout tabLayout;
   }
-
   private int[] tabIcons = {
     R.drawable.ca,
     R.drawable.nav_logo_whiteout,
@@ -33,7 +32,6 @@ public class MainActivity extends UAppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     ui = new Ui();
-
     new UAppCompatActivity.Founder(this)
       .requestFeatures()
       .noTitlebar()
@@ -43,18 +41,23 @@ public class MainActivity extends UAppCompatActivity {
       .extractUi(ui)
       .build();
 
-    ui.imgPersonalPage.setOnClickListener(
+    viewPager =(ViewPager) findViewById(R.id.viewPager);
+    tabLayout =(TabLayout) findViewById(R.id.tabLayout);
+
+    imgPersonalPage=(ImageView) findViewById(R.id.imgPersonalPage);
+    imgPersonalPage.setOnClickListener(
       new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
              Intent intent = new Intent(Base.getCurrentActivity(), PersonalPage.class);
              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
              ActivityCompat.finishAffinity(Base.getCurrentActivity());
              Base.getCurrentActivity().startActivity(intent);
             }
             });
-    ui.imgAddPost.setOnClickListener(
+
+    imgAddPost=(ImageView) findViewById(R.id.imgAddPost);
+    imgAddPost.setOnClickListener(
       new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -70,23 +73,23 @@ public class MainActivity extends UAppCompatActivity {
   }
 
   public void stratUpTab() {
-    setupViewPager(ui.viewPager);
-    ui.tabLayout.setupWithViewPager(ui.viewPager);
+    setupViewPager(viewPager);
+    tabLayout.setupWithViewPager(viewPager);
     setupTabIcons();
-    TabLayout.Tab tab = ui.tabLayout.getTabAt(1);
+    TabLayout.Tab tab = tabLayout.getTabAt(1);
     tab.select();
 
-    ui.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
       @Override
       public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
       }
       @Override
       public void onPageSelected(int position) {
         if(position == 0||position == 2) {
-          ui.tabLayout.setVisibility(View.GONE);
+          tabLayout.setVisibility(View.GONE);
         }
         else {
-          ui.tabLayout.setVisibility(View.VISIBLE);
+          tabLayout.setVisibility(View.VISIBLE);
         }
       }
       @Override
@@ -98,9 +101,9 @@ public class MainActivity extends UAppCompatActivity {
   }
 
   private void setupTabIcons() {
-    ui.tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-    ui.tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-    ui.tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+    tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+    tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+    tabLayout.getTabAt(2).setIcon(tabIcons[2]);
   }
   private void setupViewPager(ViewPager viewPager) {
     ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

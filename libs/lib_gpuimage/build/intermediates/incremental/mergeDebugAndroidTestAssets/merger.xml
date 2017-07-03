@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="debug"><source path="D:\anddev\project\android_studio\NetPood\libs\lib_gpuimage\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="D:\anddev\project\android_studio\NetPood\libs\lib_gpuimage\src\androidTest\assets"/><source path="D:\anddev\project\android_studio\NetPood\libs\lib_gpuimage\build\generated\assets\shaders\androidTest\debug"/></dataSet></merger>

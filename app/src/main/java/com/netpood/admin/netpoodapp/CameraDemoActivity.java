@@ -27,10 +27,7 @@ import android.widget.ImageView;
 import com.netpood.admin.framework.activity.UAppCompatActivity;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.List;
 
 public class CameraDemoActivity extends UAppCompatActivity implements Callback, OnClickListener {
@@ -40,15 +37,15 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
   private int cameraId;
   private boolean flashmode = false;
   private int rotation;
-
+  ImageView flipCamera;
+  ImageView flash;
+  ImageView captureImage;
+  SurfaceView surfaceView;
 
   private Ui ui;
 
   public class Ui {
-    ImageView flipCamera;
-    ImageView flash;
-    ImageView captureImage;
-    SurfaceView surfaceView;
+
   }
 
   @Override
@@ -76,22 +73,28 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       .build();
 
 
+    flipCamera=(ImageView)findViewById(R.id.flipCamera);
+    flash=(ImageView)findViewById(R.id.flash);
+    captureImage=(ImageView)findViewById(R.id.captureImage);
+    surfaceView=(SurfaceView)findViewById(R.id.surfaceView);
+
+
     // camera surface view created
     cameraId = CameraInfo.CAMERA_FACING_BACK;
-    surfaceHolder = ui.surfaceView.getHolder();
+    surfaceHolder = surfaceView.getHolder();
     surfaceHolder.addCallback(this);
-    ui.flipCamera.setOnClickListener(this);
-    ui.captureImage.setOnClickListener(this);
-    ui.flash.setOnClickListener(this);
+    flipCamera.setOnClickListener(this);
+    captureImage.setOnClickListener(this);
+    flash.setOnClickListener(this);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     if (Camera.getNumberOfCameras() > 1) {
-      ui.flipCamera.setVisibility(View.VISIBLE);
+      flipCamera.setVisibility(View.VISIBLE);
     }
 
     if (!getBaseContext().getPackageManager().hasSystemFeature(
       PackageManager.FEATURE_CAMERA_FLASH)) {
-      ui.flash.setVisibility(View.GONE);
+      flash.setVisibility(View.GONE);
     }
 
 
@@ -110,6 +113,12 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
     cameraId = id;
     releaseCamera();
     try {
+      Camera.Parameters params= camera.getParameters();
+      params.setPreviewSize(100, 100);
+      camera.setParameters(params);
+      camera.setDisplayOrientation(90);
+      camera.setPreviewDisplay(surfaceHolder);
+      camera.startPreview();
       camera = Camera.open(cameraId);
     } catch (Exception e) {
       e.printStackTrace();
@@ -189,7 +198,7 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       && params.getSupportedFlashModes() != null
       && params.getSupportedFocusModes().size() > 1;
 
-    ui.flash.setVisibility(showFlash ? View.VISIBLE
+     flash.setVisibility(showFlash ? View.VISIBLE
       : View.INVISIBLE);
 
   }
@@ -248,17 +257,22 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       public void onPictureTaken(byte[] data, Camera camera) {
         try {
 
-          Calendar calendar = Calendar.getInstance();
+         /* Calendar calendar = Calendar.getInstance();
           String year = calendar.get(Calendar.YEAR)+"";
           String month = calendar.get(Calendar.MONTH)+"";
           String day = calendar.get(Calendar.DAY_OF_MONTH)+"";
           String hour = calendar.get(Calendar.HOUR_OF_DAY)+"";
           String min = calendar.get(Calendar.MINUTE)+"";
           String sec = calendar.get(Calendar.SECOND)+"";
-          String nameImage=year+month+day+hour+min+sec+"netpood.png";
+          String nameImage=year+month+day+hour+min+sec+"netpood.png";*/
 
-          Bitmap loadedImage = BitmapFactory.decodeByteArray(data, 0, data.length);
-          File image = new File(Base.getDIR_PICTURE(), nameImage);
+          BitmapFactory.Options options = new BitmapFactory.Options();
+          options.inDither = false;
+          options.inPreferredConfig = Bitmap.Config.RGB_565;
+          Bitmap loadedImage = BitmapFactory.decodeByteArray(data, 0, data.length,options);
+          Base.bit=loadedImage;
+          Base.rotation=rotation;
+         /* File image = new File(Base.getDIR_PICTURE(), nameImage);
 
           try {
             FileOutputStream outStream = new FileOutputStream(image);
@@ -278,8 +292,8 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
              Base.rotation=rotation;*/
 
           Intent intent = new Intent(Base.getCurrentActivity(), EditCamera.class);
-          intent.putExtra("PIC",nameImage);
-          intent.putExtra("ROR",rotation);
+          //intent.putExtra("PIC",nameImage);
+          //intent.putExtra("ROR",rotation);
           Base.getCurrentActivity().startActivity(intent);
 
         } catch (Exception e) {
@@ -340,5 +354,40 @@ public class CameraDemoActivity extends UAppCompatActivity implements Callback, 
       }
 
     }
+  }
+
+
+
+
+  private Camera.Size getOptimalPreviewSize(List<Camera.Size> sizes, int w, int h) {
+    final double ASPECT_TOLERANCE = 0.1;
+    double targetRatio=(double)h / w;
+
+    if (sizes == null) return null;
+
+    Camera.Size optimalSize = null;
+    double minDiff = Double.MAX_VALUE;
+
+    int targetHeight = h;
+
+    for (Camera.Size size : sizes) {
+      double ratio = (double) size.width / size.height;
+      if (Math.abs(ratio - targetRatio) > ASPECT_TOLERANCE) continue;
+      if (Math.abs(size.height - targetHeight) < minDiff) {
+        optimalSize = size;
+        minDiff = Math.abs(size.height - targetHeight);
+      }
+    }
+
+    if (optimalSize == null) {
+      minDiff = Double.MAX_VALUE;
+      for (Camera.Size size : sizes) {
+        if (Math.abs(size.height - targetHeight) < minDiff) {
+          optimalSize = size;
+          minDiff = Math.abs(size.height - targetHeight);
+        }
+      }
+    }
+    return optimalSize;
   }
 }

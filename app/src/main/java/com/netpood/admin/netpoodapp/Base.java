@@ -1,6 +1,7 @@
 package com.netpood.admin.netpoodapp;
 
 
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 
 import com.netpood.admin.framework.core.UBase;
@@ -12,6 +13,8 @@ public class Base extends UBase {
   public static String         FONT1_NAME   = "font/IRAN-Sans-Light.otf";
   public static ByteArrayOutputStream getPic;
   public static int rotation;
+  public static Bitmap bit;
+
 
   @Override
   public void onCreate() {
