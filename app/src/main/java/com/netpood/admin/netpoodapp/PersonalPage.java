@@ -54,7 +54,7 @@ public class PersonalPage extends UAppCompatActivity {
         @Override
         public void onClick(View v) {
 
-          Intent intent = new Intent(Base.getCurrentActivity(), CameraDemoActivity.class);
+          Intent intent = new Intent(Base.getCurrentActivity(), EditCamera.class);
           Base.getCurrentActivity().startActivity(intent);
         }
       });

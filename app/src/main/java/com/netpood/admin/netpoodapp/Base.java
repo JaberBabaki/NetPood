@@ -13,6 +13,10 @@ public class Base extends UBase {
   public static String         FONT1_NAME   = "font/IRAN-Sans-Light.otf";
   public static ByteArrayOutputStream getPic;
   public static int rotation;
+  public static int w;
+  public static int h;
+  public static int w1;
+  public static int h1;
   public static Bitmap bit;
 
 

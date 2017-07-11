@@ -21,7 +21,7 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="30dip"
+            android:layout_height="?attr/actionBarSize"
             app:tabMode="fixed"
             app:tabGravity="fill"
             app:tabIndicatorHeight="0dp"
@@ -35,51 +35,91 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:background="#ffffff"/>
+        android:background="#eeeeee"/>
 </android.support.design.widget.CoordinatorLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="38dip"
+        android:layout_height="56dp"
         android:elevation="5dip"
         android:background="#F9F9F9"
         android:gravity="center">
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="0dip"
-            android:layout_height="20dip"
-            android:id="@+id/imgHome"
-            android:layout_weight="0.33"
-            android:src="@drawable/home_black"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="0dip"
-            android:layout_height="20dip"
-            android:id="@+id/imageView5"
-            android:layout_weight="0.33"
-            android:src="@drawable/searc"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/imgHome"
+                android:layout_weight="0.33"
+                android:src="@drawable/home_black"/>
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dip"
-            android:layout_height="20dip"
-            android:id="@+id/imgAddPost"
-            android:layout_weight="0.33"
-            android:src="@drawable/add"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="0dip"
-            android:layout_height="20dip"
-            android:id="@+id/imageView13"
-            android:layout_weight="0.33"
-            android:src="@drawable/star"/>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/imageView5"
+                android:layout_weight="0.33"
+                android:src="@drawable/searc"/>
+        </LinearLayout>
 
-        <ImageView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dip"
-            android:layout_height="20dip"
-            android:id="@+id/imgPersonalPage"
-            android:layout_weight="0.33"
-            android:src="@drawable/use"/>
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/imgAddPost"
+                android:layout_weight="0.33"
+                android:src="@drawable/add"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/imageView13"
+                android:layout_weight="0.33"
+                android:src="@drawable/star"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/imgPersonalPage"
+                android:layout_weight="0.33"
+                android:src="@drawable/use"/>
+        </LinearLayout>
 
     </LinearLayout>
 </LinearLayout>
