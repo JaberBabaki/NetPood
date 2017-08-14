@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layoutDirection="ltr">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_item"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardBackgroundColor="#ffffff"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dip"
+                android:layout_marginLeft="4dip"
+                android:layout_weight="1">
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_main_item"
+                    android:text="We have sent code via SMS to:"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="5dp"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:maxLines="2"
+                    android:textSize="13dp"/>
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt23"
+                    android:text="+98 09384904562"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="5dp"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="8dp"
+                    android:maxLines="2"
+                    android:textSize="13dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"/>
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt"
+                    android:text="Please enter it below."
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="5dp"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:maxLines="2"
+                    android:textSize="13dp"
+                    android:gravity="left"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:visibility="visible"
+                android:gravity="bottom">
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="send"
+                    android:id="@+id/button4"
+                    android:background="#f1f1f1"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</android.support.design.widget.CoordinatorLayout>

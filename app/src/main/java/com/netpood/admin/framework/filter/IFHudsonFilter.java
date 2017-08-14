@@ -17,7 +17,7 @@ public class IFHudsonFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture3; //overlay;\n" +
             " uniform sampler2D inputImageTexture4; //map\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec4 texel = texture2D(inputImageTexture, textureCoordinate);\n" +

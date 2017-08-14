@@ -19,7 +19,7 @@ public class IFHefeFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture5;  //hefeSoftLight\n" +
             " uniform sampler2D inputImageTexture6;  //hefeMetal\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             "{\t\n" +
             "\tvec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +
             "\tvec3 edge = texture2D(inputImageTexture2, textureCoordinate).rgb;\n" +

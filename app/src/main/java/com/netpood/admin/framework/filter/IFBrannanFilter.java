@@ -33,7 +33,7 @@ public class IFBrannanFilter extends IFImageFilter {
             " \n" +
             " vec3 luma = vec3(.3, .59, .11);\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +

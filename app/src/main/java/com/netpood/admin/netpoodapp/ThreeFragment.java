@@ -5,32 +5,41 @@ package com.netpood.admin.netpoodapp;
  */
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.netpood.admin.netpoodapp.adapter.AdapterPersonaltem;
+
 
 public class ThreeFragment extends Fragment{
-
-  public ThreeFragment() {
-    // Required empty public constructor
-  }
+  View view;
 
   @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    //TabLayout tbHome=(TabLayout)getView().findViewById(R.id.tb_home);
-
-  }
-
-  @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           Bundle savedInstanceState) {
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.f_three, container, false);
+    view= inflater.inflate(R.layout.activity_personal, container, false);
+    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+    AdapterPersonaltem newsAdapter = new AdapterPersonaltem(Base.getCurrentActivity(), DataFakeGenerator.getData(Base.getCurrentActivity()));
+    GridLayoutManager gride = new GridLayoutManager(Base.getCurrentActivity(), 2);
+    gride.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+      @Override
+      public int getSpanSize(int position) {
+        if (position == 0) {
+          return 2;
+        } else {
+          return 1;
+        }
+      }
+    });
+
+    recyclerView.setLayoutManager(gride);
+    recyclerView.setAdapter(newsAdapter);
+
+    return view;
   }
 
 }

@@ -19,7 +19,7 @@ public class IFSutroFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture5; //sutroEdgeburn\n" +
             " uniform sampler2D inputImageTexture6; //sutroCurves\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +

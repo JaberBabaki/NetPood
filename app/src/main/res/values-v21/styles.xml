@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppThemeSendPost" parent="Theme.AppCompat.Light.NoActionBar">
+                <!-- Customize your theme here. -->
+                <item name="colorPrimary">@color/progress_gray_dark</item>
+                <item name="colorPrimaryDark">@color/progress_gray_dark</item>
+                <item name="colorAccent">@color/progress_gray_dark</item>
+                <item name="android:statusBarColor">@color/color_status_bar</item>
+                <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        </style>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tab_profile"
+        android:title="پروفایل"
+        app:showAsAction="withText"
+        android:enabled="true"
+        android:icon="@drawable/user_w">
+    </item>
+    <item
+        android:id="@+id/tab_add_post"
+        android:title="مطلب جدید"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:icon="@drawable/add_post_w">
+    </item>
+    <item
+        android:id="@+id/tab_poods"
+        android:title="پودها"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:icon="@drawable/poods_w">
+    </item>
+    <item
+        android:id="@+id/tab_home"
+        android:title="خانه"
+        app:showAsAction="collapseActionView"
+        android:enabled="true"
+        android:icon="@drawable/house_h"
+        app:itemIconTint="@drawable/bottombar_select_home">
+    </item>
+
+
+
+
+</menu>

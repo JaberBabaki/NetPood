@@ -1,117 +1,132 @@
 package com.netpood.admin.netpoodapp;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.IntentCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.netpood.admin.framework.activity.UAppCompatActivity;
 
 public class MainActivity extends UAppCompatActivity {
+  DrawerLayout drawer;
 
   ImageView imgPersonalPage;
   ImageView imgAddPost;
   ViewPager viewPager;
   TabLayout tabLayout;
-  private Ui ui;
 
-  public class Ui {
-  }
-  private int[] tabIcons = {
-    R.drawable.ca,
-    R.drawable.nav_logo_whiteout,
-    R.drawable.mail
-  };
+  LinearLayout layAddPost;
 
+  LinearLayout layHomeBottom;
+  ImageView imgHomeBottom;
+  TextView txtHomeBottom;
+
+  LinearLayout layPoods;
+  ImageView imgPoodBottom;
+  TextView txtPoodBottom;
+
+  LinearLayout layProfile;
+  ImageView imgProfileBottom;
+  TextView txtProfileBottom;
+
+  private Fragment fragment;
+  private FragmentManager fragmentManager;
+
+
+  int home = 1;
+  int post = 0;
+  int pood = 0;
+  int profile = 0;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ui = new Ui();
-    new UAppCompatActivity.Founder(this)
-      .requestFeatures()
-      .noTitlebar()
-      .noActionbar()
-      .statusBar()
-      .contentView(R.layout.activity_main_a)
-      .extractUi(ui)
-      .build();
+    setContentView(R.layout.activity_main_a);
+    //setUpStatusBar();
+    setUpItemNavigation();
+    fragmentManager = getSupportFragmentManager();
 
-    viewPager =(ViewPager) findViewById(R.id.viewPager);
-    tabLayout =(TabLayout) findViewById(R.id.tabLayout);
+    layHomeBottom = (LinearLayout) findViewById(R.id.lay_home_bottom);
+    imgHomeBottom = (ImageView) findViewById(R.id.img_home_bottom);
+    txtHomeBottom = (TextView) findViewById(R.id.txt_home_bottom);
 
-    imgPersonalPage=(ImageView) findViewById(R.id.imgPersonalPage);
-    imgPersonalPage.setOnClickListener(
-      new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-             Intent intent = new Intent(Base.getCurrentActivity(), PersonalPage.class);
-             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-             ActivityCompat.finishAffinity(Base.getCurrentActivity());
-             Base.getCurrentActivity().startActivity(intent);
-            }
-            });
+    layPoods = (LinearLayout) findViewById(R.id.lay_poods_bottom);
+    imgPoodBottom = (ImageView) findViewById(R.id.img_poods_bottom);
+    txtPoodBottom = (TextView) findViewById(R.id.txt_home_bottom);
 
-    imgAddPost=(ImageView) findViewById(R.id.imgAddPost);
-    imgAddPost.setOnClickListener(
-      new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-
-             Intent intent = new Intent(Base.getCurrentActivity(), EditCamera.class);
-              Base.getCurrentActivity().startActivity(intent);
-            }
-            });
-
-      stratUpTab();
+    layProfile = (LinearLayout) findViewById(R.id.lay_profile_bottom);
+    imgProfileBottom = (ImageView) findViewById(R.id.img_profile_bottom);
+    txtProfileBottom = (TextView) findViewById(R.id.txt_profile_bottom);
 
 
-  }
+    imgHomeBottom.setImageResource(R.drawable.home_black);
+    txtHomeBottom.setVisibility(View.VISIBLE);
+    fragment = new TwoFragment();
+    final FragmentTransaction transaction = fragmentManager.beginTransaction();
+    transaction.replace(R.id.main_container, fragment).commit();
 
-  public void stratUpTab() {
-    setupViewPager(viewPager);
-    tabLayout.setupWithViewPager(viewPager);
-    setupTabIcons();
-    TabLayout.Tab tab = tabLayout.getTabAt(1);
-    tab.select();
 
-    viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    layProfile.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-      }
-      @Override
-      public void onPageSelected(int position) {
-        if(position == 0||position == 2) {
-          tabLayout.setVisibility(View.GONE);
-        }
-        else {
-          tabLayout.setVisibility(View.VISIBLE);
+      public void onClick(View view) {
+        if (profile == 0) {
+          fragment = new ThreeFragment();
+          final FragmentTransaction transaction = fragmentManager.beginTransaction();
+          transaction.replace(R.id.main_container, fragment).commit();
+          imgProfileBottom.setImageResource(R.drawable.user);
+          txtProfileBottom.setVisibility(View.VISIBLE);
+          imgHomeBottom.setImageResource(R.drawable.home_bottom_g);
+          txtHomeBottom.setVisibility(View.GONE);
+          profile = 1;
+          home = 0;
+          post = 0;
+          pood = 0;
+
         }
       }
-      @Override
-      public void onPageScrollStateChanged(int state) {
+    });
 
+    layHomeBottom.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (home == 0) {
+          fragment = new TwoFragment();
+          final FragmentTransaction transaction = fragmentManager.beginTransaction();
+          transaction.replace(R.id.main_container, fragment).commit();
+          imgHomeBottom.setImageResource(R.drawable.home_black);
+          txtHomeBottom.setVisibility(View.VISIBLE);
+          imgProfileBottom.setImageResource(R.drawable.user_w);
+          txtProfileBottom.setVisibility(View.GONE);
+          profile = 0;
+          home = 1;
+          post = 0;
+          pood = 0;
+
+        }
       }
     });
 
   }
 
-  private void setupTabIcons() {
-    tabLayout.getTabAt(0).setIcon(tabIcons[0]);
-    tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-    tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-  }
-  private void setupViewPager(ViewPager viewPager) {
-    ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-    adapter.addFragment(new OneFragment(), "ONE");
-    adapter.addFragment(new TwoFragment(), "نت پود");
-    adapter.addFragment(new ThreeFragment(), "THREE");
-    viewPager.setAdapter(adapter);
-  }
+  public void setUpItemNavigation() {
+    NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+    navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+      @Override
+      public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return true;
+      }
+    });
 
+  }
 
 }

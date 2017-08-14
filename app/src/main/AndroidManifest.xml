@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.netpood.admin.netpoodapp" android:installLocation="preferExternal">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.netpood.admin.netpoodapp"
+          android:installLocation="preferExternal">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".Base"
@@ -8,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme1">
+        android:theme="@style/AppThemeSendPost">
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.netpood.admin.netpoodapp.fileprovider"
@@ -19,15 +22,45 @@
                 android:resource="@xml/file_paths">
             </meta-data>
         </provider>
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity"
+                  android:hardwareAccelerated="true">
+        </activity>
+        <activity android:name=".ActivityPersonalPage"/>
+        <activity
+            android:name=".EditCamera"
+            android:theme="@style/AppTheme1"/>
+        <activity
+            android:name=".SendPost"
+            android:theme="@style/AppThemeSendPost"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppThemeSendPost">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".PersonalPage"></activity>
         <activity
-            android:name=".EditCamera">
+            android:name=".LoginActivity"
+            android:theme="@style/AppT">
+        </activity>
+        <activity
+            android:name=".AccontActivity"
+            android:theme="@style/AppT">
+        </activity>
+        <activity
+            android:name=".SignInActivity"
+            android:theme="@style/AppT">
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:theme="@style/AppThemeSendPost">
+        </activity>
+        <activity android:name=".Main2Activity"
+                  android:theme="@style/AppThemeSendPost">
         </activity>
     </application>
 

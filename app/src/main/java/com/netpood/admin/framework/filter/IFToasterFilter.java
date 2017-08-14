@@ -19,7 +19,7 @@ public class IFToasterFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture5; //toasterOverlayMapWarm\n" +
             " uniform sampler2D inputImageTexture6; //toasterColorshift\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     lowp vec3 texel;\n" +
             "     mediump vec2 lookup;\n" +

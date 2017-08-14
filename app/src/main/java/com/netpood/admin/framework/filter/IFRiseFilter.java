@@ -14,7 +14,7 @@ public class IFRiseFilter extends IFImageFilter {
             "uniform sampler2D inputImageTexture2;\n " +
             "uniform sampler2D inputImageTexture3;\n " +
             "uniform sampler2D inputImageTexture4;\n\n " +
-            "void main()\n  " +
+            "void activity_personal()\n  " +
             "{\n\n  " +
             "vec4 texel = texture2D(inputImageTexture, textureCoordinate);\n   " +
             "vec3 bbTexel = texture2D(inputImageTexture2, textureCoordinate).rgb;\n\n   " +

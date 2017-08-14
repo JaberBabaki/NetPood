@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NetPoodApp</string>
+    <string name="sign_in">ورود</string>
+    <string name="sign_up">ثبت نام</string>
+    <string name="user_name_pesonal_page"> جابر بابکی رسکتی</string>
+    <string name="short_name_pesonal">  تیم محبوب آرسنال</string>
+    <string name="followers">دنیال شونده ها</string>
+    <string name="following">دنبال کننده ها</string>
+    <string name="posts">پست ها</string>
+    <string name="poods">پود ها </string>
+</resources>
+

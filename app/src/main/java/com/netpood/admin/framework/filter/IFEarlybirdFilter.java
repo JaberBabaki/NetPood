@@ -33,7 +33,7 @@ public class IFEarlybirdFilter extends IFImageFilter {
             " const vec3 rgbPrime = vec3(0.25098, 0.14640522, 0.0); \n" +
             " const vec3 desaturate = vec3(.3, .59, .11);\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +

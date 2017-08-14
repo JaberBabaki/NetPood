@@ -2,7 +2,6 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="info.androidhive.materialtabs.fragments.OneFragment"
               android:background="#ffffff"
               android:orientation="vertical">
 
@@ -20,7 +19,7 @@
             android:src="@drawable/left_arrow_b"
             android:layout_margin="8dip"/>
 
-        <com.netpood.admin.framework.widget.NewControlTextView
+        <com.netpood.admin.framework.widget.CustomeTextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:id="@+id/view8"
@@ -65,7 +64,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -73,7 +72,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -128,7 +127,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -136,7 +135,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -190,7 +189,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -198,7 +197,7 @@
                     android:textColor="#000000"
                     android:textSize="12dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -253,7 +252,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -261,7 +260,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -315,7 +314,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -323,7 +322,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -378,7 +377,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -386,7 +385,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -440,7 +439,7 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
@@ -448,7 +447,7 @@
                     android:textColor="#000000"
                     android:textSize="13dip"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"
@@ -503,14 +502,14 @@
                 android:gravity="left|center"
                 android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view6"
                     android:text="Achraf Hakimi"
                     android:textColor="#000000"/>
 
-                <com.netpood.admin.framework.widget.NewControlTextView
+                <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view7"

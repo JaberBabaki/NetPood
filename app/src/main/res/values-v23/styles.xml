@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppThemeSendPost" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_status_bar</item>
+        <item name="colorPrimaryDark">@color/color_status_bar</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/color_status_bar</item>
+    </style>
+</resources>

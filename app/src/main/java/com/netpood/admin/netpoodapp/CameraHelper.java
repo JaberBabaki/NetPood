@@ -165,8 +165,8 @@ public class CameraHelper extends SurfaceView implements SurfaceHolder.Callback 
       Camera.Parameters parameters = camera.getParameters();
       parameters.setPreviewSize(mPreviewSize.width, mPreviewSize.height);
 
-      Base.w1 = mPreviewSize.width;
-      Base.h1 = mPreviewSize.height;
+      //Base.w1 = mPreviewSize.width;
+      //Base.h1 = mPreviewSize.height;
 
 
       parameters.setPictureSize(mPreviewSize.width, mPreviewSize.height);

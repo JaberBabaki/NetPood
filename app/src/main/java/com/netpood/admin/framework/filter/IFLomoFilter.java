@@ -16,7 +16,7 @@ public class IFLomoFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture2;\n" +
             " uniform sampler2D inputImageTexture3;\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +

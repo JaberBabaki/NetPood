@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/update"
+        android:title="نوتيفکشن"
+        android:icon="@drawable/notification"/>
+    <item
+        android:id="@+id/favorate"
+        android:title="تخفبف ها"
+        />
+    <item
+        android:id="@+id/zearat"
+        android:title="رويدادها"
+        />
+    <item
+        android:id="@+id/contact"
+        android:title="تنظيمات اکانت کاربري"
+        />
+    <item
+        android:id="@+id/send"
+        android:title="راهنما"
+        />
+    <item
+        android:id="@+id/about"
+        android:title="درباره ما"
+        />
+</menu>

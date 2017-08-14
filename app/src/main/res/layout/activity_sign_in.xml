@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.netpood.admin.netpoodapp.SignInActivity"
+    android:layoutDirection="ltr">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView12"
+        android:src="@drawable/signin"
+        android:scaleType="fitXY"/>
+
+
+    <com.netpood.admin.framework.widget.CustomeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_netpood"
+        android:text="NetPood"
+        android:textColor="#ffffff"
+        android:textSize="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+    <com.netpood.admin.framework.widget.CustomeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:layout_alignParentTop="true"
+        android:text="new way to the new wear"
+        android:textColor="#ffffff"
+        android:textSize="15dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.netpood.admin.framework.widget.CustomeTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_create"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp"
+            android:layout_alignParentTop="true"
+            android:text="Sign in to continue"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/edt_pre_number_plus"
+                android:layout_width="7dp"
+                android:layout_height="38dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/edt_bg_selector"
+                android:layout_marginLeft="48dp"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:enabled="true"
+                android:singleLine="true"
+                android:text="+">
+            </EditText>
+
+            <EditText
+                android:id="@+id/edt_pre_number"
+                android:layout_width="27dp"
+                android:layout_height="38dp"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/edt_bg_selector"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:enabled="true"
+                android:layout_marginRight="4dp"
+                android:singleLine="true"
+                android:text="959"
+                android:maxLength="3"
+                android:phoneNumber="true">
+            </EditText>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="38dp"
+                android:id="@+id/edt_phone_number"
+                android:layout_marginRight="40dp"
+                android:hint="Phone number"
+                android:layoutDirection="rtl"
+                android:textSize="14dp"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:focusableInTouchMode="true"
+                android:textCursorDrawable="@color/color_cur"
+                android:textColorHint="#ffffff"
+                android:background="@drawable/edt_bg_selector"
+                android:textColor="#ffffff"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:phoneNumber="true"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="38dp"
+            android:id="@+id/edt_email"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:hint="Password"
+            android:layoutDirection="rtl"
+            android:textSize="14sp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:focusableInTouchMode="true"
+            android:textCursorDrawable="@color/color_cur"
+            android:textColorHint="#ffffff"
+            android:background="@drawable/edt_bg_selector"
+            android:textColor="#ffffff"
+            android:padding="8dp"
+            android:layout_marginTop="40dp"/>
+
+        <com.netpood.admin.framework.widget.CustomeTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_forgot"
+            android:layout_alignParentBottom="true"
+            android:text="Forgot Password"
+            android:textColor="#ffffff"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_marginTop="40dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginBottom="30dp">
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="SIGN IN"
+                android:id="@+id/btn_sign_in_account"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_send_corner_signup"
+                android:layout_marginTop="40dp"/>
+
+            <com.netpood.admin.framework.widget.CustomeTextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                android:id="@+id/txt_sign_up"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

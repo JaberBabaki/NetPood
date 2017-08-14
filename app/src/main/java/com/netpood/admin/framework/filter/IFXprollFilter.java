@@ -16,7 +16,7 @@ public class IFXprollFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture2; //map\n" +
             " uniform sampler2D inputImageTexture3; //vigMap\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     \n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +

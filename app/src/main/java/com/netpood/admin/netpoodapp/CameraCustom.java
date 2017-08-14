@@ -57,8 +57,8 @@ public class CameraCustom extends Activity {
       public void run() {
         //maybe also works height = ll.getLayoutParams().height;
 
-        Base.h = cameraPreviewLayout.getHeight();
-        Base.w = cameraPreviewLayout.getWidth();
+       // Base.h = cameraPreviewLayout.getHeight();
+       // Base.w = cameraPreviewLayout.getWidth();
 
       }
     });

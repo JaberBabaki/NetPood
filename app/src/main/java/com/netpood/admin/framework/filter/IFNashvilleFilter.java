@@ -15,7 +15,7 @@ public class IFNashvilleFilter extends IFImageFilter {
             " uniform sampler2D inputImageTexture;\n" +
             " uniform sampler2D inputImageTexture2;\n" +
             " \n" +
-            " void main()\n" +
+            " void activity_personal()\n" +
             " {\n" +
             "     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;\n" +
             "     texel = vec3(\n" +
