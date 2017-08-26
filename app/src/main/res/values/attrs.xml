@@ -1,6 +1,47 @@
 <resources>
-
-
+    <declare-styleable name="BannerSlider">
+        <attr name="indicatorSize" format="dimension" />
+        <attr name="selected_slideIndicator" format="reference" />
+        <attr name="unselected_slideIndicator" format="reference" />
+        <attr name="defaultIndicators" format="integer">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+            <enum name="round_square" value="2"/>
+            <enum name="dash" value="3"/>
+        </attr>
+        <attr name="animateIndicators" format="boolean"/>
+        <attr name="interval" format="integer"/>
+        <attr name="loopSlides" format="boolean"/>
+        <attr name="defaultBanner" format="integer"/>
+        <attr name="emptyView" format="reference"/>
+        <attr name="hideIndicators" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="IntroView">
+        <attr name="scrollDuration" format="integer" />
+        <attr name="scrollDelay" format="integer" />
+        <attr name="paddingTitleTop" format="dimension" />
+        <attr name="paddingTitleBottom" format="dimension" />
+        <attr name="paddingTitleLeft" format="dimension" />
+        <attr name="paddingTitleRight" format="dimension" />
+        <attr name="paddingTextTop" format="dimension" />
+        <attr name="paddingTextBottom" format="dimension" />
+        <attr name="paddingTextLeft" format="dimension" />
+        <attr name="paddingTextRight" format="dimension" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="scaleType" format="enum">
+            <enum name="center" value="0" />
+            <enum name="centerCrop" value="1" />
+            <enum name="centerInside" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="fitStart" value="5" />
+            <enum name="fitXY" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
 
     <declare-styleable name="StartPointSeekBar">
         <attr name="minValue" format="float"/>

@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <color name="default_indicator_color_selected">#eeee</color>
+    <color name="default_indicator_color_unselected">#66eeeeee</color>
+
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorToolbar">#F9F9F9</color>
+    <color name="colorToolbar">#818d9d</color>
     <color name="colorPrimaryDark">#303f9f</color>
     <color name="colorAccent">#ff4081</color>
     <color name="progress_gray">#FFD8D8D8</color>
     <color name="progress_gray_dark">#FF383838</color>
     <color name="default_blue_light">#ff33b5e5</color>
-    <color name="color_status_bar">#f0f0f0</color>
+    <color name="color_status_bar">#4D555E</color>
+    <color name="color_status_bar_details">#908B9DAF</color>
     <color name="color_cur">#57A73A</color>
-
+    <color name="colorHambergrMenue">#ffffff</color>
 
 
     <!-- Screens background color-->

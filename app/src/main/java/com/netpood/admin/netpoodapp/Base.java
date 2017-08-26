@@ -3,6 +3,8 @@ package com.netpood.admin.netpoodapp;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
 import com.netpood.admin.framework.core.UBase;
 
@@ -20,7 +22,10 @@ public class Base extends UBase {
 
   public static String tag;
 
+  public static Fragment fragment;
+  public static FragmentManager fragmentManager;
 
+  public static int folloing;
 
   @Override
   public void onCreate() {

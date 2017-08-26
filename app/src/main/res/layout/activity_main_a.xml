@@ -117,111 +117,126 @@
             android:layout_height="56dp"
             android:layout_gravity="bottom"
             android:gravity="bottom"
-            android:elevation="2dp">
+            android:elevation="2dp"
+            >
 
             <LinearLayout
                 android:id="@+id/navigation"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_gravity="start"
-                android:background="#ffffff"
-                android:orientation="horizontal"
+                android:background="#F5F5F5"
+                android:orientation="vertical"
                 >
 
-                <LinearLayout
-                    android:id="@+id/lay_home_bottom"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/img_home_bottom"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/home_bottom_g"/>
-
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:id="@+id/txt_home_bottom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="خانه"
-                        android:textColor="#000000"
-                        android:textSize="10dp"
-                        android:visibility="gone"/>
-                </LinearLayout>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/imageView33"
+                    android:src="#eeeeee"/>
 
                 <LinearLayout
-                    android:id="@+id/lay_add_post_bottom"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
 
-                    <ImageView
-                        android:id="@+id/img_add_post_bottom"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/add_post_w"/>
+                    <LinearLayout
+                        android:id="@+id/lay_home_bottom"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:id="@+id/txt_sdd_post_bottom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="مطلب جدید"
-                        android:textColor="#000000"
-                        android:textSize="10dp"
-                        android:visibility="gone"/>
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/img_home_bottom"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/home"/>
 
-                <LinearLayout
-                    android:id="@+id/lay_poods_bottom"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:id="@+id/txt_home_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="خانه"
+                            android:textColor="#000000"
+                            android:textSize="10dp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/img_poods_bottom"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/poods_w"/>
+                    <LinearLayout
+                        android:id="@+id/lay_add_post_bottom"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:id="@+id/txt_poods_bottom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="پودها"
-                        android:textColor="#000000"
-                        android:textSize="10dp"
-                        android:visibility="gone"/>
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/img_add_post_bottom"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/newpost"/>
 
-                <LinearLayout
-                    android:id="@+id/lay_profile_bottom"
-                    android:layout_width="0dip"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.25"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:id="@+id/txt_sdd_post_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="مطلب جدید"
+                            android:textColor="#000000"
+                            android:textSize="10dp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/img_profile_bottom"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/user_w"/>
+                    <LinearLayout
+                        android:id="@+id/lay_poods_bottom"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:id="@+id/txt_profile_bottom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="پروفایل"
-                        android:textColor="#000000"
-                        android:textSize="10dp"
-                        android:visibility="gone"/>
+                        <ImageView
+                            android:id="@+id/img_poods_bottom"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/poods"/>
+
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:id="@+id/txt_poods_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="پودها"
+                            android:textColor="#000000"
+                            android:textSize="10dp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_profile_bottom"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.25"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/img_profile_bottom"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/profile"/>
+
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:id="@+id/txt_profile_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="پروفایل"
+                            android:textColor="#000000"
+                            android:textSize="10dp"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
                 </LinearLayout>
             </LinearLayout>
 

@@ -1,125 +1,108 @@
 package com.netpood.admin.netpoodapp.database;
 
 /**
- * Created by Saeed shahini on 7/21/2016.
+ * Created by jaber babaki on 7/21/2016.
  */
 public class PostItem {
-    private int id;
-    private String postImage;
-    private String title;
-    private String zendgiNameh;
-    private String born;
-    private String shahadt;
-    private String mahal;
-    private String vaseatNameh;
-    private String name;
-    private String family;
-    private int like;
-    private int ViewAll;
-    private int View;
 
-    public int getId() {
-        return id;
-    }
+  private int id;
+  private String urlImageUserItem;
+  private String nameUserItem;
+  private String txtDateItem;
+  private String urlImageMain;
+  private String txtMainItem;
+  private String txtViewItem;
+  private String urlImageUserIdea;
+  private String txtUserIdea;
+  private String txtAllIdea;
+  private int likeItem;
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPostImage() {
-        return postImage;
-    }
-
-    public void setPostImage(String postImage) {
-        this.postImage = postImage;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getZendgiNameh() {
-        return zendgiNameh;
-    }
-
-    public void setZendgiNameh(String zendgiNameh) {
-        this.zendgiNameh = zendgiNameh;
-    }
+  public int getId() {
+    return id;
+  }
 
 
-    public int getLike() {
-        return like;
-    }
+  public String getUrlImageUserItem() {
+    return urlImageUserItem;
+  }
 
-    public void setLike(int like) {
-        this.like = like;
-    }
+  public void setUrlImageUserItem(String urlImageUserItem) {
+    this.urlImageUserItem = urlImageUserItem;
+  }
 
-    public int getViewAll() {
-        return ViewAll;
-    }
+  public String getNameUserItem() {
+    return nameUserItem;
+  }
 
-    public void setViewAll(int viewAll) {
-        ViewAll = viewAll;
-    }
+  public void setNameUserItem(String nameUserItem) {
+    this.nameUserItem = nameUserItem;
+  }
 
-    public int getView() {
-        return View;
-    }
+  public String getTxtDateItem() {
+    return txtDateItem;
+  }
 
-    public void setView(int view) {
-        View = view;
-    }
+  public void setTxtDateItem(String txtDateItem) {
+    this.txtDateItem = txtDateItem;
+  }
 
-    public String getVaseatNameh() {
-        return vaseatNameh;
-    }
+  public String getUrlImageMain() {
+    return urlImageMain;
+  }
 
-    public void setVaseatNameh(String vaseatNameh) {
-        this.vaseatNameh = vaseatNameh;
-    }
+  public void setUrlImageMain(String urlImageMain) {
+    this.urlImageMain = urlImageMain;
+  }
 
-    public String getBorn() {
-        return born;
-    }
+  public String getTxtMainItem() {
+    return txtMainItem;
+  }
 
-    public void setBorn(String born) {
-        this.born = born;
-    }
+  public void setTxtMainItem(String txtMainItem) {
+    this.txtMainItem = txtMainItem;
+  }
 
-    public String getShahadt() {
-        return shahadt;
-    }
+  public String getTxtViewItem() {
+    return txtViewItem;
+  }
 
-    public void setShahadt(String shahadt) {
-        this.shahadt = shahadt;
-    }
+  public void setTxtViewItem(String txtViewItem) {
+    this.txtViewItem = txtViewItem;
+  }
 
-    public String getMahal() {
-        return mahal;
-    }
+  public String getUrlImageUserIdea() {
+    return urlImageUserIdea;
+  }
 
-    public void setMahal(String mahal) {
-        this.mahal = mahal;
-    }
+  public void setUrlImageUserIdea(String urlImageUserIdea) {
+    this.urlImageUserIdea = urlImageUserIdea;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getTxtUserIdea() {
+    return txtUserIdea;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setTxtUserIdea(String txtUserIdea) {
+    this.txtUserIdea = txtUserIdea;
+  }
 
-    public String getFamily() {
-        return family;
-    }
+  public String getTxtAllIdea() {
+    return txtAllIdea;
+  }
 
-    public void setFamily(String family) {
-        this.family = family;
-    }
+  public void setTxtAllIdea(String txtAllIdea) {
+    this.txtAllIdea = txtAllIdea;
+  }
+
+  public int getLikeItem() {
+    return likeItem;
+  }
+
+  public void setLikeItem(int likeItem) {
+    this.likeItem = likeItem;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
 }

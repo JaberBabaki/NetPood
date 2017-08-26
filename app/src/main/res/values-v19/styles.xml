@@ -3,10 +3,10 @@
 
     <style name="AppT" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@android:color/transparent</item>
-        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@android:color/holo_red_light</item>
         <item name="colorAccent">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+
 
     </style>
     <style name="AppTW" parent="Theme.AppCompat.DayNight">

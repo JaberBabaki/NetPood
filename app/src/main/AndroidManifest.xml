@@ -4,6 +4,7 @@
           android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".Base"
@@ -23,19 +24,21 @@
             </meta-data>
         </provider>
 
-        <activity android:name=".MainActivity"
-                  android:hardwareAccelerated="true">
-        </activity>
-        <activity android:name=".ActivityPersonalPage"/>
         <activity
-            android:name=".EditCamera"
+            android:name=".Activity.MainActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Activity.ActivityPersonalPage"/>
+        <activity
+            android:name=".Activity.ActivityEditCamera"
             android:theme="@style/AppTheme1"/>
         <activity
-            android:name=".SendPost"
+            android:name=".Activity.ActivitySendPost"
             android:theme="@style/AppThemeSendPost"
             android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.ActivitySplash"
             android:theme="@style/AppThemeSendPost">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -44,24 +47,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.AccontActivity"
             android:theme="@style/AppT">
         </activity>
         <activity
-            android:name=".AccontActivity"
+            android:name=".Activity.ActivitySignIn"
             android:theme="@style/AppT">
         </activity>
         <activity
-            android:name=".SignInActivity"
-            android:theme="@style/AppT">
-        </activity>
-        <activity
-            android:name=".WelcomeActivity"
+            android:name=".Activity.ActivityWelcome"
             android:theme="@style/AppThemeSendPost">
         </activity>
-        <activity android:name=".Main2Activity"
-                  android:theme="@style/AppThemeSendPost">
+        <activity android:name=".Activity.ActivityDetailPost"
+            android:theme="@style/AppT">
         </activity>
+
     </application>
 
 </manifest>

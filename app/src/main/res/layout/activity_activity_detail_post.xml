@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="#ffffff">
+
+        <android.support.v4.widget.DrawerLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layoutDirection="rtl"
+            android:id="@+id/drawer"
+            android:layout_weight="1">
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layoutDirection="ltr">
+
+
+
+                <android.support.design.widget.AppBarLayout
+                    android:id="@+id/main_appbar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    fitsSystemWindows="true">
+
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:id="@+id/collaps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:contentScrim="@color/colorToolbar"
+                        fitsSystemWindows="true"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                        app:expandedTitleTextAppearance="@style/CollapsedAppBarTopic">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+
+                            <ImageView
+                                android:id="@+id/intro_view1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/j13"
+                                android:adjustViewBounds="true"
+                                android:visibility="gone"/>
+
+                            <com.netpood.admin.framework.widget.WrapContentHeightViewPager
+                                android:id="@+id/view_page"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible"/>
+
+                            <com.netpood.admin.framework.widget.PageIndicator
+                                android:layout_width="fill_parent"
+                                android:layout_height="48dp"
+                                android:id="@+id/page_indicator"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"/>
+
+                        </RelativeLayout>
+
+
+                        <android.support.v7.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?actionBarSize"
+                            android:layout_marginTop="24dp"
+                            app:layout_collapseMode="pin"
+                            android:layoutDirection="rtl">
+
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/lay_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:visibility="visible">
+
+                                    <ImageView
+                                        android:id="@+id/img_drawer"
+                                        android:layout_width="24dp"
+                                        android:layout_height="27dp"
+                                        android:src="@drawable/index"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginBottom="16dp"/>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/lay_back"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.5"
+                                    android:gravity="left|center"
+                                    android:visibility="visible">
+
+                                    <LinearLayout
+                                        android:id="@+id/lay_search_p"
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="16dp"
+                                        android:visibility="gone">
+
+                                        <EditText
+                                            android:layout_width="0dp"
+                                            android:layout_height="38dp"
+                                            android:id="@+id/edt_search"
+                                            android:hint="جستجو..."
+                                            android:layoutDirection="rtl"
+                                            android:textSize="13dp"
+                                            android:layout_alignParentTop="true"
+                                            android:gravity="center"
+                                            android:focusableInTouchMode="true"
+                                            android:textCursorDrawable="@color/color_cur"
+                                            android:textColorHint="#000000"
+                                            android:background="@drawable/edt_bg_selector"
+                                            android:textColor="#000000"
+                                            android:padding="8dp"
+                                            android:singleLine="true"
+                                            android:layout_marginLeft="8dp"
+                                            android:visibility="visible"
+                                            android:layout_weight="1"/>
+
+                                        <ImageView
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
+                                            android:id="@+id/img_cancel_search"
+                                            android:src="@drawable/close"/>
+
+                                    </LinearLayout>
+
+                                    <ImageView
+                                        android:id="@+id/img_back"
+                                        android:layout_width="24dp"
+                                        android:layout_height="27dp"
+                                        android:layout_marginLeft="16dp"
+                                        android:src="@drawable/left_arrow_w"/>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </android.support.v7.widget.Toolbar>
+                    </android.support.design.widget.CollapsingToolbarLayout>
+                </android.support.design.widget.AppBarLayout>
+
+
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#ffffff"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:id="@+id/lst_scrol"
+                    android:fillViewport="true">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:background="#FAFAFA"
+                                android:visibility="visible">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/view5"
+                                    android:gravity="right"
+                                    android:text="همه زیر یک سقف"
+                                    android:textColor="#000000"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:textSize="17dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FAFAFA"
+                                android:visibility="visible"
+                                >
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع"
+                                    android:lineSpacingExtra="13dp"
+                                    android:id="@+id/view9"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:textSize="12dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:gravity="center"
+                                android:background="#FAFAFA">
+
+                                <ImageView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    android:id="@+id/imageView"
+                                    android:src="@drawable/like_c"
+                                    android:layout_marginRight="20dp"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    android:id="@+id/imageView8"
+                                    android:src="@drawable/speech_bubble"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    />
+
+                                <ImageView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    android:id="@+id/imageView19"
+                                    android:src="@drawable/share_p"
+                                    android:layout_marginLeft="20dp"
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:background="#fafafa"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/imageView32"/>
+                                <LinearLayout
+                                    android:orientation="horizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:gravity="left|center"
+                                    android:background="#fafafa"
+                                    android:layout_weight="1">
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="left|center"
+                                        android:layout_weight="0.5"
+                                        android:layout_marginLeft="20dp">
+
+                                        <Button
+                                            android:layout_width="120dp"
+                                            android:layout_height="28dp"
+                                            android:text="Follow"
+                                            android:id="@+id/button"
+                                            android:background="#818d9d"/>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:orientation="horizontal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="fill_parent"
+                                        android:gravity="center|right"
+                                        android:id="@+id/lay_user_accont"
+                                        android:layout_marginRight="20dp"
+                                        android:layout_weight="0.5">
+
+                                        <com.netpood.admin.framework.widget.CustomeTextView
+                                            android:layout_width="98dip"
+                                            android:layout_height="wrap_content"
+                                            android:id="@+id/txt_user"
+                                            android:text="atousa.m1990"
+                                            android:textColor="#938686"
+                                            android:layout_marginLeft="4dp"
+                                            />
+                                        <ImageView
+                                            android:layout_width="44dip"
+                                            android:layout_height="44dip"
+                                            android:id="@+id/img_user_item"
+                                            android:src="@drawable/ja"
+                                            android:layout_marginLeft="8dip"
+                                            android:layout_alignParentTop="true"
+                                            android:layout_centerHorizontal="true"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+                </android.support.v4.widget.NestedScrollView>
+
+
+
+
+            </android.support.design.widget.CoordinatorLayout>
+
+            <android.support.design.widget.NavigationView
+                android:id="@+id/navigation_view"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginTop="24dp"
+                android:background="#FAFAFA"
+                app:itemTextColor="#E8E8E8">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <include layout="@layout/layout_navigation_header" />
+                    <include layout="@layout/navigation_drawer_menu" />
+                </LinearLayout>
+
+            </android.support.design.widget.NavigationView>
+
+        </android.support.v4.widget.DrawerLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

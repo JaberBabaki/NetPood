@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layoutDirection="ltr">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="#ffffff"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:orientation="horizontal" android:gravity="top"
+            >
+
+
+            <ImageView
+                android:id="@+id/img_pesonal"
+                android:layout_width="110dp"
+                android:layout_height="fill_parent"
+                android:src="@drawable/cirpic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp">
+
+            <com.netpood.admin.framework.widget.CustomeTextView
+                android:id="@+id/txt_name_persoanl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/user_name_pesonal_page"
+                android:textColor="#1B1B1B"
+                android:textSize="16dip"
+                />
+
+            <com.netpood.admin.framework.widget.CustomeTextView
+                android:id="@+id/txt_short_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/short_name_pesonal"
+                android:textColor="#B3B3B3"
+                android:textSize="14dip"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:orientation="vertical" android:gravity="center" android:layout_marginLeft="2dip">
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/txt_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:visibility="visible"
+                    android:textStyle="bold"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/NewControlTextView09"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/posts"
+                    android:textColor="#B3B3B3"
+                    android:textSize="11dip"
+                    android:visibility="visible"
+                    android:layout_marginTop="2dip"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:orientation="vertical" android:gravity="center" android:layout_marginLeft="2dip"
+                android:id="@+id/lay_followers">
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/txt_followers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="30K"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:visibility="visible"
+                    android:textStyle="bold"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/NewControlTextView06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/followers"
+                    android:textColor="#B3B3B3"
+                    android:textSize="11dip"
+                    android:visibility="visible" android:layout_marginTop="2dip"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:orientation="vertical" android:gravity="center" android:layout_marginLeft="2dip"
+                android:id="@+id/lay_following">
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/txt_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1K"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:visibility="visible"
+                    android:textStyle="bold"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/NewControlTextView07"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/following"
+                    android:textColor="#B3B3B3"
+                    android:textSize="11dip"
+                    android:visibility="visible" android:layout_marginTop="2dip"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:orientation="vertical" android:gravity="center" android:layout_marginLeft="2dip"
+                android:visibility="visible">
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/txt_poods"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="20"
+                    android:textColor="#000000"
+                    android:textSize="16dip"
+                    android:visibility="visible"
+                    android:textStyle="bold"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:id="@+id/NewControlTextView08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/poods"
+                    android:textColor="#B3B3B3"
+                    android:textSize="11dip"
+                    android:visibility="visible" android:layout_marginTop="2dip"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

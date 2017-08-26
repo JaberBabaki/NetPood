@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:gravity="center"
+            android:background="#ffffff"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/lay_item_country">
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:gravity="center">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:padding="4dp">
+
+                                <ImageView
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="fill_parent"
+                                    android:id="@+id/img_user_follow"
+                                    android:src="@drawable/w2"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:padding="8dp">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:id="@+id/txt_name"
+                                    android:text="saeed.amini1991"
+                                    android:layout_weight="0.5"
+                                    android:gravity="center"
+                                    android:textColor="#000000"/>
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:id="@+id/txt_short_name"
+                                    android:text="3aeed"
+                                    android:textSize="12dp"
+                                    android:layout_weight="0.5"
+                                    android:gravity="center"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_marginRight="4dp">
+
+                                <Button
+                                    android:layout_width="110dp"
+                                    android:layout_height="38dp"
+                                    android:text="followering"
+                                    android:id="@+id/btn_follow"/>
+                        </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:id="@+id/imageView28"
+                    android:src="#F3F3F3"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+</LinearLayout>

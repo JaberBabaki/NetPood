@@ -2,15 +2,14 @@ package com.netpood.admin.netpoodapp.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.netpood.admin.netpoodapp.R;
-import com.netpood.admin.netpoodapp.database.PostItem;
+import com.netpood.admin.netpoodapp.database.CountryItem;
 
 import java.util.List;
 
@@ -21,85 +20,49 @@ public class AdapterContryItem extends RecyclerView.Adapter<AdapterContryItem.Ne
 
 
   private Context context;
-  private List<PostItem> posts;
-
-  public class NewsViewHolder extends RecyclerView.ViewHolder {
-
-    private ImageView urlImageUserItem;
-    private TextView nameUserItem;
-    private TextView txtDateItem;
-    private ImageView urlImageMain;
-    private TextView txtMainItem;
-    private TextView txtViewItem;
-    private ImageView urlImageUserIdea;
-    private TextView txtIdeaUser;
-    private TextView txtAllIdea;
-    private ImageView imageLike;
-    private int likeItem;
-
-    public NewsViewHolder(View itemView) {
-      super(itemView);
-      urlImageUserItem = (ImageView) itemView.findViewById(R.id.img_user_item);
-      nameUserItem = (TextView) itemView.findViewById(R.id.txt_main_item);
-      txtDateItem = (TextView) itemView.findViewById(R.id.txt_date);
-      urlImageMain = (ImageView) itemView.findViewById(R.id.img_main_item);
-      txtMainItem = (TextView) itemView.findViewById(R.id.txt_main_item);
-      txtViewItem = (TextView) itemView.findViewById(R.id.txt_view_item);
-      urlImageUserIdea = (ImageView) itemView.findViewById(R.id.img_user_idea);
-      txtIdeaUser = (TextView) itemView.findViewById(R.id.txt_user_idea);
-      txtAllIdea = (TextView) itemView.findViewById(R.id.txt_all_comment);
-      imageLike = (ImageView) itemView.findViewById(R.id.img_like_item);
-      //cardView = (CardView) itemView.findViewById(R.id.card_item);
-    }
-  }
-
-  public AdapterContryItem(Context context, List<PostItem> posts) {
+  private List<CountryItem> posts;
+  private OnItemClickListener.OnItemClickCallback onItemClickCallback;
+  public AdapterContryItem(Context context, List<CountryItem> posts, OnItemClickListener.OnItemClickCallback onItemClickCallback) {
     this.context = context;
     this.posts = posts;
+    this.onItemClickCallback = onItemClickCallback;
   }
 
   @Override
   public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(context).inflate(R.layout.item_namyeh, parent, false);
+    View view = LayoutInflater.from(context).inflate(R.layout.item_country, parent, false);
     return new NewsViewHolder(view);
   }
 
-  @Override
-  public void onBindViewHolder(final NewsViewHolder holder, int position) {
-    final PostItem post = posts.get(position);
-    //final Shohda shohda = new Shohda();
-    holder.urlImageUserItem.setImageDrawable(post.getUrlImageUserItem());
-    holder.nameUserItem.setText(post.getNameUserItem());
-    holder.txtDateItem.setText(post.getTxtDateItem());
-    holder.urlImageMain.setImageDrawable(post.getUrlImageMain());
-    holder.txtMainItem.setText(post.getTxtMainItem());
-    holder.txtViewItem.setText(post.getTxtViewItem());
-    holder.urlImageUserIdea.setImageDrawable(post.getUrlImageUserIdea());
-    holder.txtIdeaUser.setText(post.getTxtUserIdea());
-    holder.txtAllIdea.setText(post.getTxtAllIdea());
+  public class NewsViewHolder extends RecyclerView.ViewHolder {
 
-    if (post.getLikeItem() == 1) {
-      holder.imageLike.setImageResource(R.drawable.likeok);
-      Log.i("LIK", "1");
-    } else if (post.getLikeItem() == 1) {
-      Log.i("LIK", "2");
-      holder.imageLike.setImageResource(R.drawable.ufi_heart_bold);
+    private TextView nameCountry;
+    private TextView txtcodeCountry;
+    private LinearLayout layMain;
+
+    public NewsViewHolder(View itemView) {
+      super(itemView);
+      nameCountry = (TextView) itemView.findViewById(R.id.txt_name);
+      txtcodeCountry = (TextView) itemView.findViewById(R.id.txt_code);
+      layMain = (LinearLayout) itemView.findViewById(R.id.lay_item_country);
     }
+  }
 
-    holder.imageLike.setOnClickListener(new View.OnClickListener() {
+
+
+  @Override
+  public void onBindViewHolder(final NewsViewHolder holder, final int position) {
+    CountryItem post = posts.get(position);
+    holder.nameCountry.setText(post.getNameCountry());
+    holder.txtcodeCountry.setText("+"+post.getCodeCountry());
+   /* holder.layMain.setOnClickListener(new View.OnClickListener() {
       @Override
-      public void onClick(View view) {
-        if (post.getLikeItem() == 1) {
-          Log.i("LIK", "3");
-          holder.imageLike.setImageResource(R.drawable.ufi_heart_bold);
-          post.setLikeItem(0);
-        } else if (post.getLikeItem() == 0) {
-          holder.imageLike.setImageResource(R.drawable.likeok);
-          Log.i("LIK", "4");
-          post.setLikeItem(1);
-        }
+      public void onClick(View v) {
+
+        Base.position=position;
       }
-    });
+    });*/
+    holder.layMain.setOnClickListener(new OnItemClickListener(position, onItemClickCallback));
 
   }
 

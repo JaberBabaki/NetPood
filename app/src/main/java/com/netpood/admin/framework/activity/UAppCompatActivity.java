@@ -10,7 +10,7 @@ import android.view.View;
 import com.netpood.admin.framework.core.UBase;
 
 public class UAppCompatActivity extends AppCompatActivity {
-  DrawerLayout drawer;
+  public DrawerLayout navigationView;
   @Override
   public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
     super.onCreate(savedInstanceState, persistentState);
@@ -20,7 +20,7 @@ public class UAppCompatActivity extends AppCompatActivity {
   @Override
   protected void onResume() {
     super.onResume();
-    setUpStatusBar();
+    //setUpStatusBar();
 
     UBase.setCurrentActivity(this);
   }

@@ -1,45 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="160dp"
               android:layoutDirection="ltr"
     >
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="160dp"
         android:background="#ffffff">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="0.8"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="128dp"
-                android:layout_height="126dp"
-                android:id="@+id/imageView4"
-                android:src="@drawable/ja"
-                android:layout_margin="8dp"
-                android:scaleType="centerCrop"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="0dip"
-            android:layout_weight="0.5"
-            android:gravity="right">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:background="#21242D">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.5"
-                android:gravity="bottom">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:layout_weight="1">
 
                 <com.netpood.admin.framework.widget.CustomeTextView
                     android:layout_width="fill_parent"
@@ -50,31 +35,41 @@
                     android:layout_below="@+id/imageView4"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="8dp"
-                    android:textSize="18dp"
-                    android:textColor="#000000"
-                    android:gravity="center"/>
+                    android:textSize="14dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center|right"/>
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="جابر بابکي رسکتي"
+                    android:id="@+id/txt_header_name"
+                    android:layout_below="@+id/imageView4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="8dp"
+                    android:textSize="10dp"
+                    android:textColor="#ffffff"
+                    android:gravity="center|right"/>
+
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_weight="0.5"
-                android:gravity="center|right">
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="نسخه 1.0.1"
-                    android:id="@+id/txt_ver"
-                    android:textSize="18dp"
-                    android:layout_marginLeft="8dip"
-                    android:layout_marginRight="8dip"
-                    android:visibility="gone"/>
-
+                <ImageView
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/imon_ircle"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerCrop"
+                    android:padding="4dp"
+                    />
             </LinearLayout>
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
