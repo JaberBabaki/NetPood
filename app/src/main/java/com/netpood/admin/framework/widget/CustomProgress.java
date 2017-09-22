@@ -18,7 +18,7 @@ public class CustomProgress extends ImageView {
     private static final int STROKE_WIDTH = 5;
 
     private int              percent      = -180;
-    public String            color        = "#1A75BC";
+    public String            color        = "#818d9d";
 
 
     public void setColor(String col) {

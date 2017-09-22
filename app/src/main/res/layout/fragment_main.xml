@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -114,21 +113,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/swip_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#f1f1f1"
-                android:fillViewport="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-        </android.support.v4.widget.SwipeRefreshLayout>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:id="@+id/imageView37"
+            android:src="@drawable/sli2"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_item"
+            android:id="@+id/card_item_frg_main"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -177,6 +171,43 @@
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="56dp"
+                    android:background="#f1f1f1"
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+            </com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout >
+
+
+            <com.netpood.admin.framework.widget.CustomLoading
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:id="@+id/pb"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                />
+        </LinearLayout>
 
     </RelativeLayout>
 

@@ -1,217 +1,400 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    >
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="#ffffff">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:elevation="4dp">
+        android:gravity="top"
+        app:cardCornerRadius="0dp"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/main.appbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorToolbar"
-            android:gravity="right"
-            android:layoutDirection="rtl"
-            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:elevation="4dp"
             >
 
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/lay_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:id="@+id/img_drawer"
-                        android:layout_width="24dp"
-                        android:layout_height="27dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginTop="16dp"
-                        android:src="@drawable/index"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/lay_back"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:gravity="left|center"
-                    android:visibility="visible">
-
-                    <LinearLayout
-                        android:id="@+id/lay_search_p"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:visibility="gone">
-
-                        <EditText
-                            android:id="@+id/edt_search"
-                            android:layout_width="0dp"
-                            android:layout_height="38dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginLeft="8dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/edt_bg_selector"
-                            android:focusableInTouchMode="true"
-                            android:gravity="center"
-                            android:hint="جستجو..."
-                            android:layoutDirection="rtl"
-                            android:padding="8dp"
-                            android:singleLine="true"
-                            android:textColor="#000000"
-                            android:textColorHint="#000000"
-                            android:textCursorDrawable="@color/color_cur"
-                            android:textSize="13dp"
-                            android:visibility="visible"/>
-
-                        <ImageView
-                            android:id="@+id/img_cancel_search"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/close"/>
-
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/img_search"
-                        android:layout_width="24dp"
-                        android:layout_height="27dp"
-                        android:layout_marginLeft="16dp"
-                        android:src="@drawable/search"/>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="120dp"
-            android:id="@+id/imageView37"
-            android:src="@drawable/sli2"
-            android:scaleType="fitXY"
-            android:visibility="gone"/>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/card_item_frg_main"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_margin="8dp"
-            android:background="#00000000"
-            card_view:cardBackgroundColor="#ffffff"
-            card_view:cardCornerRadius="4dp">
-
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#00000000"
-                android:orientation="vertical">
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorToolbar"
+                android:layoutDirection="rtl"
+                >
+
 
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_margin="8dp"
-                    android:background="#00000000"
-                    android:gravity="center"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.netpood.admin.framework.widget.InsLoadingView
-                        android:id="@+id/loading_view"
-                        android:layout_width="56dp"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/logon"
-                        app:status="loading"
-                        />
+                    <LinearLayout
+                        android:id="@+id/lay_go"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.33"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
 
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:id="@+id/txt_m3"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="8dp"
-                        android:gravity="left"
-                        android:text="Please Wait...."
-                        android:textColor="#000000"
-                        android:textSize="13dp"
-                        android:visibility="visible"/>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:visibility="visible"
+                            android:id="@+id/lay_go_main">
+
+                            <com.netpood.admin.framework.widget.CustomeTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/txt_pood_count"
+                                android:text="تایید"
+                                android:textColor="#ffffff"
+                                android:textSize="14dp"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.33"
+                        android:gravity="center"
+                        android:id="@+id/lay_title">
+
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/view11"
+                            android:text="انتخاب پود"
+                            android:textColor="#ffffff"
+                            android:textSize="15dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:id="@+id/lay_text_search"
+                        android:visibility="gone"
+                        android:gravity="center">
+
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/edt_search_pood"
+                            android:autoText="false"
+                            android:background="@null"
+                            android:layout_weight="1"
+                            android:textSize="13dp"
+                            android:textColor="#ffffff"/>
+
+                        <ImageView
+                            android:layout_width="27dp"
+                            android:layout_height="27dp"
+                            android:id="@+id/img_cancel_search"
+                            android:src="@android:drawable/ic_menu_close_clear_cancel"
+                            android:layout_marginLeft="16dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.33"
+                        android:gravity="left|center"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/img_back"
+                            android:layout_width="24dp"
+                            android:layout_height="27dp"
+                            android:layout_marginLeft="16dp"
+                            android:src="@drawable/search"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_marginTop="56dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_item"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardBackgroundColor="#ffffff"
+            android:layout_margin="8dp"
+            android:background="#00000000">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#00000000"
+                    >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="left|center">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:id="@+id/list_gride"
+                            android:src="@drawable/menu"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="4dp"/>
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:id="@+id/list_vertical"
+                            android:src="@drawable/list"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="center">
+
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txt_filter"
+                            android:text="Fillter"
+                            android:textSize="15dp"
+                            android:textColor="#000000"/>
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/img_filter"
+                            android:src="@drawable/downarrow"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginLeft="8dp"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/refresh_layout"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+            android:layout_height="match_parent"
+            android:layout_marginTop="82dp">
 
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_view"
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_item_frg_main"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="8dp"
+                android:background="#00000000"
+                card_view:cardBackgroundColor="#ffffff"
+                card_view:cardCornerRadius="4dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="56dp"
-                    android:background="#f1f1f1"
-                    android:fillViewport="true"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+                    android:background="#00000000"
+                    android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="8dp"
+                        android:background="#00000000"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-            </com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout >
+                        <com.netpood.admin.framework.widget.InsLoadingView
+                            android:id="@+id/loading_view"
+                            android:layout_width="56dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/logon"
+                            app:status="loading"
+                            />
 
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:id="@+id/txt_m3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="8dp"
+                            android:gravity="left"
+                            android:text="Please Wait...."
+                            android:textColor="#000000"
+                            android:textSize="13dp"
+                            android:visibility="visible"/>
 
-            <com.netpood.admin.framework.widget.CustomLoading
-                android:layout_width="fill_parent"
-                android:layout_height="48dp"
-                android:id="@+id/pb"
-                android:layout_gravity="center_horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_horizental"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#ffffff"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:visibility="visible"
-                />
-        </LinearLayout>
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"/>
 
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:id="@+id/imageView39"
+                android:layout_marginTop="160dp"
+                android:background="@color/colorToolbar"
+                android:layout_marginLeft="64dp"
+                android:layout_marginRight="64dp"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:id="@+id/imageView39"
+                android:layout_marginTop="170dp"
+                android:background="@color/colorToolbar"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="5dp"/>
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:id="@+id/imageView39"
+                android:layout_marginTop="180dp"
+                android:background="@color/colorToolbar"
+                android:layout_marginLeft="64dp"
+                android:layout_marginRight="64dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:visibility="visible"
+                android:layout_marginTop="190dp"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:id="@+id/lay_filter"
+            android:background="#ECECEC"
+            android:layout_below="@+id/card_item"
+            android:visibility="gone"
+            android:layout_alignParentTop="false">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:id="@+id/lay_top_post">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/img_top_post"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/tic_filter"
+                    android:visibility="invisible"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/view"
+                    android:text="بیشترین مطالب"
+                    android:textColor="#000000"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:layout_marginRight="8dp"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView36"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@color/colorToolbar"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:id="@+id/lay_top_member">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:id="@+id/img_top_member"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/tic_filter"
+                    android:visibility="invisible"/>
+
+                <com.netpood.admin.framework.widget.CustomeTextView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/view"
+                    android:text="بیشترین اعضاء"
+                    android:textColor="#000000"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:layout_marginRight="8dp"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
     </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
-

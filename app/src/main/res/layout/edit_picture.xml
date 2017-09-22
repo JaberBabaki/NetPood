@@ -1,88 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ffffff"
-              android:layoutDirection="ltr"
-    >
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="4dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorToolbar"
+            android:gravity="right"
+            android:layoutDirection="rtl">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:gravity="left|center"
+              >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center"
+                    android:id="@+id/layNextEffect">
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/view12"
+                        android:text="Next"
+                        android:textColor="#ffffff"
+                        android:textSize="17dip"
+                        android:gravity="center|right"
+                        android:layout_marginRight="16dip"
+                        android:visibility="visible"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:id="@+id/layHeaderEffect">
+
+                    <ImageView
+                        android:layout_width="34dip"
+                        android:layout_height="24dip"
+                        android:id="@+id/imageView6"
+                        android:src="@drawable/brightness"
+                        android:visibility="gone"/>
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txtHeaderEffect"
+                        android:textColor="#000000"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.33"
+                    android:gravity="left|center"
+                    android:id="@+id/layBackEffect">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dip"
+                        android:id="@+id/imageView4"
+                        android:src="@drawable/left_arrow_w"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
+        android:layout_marginTop="56dp"
         android:id="@+id/lay_editt">
 
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="48dip"
-            android:gravity="left|center"
-            android:elevation="5dip">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:gravity="left|center"
-                android:id="@+id/layBackEffect">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="24dip"
-                    android:id="@+id/imageView4"
-                    android:src="@drawable/left_arrow_b"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:gravity="center"
-                android:visibility="visible"
-                android:id="@+id/layHeaderEffect">
-
-                <ImageView
-                    android:layout_width="34dip"
-                    android:layout_height="24dip"
-                    android:id="@+id/imageView6"
-                    android:src="@drawable/brightness"
-                    android:visibility="gone"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txtHeaderEffect"
-                    android:textColor="#000000"
-                    android:textSize="17dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="0.33"
-                android:gravity="center"
-                android:id="@+id/layNextEffect">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view12"
-                    android:text="Next"
-                    android:textColor="#000000"
-                    android:textSize="17dip"
-                    android:gravity="center|right"
-                    android:layout_marginRight="16dip"
-                    android:visibility="visible"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
 
 
         <LinearLayout
@@ -98,7 +115,6 @@
                 android:layout_height="0dip"
                 android:layout_weight="1"
                 android:scaleType="centerInside"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#ffffff"/>
 
@@ -107,187 +123,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
                 android:layout_gravity="bottom">
-                <HorizontalScrollView
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:id="@+id/scrollViewEdit"
-                    android:visibility="gone"
-                    android:scrollIndicators="none"
-                    android:scrollbars="none"
-                    android:layout_weight="1"
-                    >
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:id="@+id/lay_edit_ad">
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dip"
-                            android:gravity="center"
-                            android:layout_marginLeft="8dip"
-                            android:layout_weight="0.2"
-                            android:layout_marginRight="4dip"
-                            android:id="@+id/lay_adjust"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view49"
-                                android:text="Adjust"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dip"
-                                android:layout_height="78dip"
-                                android:id="@+id/imageView22"
-                                android:src="@drawable/tool_adjust_straighten_whiteout"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dip"
-                            android:gravity="center"
-                            android:id="@+id/lay_brightness"
-                            android:layout_weight="0.2"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginRight="4dip"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view48"
-                                android:gravity="center"
-                                android:text="Brightness"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dip"
-                                android:layout_height="78dip"
-                                android:id="@+id/imageView23"
-                                android:src="@drawable/tool_brightness_whiteout"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dip"
-                            android:gravity="center"
-                            android:layout_weight="0.2"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginRight="4dip"
-                            android:id="@+id/lay_contrast"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view47"
-                                android:text="Contrast"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dip"
-                                android:layout_height="78dip"
-                                android:id="@+id/imageView24"
-                                android:src="@drawable/tool_contrast_whiteout"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dip"
-                            android:gravity="center"
-                            android:layout_weight="0.2"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginRight="4dip"
-                            android:id="@+id/lay_saturation"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view46"
-                                android:text="Saturation"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dip"
-                                android:layout_height="78dip"
-                                android:id="@+id/imageView25"
-                                android:src="@drawable/tool_saturation_whiteout"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_weight="0.2"
-                            android:gravity="center"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginRight="4dip"
-                            android:id="@+id/lay_vignette"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view13"
-                                android:text="Vignette"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dp"
-                                android:layout_height="78dp"
-                                android:id="@+id/imageView26"
-                                android:src="@drawable/tool_vignette_whiteout"/>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dp"
-                            android:layout_height="120dp"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginRight="4dip"
-                            android:id="@+id/lay_warmth"
-                            android:onClick="editClicked">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/view14"
-                                android:text="Warmth"
-                                android:textColor="#000000"/>
-
-                            <ImageView
-                                android:layout_width="78dp"
-                                android:layout_height="78dp"
-                                android:id="@+id/imageView27"
-                                android:src="@drawable/tool_warmth_whiteout"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </HorizontalScrollView>
 
                 <HorizontalScrollView
                     android:id="@+id/scrollViewFilter"
                     android:layout_width="match_parent"
                     android:layout_height="0dip"
                     android:layout_alignParentBottom="true"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:scrollIndicators="none"
                     android:scrollbars="none"
                     android:layout_weight="1">
@@ -918,108 +760,223 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:id="@+id/laySeekBar"
-                    android:visibility="gone"
+                    android:id="@+id/lay_edit_ad"
                     android:layout_weight="1">
 
-                    <SeekBar
-                        android:layout_width="fill_parent"
-                        android:layout_height="30dip"
-                        android:id="@+id/sek"
-                        android:elevation="4dip"
-                        android:contextClickable="true"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:progressBackgroundTint="#C7C7C7"
-                        android:progressTint="#262626"
-                        android:thumbTint="#262626"
-                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <com.netpood.admin.framework.widget.CustomeTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/txt_seek_value"
-                        android:text="0"
-                        android:textColor="#000000"/>
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3.3"
+                            android:gravity="center">
 
-                    <com.netpood.admin.framework.widget.StartPointSeekBar
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/seek_midle"
-                        android:paddingLeft="16dip"
-                        android:paddingRight="16dip"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"/>
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left|center">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/view6"
+                                    android:text="Brightness"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txt_bri"
+                                    android:text="0"/>
+
+                                <SeekBar
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/seekbar_brigthness"
+                                    android:layout_marginRight="8dp"
+                                    android:thumbTint="@color/colorToolbar"
+                                    android:progressTint="@color/colorToolbar"
+                                    />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3.3"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left|center">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/view6"
+                                    android:text="Contrast"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_weight="1">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txt_con"
+                                    android:text="0"/>
+
+                                <SeekBar
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/seekbar_contrast"
+                                    android:layout_marginRight="8dp"
+                                    android:thumbTint="@color/colorToolbar"
+                                    android:progressTint="@color/colorToolbar"
+                                    android:progress="50"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3.3"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left|center">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/view6"
+                                    android:text="Saturation"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/txt_satu"
+                                    android:text="0"/>
+
+                                <SeekBar
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/seekbar_vignette"
+                                    android:layout_marginRight="8dp"
+                                    android:thumbTint="@color/colorToolbar"
+                                    android:progressTint="@color/colorToolbar"
+                                    android:progress="50"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="fill_parent"
-                        android:layout_height="48dip"
-                        android:layout_gravity="bottom">
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dip"
+                    android:layout_gravity="bottom">
 
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="bottom|center"
-                            android:id="@+id/layFilter">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="bottom|center"
+                        android:id="@+id/layFilter">
 
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="fill_parent"
-                                android:id="@+id/txtFilter"
-                                android:text="FILTER"
-                                android:textColor="#000000"
-                                android:gravity="center"/>
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/txtFilter"
+                            android:text="FILTER"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
 
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="1dip"
-                                android:id="@+id/imgSelectFilter"
-                                android:layout_marginBottom="4dip"
-                                android:layout_marginLeft="4dip"
-                                android:layout_marginRight="4dip"
-                                android:background="#000000"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="0dip"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="bottom|center"
-                            android:id="@+id/layEdit">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="fill_parent"
-                                android:id="@+id/txtEdit"
-                                android:text="EDIT"
-                                android:textColor="#000000"
-                                android:gravity="center"/>
-
-                            <ImageView
-                                android:layout_width="fill_parent"
-                                android:layout_height="1dip"
-                                android:id="@+id/imgEdit"
-                                android:layout_marginBottom="4dip"
-                                android:layout_marginRight="4dip"
-                                android:layout_marginLeft="4dip"/>
-                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:id="@+id/imgSelectFilter"
+                            android:layout_marginBottom="4dip"
+                            android:layout_marginLeft="4dip"
+                            android:layout_marginRight="4dip"
+                            android:background="#000000"/>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:gravity="bottom|center"
+                        android:id="@+id/layEdit">
+
+                        <com.netpood.admin.framework.widget.CustomeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/txtEdit"
+                            android:text="EDIT"
+                            android:textColor="#000000"
+                            android:gravity="center"/>
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:id="@+id/imgEdit"
+                            android:layout_marginBottom="4dip"
+                            android:layout_marginRight="4dip"
+                            android:layout_marginLeft="4dip"/>
+                    </LinearLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
 
         </LinearLayout>
 
-        </LinearLayout>
-
     </LinearLayout>
 
+
+</android.support.design.widget.CoordinatorLayout>

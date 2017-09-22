@@ -1,6 +1,7 @@
 package com.netpood.admin.netpoodapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.netpood.admin.netpoodapp.Activity.ActivitySelectPood;
+import com.netpood.admin.netpoodapp.Activity.ActivityMessagePood;
 import com.netpood.admin.netpoodapp.Base;
 import com.netpood.admin.netpoodapp.R;
 import com.netpood.admin.netpoodapp.database.PoodItem;
@@ -29,6 +30,7 @@ public class AdapterSelectedPoodItem extends RecyclerView.Adapter<AdapterSelecte
   private Context context;
   private List<PoodItem> posts;
   private OnItemClickListener.OnItemClickCallback onItemClickCallback;
+
   public class NewsViewHolder extends RecyclerView.ViewHolder {
 
     private TextView namePood;
@@ -55,7 +57,7 @@ public class AdapterSelectedPoodItem extends RecyclerView.Adapter<AdapterSelecte
 
   @Override
   public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(context).inflate(R.layout.item_pood, parent, false);
+    View view = LayoutInflater.from(context).inflate(R.layout.item_pood_selected, parent, false);
     return new NewsViewHolder(view);
   }
 
@@ -69,7 +71,7 @@ public class AdapterSelectedPoodItem extends RecyclerView.Adapter<AdapterSelecte
       .diskCacheStrategy(DiskCacheStrategy.ALL)
       .into(holder.poodImage);
 
-    holder.countUser.setText(" تعداد اعضاء  "+post.getCountUsers());
+    holder.countUser.setText(" تعداد اعضاء  " + post.getCountUsers());
     holder.namePood.setText(post.getName());
 
     if (post.getLike() == 1) {
@@ -80,61 +82,22 @@ public class AdapterSelectedPoodItem extends RecyclerView.Adapter<AdapterSelecte
       holder.imageLike.setImageResource(R.drawable.likepood);
     }
 
-    /*holder.imageLike.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        if (post.getLike() == 1) {
-          Log.i("LIK", "3");
-          holder.imageLike.setImageResource(R.drawable.likepood);
-          post.setLike(0);
-        } else if (post.getLike() == 0) {
-          holder.imageLike.setImageResource(R.drawable.like_w);
-          Log.i("LIK", "4");
-          post.setLike(1);
-        }
-      }
-    });*/
-
-
+    holder.imageLike.setImageResource(R.drawable.like_w);
     holder.item.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        if (post.getLike() == 1) {
-          Log.i("LIK", "3");
-          holder.imageLike.setImageResource(R.drawable.likepood);
-          ActivitySelectPood.countPood=ActivitySelectPood.countPood-1;
-          post.setLike(0);
-        } else if (post.getLike() == 0) {
-          holder.imageLike.setImageResource(R.drawable.like_w);
-          Log.i("LIK", "4");
-          post.setLike(1);
-         // Toast.makeText(Base.getCurrentActivity(),"به پود "+post.getName()+ "  خوش آمدید "    , Toast.LENGTH_SHORT).show();
-          ActivitySelectPood.countPood=ActivitySelectPood.countPood+1;
-        }
-
-
-        if(ActivitySelectPood.countPood>0){
-         // ActivitySelectPood.layGoMain.setVisibility(View.VISIBLE);
-          ActivitySelectPood.txtCount.setText(""+ActivitySelectPood.countPood);
-        }else{
-          //ActivitySelectPood.layGoMain.setVisibility(View.INVISIBLE);
-          ActivitySelectPood.countPood=0;
-          ActivitySelectPood.txtCount.setText("0");
-        }
-
-
+        Intent intent = new Intent(Base.getCurrentActivity(), ActivityMessagePood.class);
+        intent.putExtra("name",post.getName());
+        intent.putExtra("member",post.getCountUsers());
+        Base.getCurrentActivity().startActivity(intent);
       }
     });
-
-    //holder.item.setOnClickListener(new OnItemClickListener(position, onItemClickCallback));
-
   }
 
   @Override
   public int getItemCount() {
     return posts.size();
   }
-
 
 
 }

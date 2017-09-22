@@ -1,9 +1,6 @@
 package com.netpood.admin.netpoodapp.database;
 
 import android.content.Context;
-import android.support.v4.content.res.ResourcesCompat;
-
-import com.netpood.admin.netpoodapp.R;
 
 import java.util.ArrayList;
 
@@ -26,9 +23,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(1);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(), R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.j13,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                    //post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(), R.drawable.w2,null));
+                    //post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.j13,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
                 case 2:
                     post.setId(i);
@@ -39,9 +36,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(0);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w12,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                    //post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
+                   // post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w12,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
                 case 3:
                     post.setId(i);
@@ -52,9 +49,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(0);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w12,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                    //post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
+                   // post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.a1,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
                 case 4:
                     post.setId(i);
@@ -65,9 +62,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(0);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.man1,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                   // post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
+                   // post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.man1,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
                 case 5:
                     post.setId(i);
@@ -78,9 +75,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(1);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.yes,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                   // post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
+                    //post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.yes,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
                 case 6:
                     post.setId(i);
@@ -91,9 +88,9 @@ public class DataFakeMainItem {
                     post.setTxtUserIdea("براي من که خيلي جالب شده");
                     post.setTxtAllIdea("نمايش 340 پيام");
                     post.setLikeItem(1);
-                    post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
-                    post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.yes,null));
-                    post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
+                    //post.setUrlImageUserItem(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w2,null));
+                   // post.setUrlImageMain(ResourcesCompat.getDrawable(context.getResources(),R.drawable.yes,null));
+                   // post.setUrlImageUserIdea(ResourcesCompat.getDrawable(context.getResources(),R.drawable.w5,null));
                     break;
             }
             posts.add(post);

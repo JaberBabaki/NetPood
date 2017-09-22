@@ -28,7 +28,6 @@ import com.netpood.admin.netpoodapp.adapter.OnItemClickListener;
 import com.netpood.admin.netpoodapp.database.CountryItem;
 import com.netpood.admin.netpoodapp.database.DataFakeCountry;
 import com.netpood.admin.netpoodapp.database.LoginItem;
-import com.netpood.admin.netpoodapp.database.PostItem;
 import com.netpood.admin.netpoodapp.webService.ApiClient;
 import com.netpood.admin.netpoodapp.webService.ApiInterface;
 
@@ -44,6 +43,8 @@ public class AccontActivity extends UAppCompatActivity {
 
   LinearLayout layPhoneNumber;
   LinearLayout layVertification;
+  LinearLayout layCode;
+  LinearLayout layWill;
 
   private static final String FORMAT = "%02d:%02d";
   TextView txtM3;
@@ -53,9 +54,10 @@ public class AccontActivity extends UAppCompatActivity {
   EditText edtPhoneNumber;
   Button btnSignUp;
   TextView btnSignIn;
-  TextView txtEnableEdit;
+  LinearLayout layEnableEdit;
+  LinearLayout layForgot;
   TextView txtM1;
-  TextView txtM2;
+  TextView txtRecieved;
   TextView txtNetPood;
   EditText edtPass;
   EditText edtPreNumber;
@@ -80,15 +82,18 @@ public class AccontActivity extends UAppCompatActivity {
 
     layPhoneNumber = (LinearLayout) findViewById(R.id.lay_phone_number);
     layVertification = (LinearLayout) findViewById(R.id.lay_vertification);
+    layCode = (LinearLayout) findViewById(R.id.lay_code);
+    layWill = (LinearLayout) findViewById(R.id.lay_will);
 
     edtPhoneNumber = (EditText) findViewById(R.id.edt_phone_number);
     layChoise = (LinearLayout) findViewById(R.id.lay_choice_cuntry);
     btnSignUp = (Button) findViewById(R.id.btn_sign_up_account);
     btnSignIn = (TextView) findViewById(R.id.btn_sign_in);
-    txtEnableEdit = (TextView) findViewById(R.id.txt_edit);
+    layEnableEdit = (LinearLayout) findViewById(R.id.lay_edit);
+    layForgot = (LinearLayout) findViewById(R.id.lay_forgot);
     txtCreate = (TextView) findViewById(R.id.txt_create);
     txtM1 = (TextView) findViewById(R.id.txt_m1);
-    txtM2 = (TextView) findViewById(R.id.txt_m2);
+    txtRecieved = (TextView) findViewById(R.id.txt_number_recived);
     txtM3 = (TextView) findViewById(R.id.txt_m3);
     txtNetPood = (TextView) findViewById(R.id.txt_netpood);
     edtPass = (EditText) findViewById(R.id.edt_pass);
@@ -96,31 +101,42 @@ public class AccontActivity extends UAppCompatActivity {
     edtChooseCountry = (TextView) findViewById(R.id.edt_choice_country);
     EditText edtPreNumberPlus = (EditText) findViewById(R.id.edt_pre_number_plus);
     edtPreNumberPlus.setEnabled(false);
+
+    edtPass.setTypeface(Base.font1);
+    edtPhoneNumber.setTypeface(Base.font1);
+    btnSignUp.setTypeface(Base.font1);
     GetCountryZipCode();
     edtChooseCountry.setEnabled(true);
     btnSignUp.setOnClickListener(new View.OnClickListener() {
                                    @Override
                                    public void onClick(View v) {
-                                     if (btnSignUp.getText().toString().equals("NEXT")) {
-                                       if (edtPhoneNumber.getText().toString().length() > 5 && edtPreNumber.getText().toString().length() >= 1) {
-                                         showLoadingBar();
-                                         loadJSON2(3);
-                                        // loadJSON(edtPhoneNumber.getText().toString(), edtPreNumber.getText().toString(), edtChooseCountry.getText().toString());
-            /*Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-              public void run() {
+                                     if (layPhoneNumber.getVisibility() == View.VISIBLE) {
+                                       if (edtPreNumber.getText().toString().trim().equals("98")) {
+                                         if (edtPhoneNumber.getText().toString().length() == 11) {
 
-              }
-            }, 5000);*/
+                                           showLoadingBar();
+                                           loadJSON(edtPhoneNumber.getText().toString(), edtPreNumber.getText().toString(), edtChooseCountry.getText().toString());
+                                         } else {
+                                           CustomSnakeBar customSnakeBar = new CustomSnakeBar();
+                                           customSnakeBar.showMessage(v, "شماره موبایل یازده رقمی وارد کنید");
+                                         }
+                                       } else if (edtPhoneNumber.getText().toString().length() > 5) {
+                                         showLoadingBar();
+                                         loadJSON(edtPhoneNumber.getText().toString(), edtPreNumber.getText().toString(), edtChooseCountry.getText().toString());
+
                                        } else {
                                          CustomSnakeBar customSnakeBar = new CustomSnakeBar();
-                                         customSnakeBar.showMessage(v, "Please enter the phone number correctly");
+                                         customSnakeBar.showMessage(v, "لطفا شماره موبایلی درست وارد کنید");
+
+
                                        }
-                                     } else if (btnSignUp.getText().toString().equals("DONE")) {
-                                       if (edtPass.getText().toString().length() > 6) {
-                                         Intent intent = new Intent(Base.getCurrentActivity(), MainActivity.class);
-                                         finish();
+                                       Log.i("OSO", "1 name" + "|" + "searchString");
+                                     } else if (layPhoneNumber.getVisibility() == View.GONE) {
+                                       Log.i("OSO", "2 name " + "|" + "searchString");
+                                       if (edtPass.getText().toString().length() >= 6) {
+                                         Intent intent = new Intent(Base.getCurrentActivity(), ActivityInitialize.class);
                                          Base.getCurrentActivity().startActivity(intent);
+                                         finish();
 
                                        }
                                      }
@@ -129,13 +145,17 @@ public class AccontActivity extends UAppCompatActivity {
 
     );
 
-    txtEnableEdit.setOnClickListener(new View.OnClickListener()
+    layEnableEdit.setOnClickListener(new View.OnClickListener()
 
                                      {
                                        @Override
                                        public void onClick(View v) {
                                          layPhoneNumber.setVisibility(View.VISIBLE);
+
                                          layVertification.setVisibility(View.GONE);
+                                         layCode.setVisibility(View.GONE);
+                                         layWill.setVisibility(View.GONE);
+
                                          btnSignUp.setText("NEXT");
                                          txtCreate.setText("Phone Number");
                                          cd.cancel();
@@ -164,7 +184,7 @@ public class AccontActivity extends UAppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
 
-                                      Intent intent = new Intent(Base.getCurrentActivity(), MainActivity.class);
+                                      Intent intent = new Intent(Base.getCurrentActivity(), ActivityInitialize.class);
                                       finish();
                                       Base.getCurrentActivity().startActivity(intent);
 
@@ -223,6 +243,14 @@ public class AccontActivity extends UAppCompatActivity {
                                           }
 
     );
+
+
+    layForgot.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        showDialogForget();
+      }
+    });
   }
 
   public String GetCountryZipCode() {
@@ -259,6 +287,8 @@ public class AccontActivity extends UAppCompatActivity {
         CustomSnakeBar customSnakeBar = new CustomSnakeBar();
         customSnakeBar.showMessage(btnSignUp, "Sorry, the code entry time has ended, please try again");
         layVertification.setVisibility(View.GONE);
+        layCode.setVisibility(View.GONE);
+        layWill.setVisibility(View.GONE);
         layPhoneNumber.setVisibility(View.VISIBLE);
         btnSignUp.setText("NEXT");
         txtCreate.setText("Phone Number");
@@ -310,7 +340,6 @@ public class AccontActivity extends UAppCompatActivity {
       }
     });
 
-
     dialog2.setCancelable(true);
     dialog2.show();
   }
@@ -319,6 +348,22 @@ public class AccontActivity extends UAppCompatActivity {
     dialog2 = new Dialog(Base.getCurrentActivity());
     dialog2.setContentView(R.layout.dialog_loadbar);
     dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    dialog2.setCancelable(true);
+    dialog2.show();
+  }
+
+  public void showDialogForget() {
+    final Dialog dialog2 = new Dialog(Base.getCurrentActivity());
+    dialog2.setContentView(R.layout.dialog_forgot);
+    dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    final Button btnSendForgot = (Button) dialog2.findViewById(R.id.btn_forget_ok);
+    btnSendForgot.setTypeface(Base.font1);
+    btnSendForgot.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        dialog2.cancel();
+      }
+    });
     dialog2.setCancelable(true);
     dialog2.show();
   }
@@ -334,59 +379,42 @@ public class AccontActivity extends UAppCompatActivity {
     }
   };
 
-  private void loadJSON2(final int page) {
-    try {
-      apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-      Log.i("PAG", "page   " + page);
-      Call<ArrayList<PostItem>> call = apiInterface.getMainItem(page);
-      call.enqueue(new Callback<ArrayList<PostItem>>() {
-        @Override
-        public void onResponse(Call<ArrayList<PostItem>> call, Response<ArrayList<PostItem>> response) {
-          //Log.i("RES", response.toString());
-          if (response.isSuccessful()) {
-            Log.i("RESE", "jaber" + response.body().get(0).getNameUserItem());
-          }
-        }
-
-        @Override
-        public void onFailure(Call<ArrayList<PostItem>> call, Throwable throwable) {
-          Log.i("RESE", "jaber" + throwable.toString());
-        }
-      });
-    } catch (Exception e) {
-      Log.i("ERR", e.getMessage());
-      //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-    }
-  }
-
   private void loadJSON(final String number, final String code, String country) {
     try {
       apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
       Log.i("PAG", "page   " + number);
       //,"app",code,country
-      Call<ArrayList<LoginItem>> call = apiInterface.login("22104");
+      Call<ArrayList<LoginItem>> call = apiInterface.login(number);
       Log.i("RES", "" + call);
       call.enqueue(new Callback<ArrayList<LoginItem>>() {
         @Override
         public void onResponse(Call<ArrayList<LoginItem>> call, Response<ArrayList<LoginItem>> response) {
           // Log.i("RES", response.body().get(0).getNo());
-          Log.i("RES", response.body().get(1).getRand());
+          Log.i("RES", "" + call);
           if (response.isSuccessful()) {
-            if (response.body().get(0).getNo().equals("no")) {
+            if ((response.body().get(0).getRand().equals("no"))) {
               dialog2.dismiss();
-              layVertification.setVisibility(View.VISIBLE);
+              layVertification.setVisibility(View.GONE);
+              layCode.setVisibility(View.VISIBLE);
+              layWill.setVisibility(View.GONE);
+              edtPass.setHint("رمز عبور");
               layPhoneNumber.setVisibility(View.GONE);
-              btnSignUp.setText("DONE");
-              txtCreate.setText("Phone Verification");
-              startTime2Min();
-            } else if (!(response.body().get(0).getRand().equals(null))) {
+              btnSignUp.setText("تایید");
+              txtCreate.setText("ورود رمز");
+              txtRecieved.setText(edtPreNumber.getText().toString()+ edtPhoneNumber.getText().toString());
+              layForgot.setVisibility(View.GONE);
+              //startTime2Min();
+            } else if (!(response.body().get(0).getRand().equals("no"))) {
               dialog2.dismiss();
+              edtPass.setHint("کد 6 رقمی");
               layVertification.setVisibility(View.VISIBLE);
+              layCode.setVisibility(View.VISIBLE);
+              layWill.setVisibility(View.VISIBLE);
               layPhoneNumber.setVisibility(View.GONE);
-              btnSignUp.setText("DONE");
-              txtCreate.setText("Phone Verification");
-              CustomSnakeBar customSnakeBar = new CustomSnakeBar();
-              customSnakeBar.showMessage(layPhoneNumber, "Enter " + response.body().get(0).getRand());
+              btnSignUp.setText("تایید");
+              txtCreate.setText("  کد " + response.body().get(0).getRand() + "  وارد کنید  ");
+              layForgot.setVisibility(View.VISIBLE);
+
               startTime2Min();
 
             }
@@ -403,7 +431,6 @@ public class AccontActivity extends UAppCompatActivity {
       //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
     }
   }
-//jaber
 
 }
 

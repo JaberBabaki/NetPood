@@ -24,7 +24,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#fafafa"
+                android:background="@color/colorToolbar"
                 android:gravity="left"
                 android:layoutDirection="rtl"
                 app:layout_scrollFlags="scroll|enterAlways"
@@ -50,7 +50,7 @@
                             android:layout_width="24dp"
                             android:layout_height="27dp"
                             android:layout_margin="16dp"
-                            android:src="@drawable/menuuu"/>
+                            android:src="@drawable/index"/>
                     </LinearLayout>
 
                     <LinearLayout

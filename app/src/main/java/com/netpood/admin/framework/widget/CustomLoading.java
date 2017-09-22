@@ -16,7 +16,7 @@ public class CustomLoading extends ImageView {
     private Paint            circleOff;
     private Paint            textPaint;
 
-    private static final int STROKE_WIDTH = 2;
+    private static final int STROKE_WIDTH = 8;
 
     private int              indicate     = 3;
 

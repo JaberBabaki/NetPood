@@ -5,12 +5,10 @@ package com.netpood.admin.netpoodapp.fragment;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,8 +21,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.netpood.admin.framework.widget.EndlessRecyclerViewScrollListener;
-import com.netpood.admin.framework.widget.InfiniteScrollListener;
+import com.netpood.admin.framework.widget.CustomLoading;
+import com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout;
 import com.netpood.admin.netpoodapp.Activity.MainActivity;
 import com.netpood.admin.netpoodapp.Base;
 import com.netpood.admin.netpoodapp.R;
@@ -43,18 +41,18 @@ import retrofit2.Response;
 
 public class FragmentMain extends Fragment {
   private View view;
-  private NavigationView drawer;
   private int position;
   private Bundle bundle;
-  private ApiInterface apiInterface;
-  private List<PostItem> posts;
-  private RecyclerView recyclerView;
-  private SwipeRefreshLayout swipRefresh;
   private CardView cardLoading;
-  private AdapterMainItem newsAdapter;
+  private RecyclerView recyclerView;
+  private int page = 0;
   private LinearLayoutManager lay;
-  private EndlessRecyclerViewScrollListener scrollListener;
-  private int page=0;
+  List<PostItem> movies;
+  AdapterMainItem adapter;
+  ApiInterface api;
+  Context context;
+  CustomLoading pb;
+  RecyclerRefreshLayout ref;
 
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
@@ -63,54 +61,70 @@ public class FragmentMain extends Fragment {
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
 
     view = inflater.inflate(R.layout.fragment_main, container, false);
     initView();
     initToolbar();
-
-    swipRefresh = (SwipeRefreshLayout) view.findViewById(R.id.swip_refresh);
-    swipRefresh.setColorSchemeResources(R.color.colorToolbar);
-    swipRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-      @Override
-      public void onRefresh() {
-        loadJSON(page++);
-
-      }
-    });
-    initToolbar();
     return view;
   }
-
   public void initView() {
-    cardLoading = (CardView) view.findViewById(R.id.card_item);
-    cardLoading.setVisibility(View.VISIBLE);
-    loadJSON(page++);
-    recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-    lay = new LinearLayoutManager(Base.getContext(), LinearLayoutManager.VERTICAL, false);
-    recyclerView.setLayoutManager(lay);
     bundle = getArguments();
     if (bundle != null) {
       position = bundle.getInt("POS");
-      //recyclerView.scrollToPosition(position);
       lay.scrollToPositionWithOffset(position, 0);
       Toast.makeText(Base.getCurrentActivity(), "position  " + position, Toast.LENGTH_SHORT).show();
     }
 
-    recyclerView.addOnScrollListener(createInfiniteScrollListener());
-  }
-  @NonNull
-  private InfiniteScrollListener createInfiniteScrollListener() {
-    return new InfiniteScrollListener(10, lay) {
-      @Override public void onScrolledToEnd(final int firstVisibleItemPosition) {
-        Log.i("PAG","page   "+page);
-        int start = page++ ;
-        loadJSON(page++);
-        final boolean allItemsLoaded = start >= posts.size();
+    ref = (RecyclerRefreshLayout) view.findViewById(R.id.refresh_layout);
+    ref.setRefreshStyle(RecyclerRefreshLayout.RefreshStyle.PINNED);
+    ref.setRefreshInitialOffset(35);
+    ref.setRefreshTargetOffset(163);
+    ref.setOnRefreshListener(new RecyclerRefreshLayout.OnRefreshListener() {
+      @Override
+      public void onRefresh() {
+
+        //deleteTen();
+        loadMore(page++);
 
       }
-    };
+    });
+    //ref.setBackgroundColor(Color.parseColor("#818d9d"));
+
+    recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+    lay = new LinearLayoutManager(Base.getContext(), LinearLayoutManager.VERTICAL, false);
+    cardLoading = (CardView) view.findViewById(R.id.card_item_frg_main);
+    pb = (CustomLoading) view.findViewById(R.id.pb);
+    pb.setTag("2");
+    movies = new ArrayList<>();
+    adapter = new AdapterMainItem(Base.getContext(), movies);
+    api = ApiClient.getApiClient().create(ApiInterface.class);
+    //loadMore(0);
+
+    adapter.setLoadMoreListener(new AdapterMainItem.OnLoadMoreListener() {
+      @Override
+      public void onLoadMore() {
+        if (!pb.getTag().toString().equals("1")) {
+          recyclerView.post(new Runnable() {
+            @Override
+            public void run() {
+
+              Log.i("LOD", "" + page);
+              pb.setVisibility(View.VISIBLE);
+              loadMore(page);
+              page++;
+            }
+          });
+        }
+      }
+    });
+
+    recyclerView.setHasFixedSize(true);
+    recyclerView.setLayoutManager(lay);
+    recyclerView.setAdapter(adapter);
+
   }
+
+
   public void initToolbar() {
     final LinearLayout laySearch = (LinearLayout) view.findViewById(R.id.lay_search_p);
     ImageView imgDrawer = (ImageView) view.findViewById(R.id.img_drawer);
@@ -145,33 +159,39 @@ public class FragmentMain extends Fragment {
     });
   }
 
-  private void loadJSON(final int page) {
-    try {
-      apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-      Log.i("PAG","page   "+page);
-      Call<ArrayList<PostItem>> call = apiInterface.getMainItem(page);
-      call.enqueue(new Callback<ArrayList<PostItem>>() {
-        @Override
-        public void onResponse(Call<ArrayList<PostItem>> call, Response<ArrayList<PostItem>> response) {
-          //Log.i("RES", response.toString());
-          if (response.isSuccessful()) {
-            posts = response.body();
-            Log.i("PAG","page  "+page+"  ID  "+ posts.get(0).getId()+"  posts  "+posts.size());
-            newsAdapter = new AdapterMainItem(Base.getCurrentActivity(), posts);
-            recyclerView.setAdapter(newsAdapter);
-            cardLoading.setVisibility(View.GONE);
-            swipRefresh.setRefreshing(false);
-          }
-        }
 
-        @Override
-        public void onFailure(Call<ArrayList<PostItem>> call, Throwable throwable) {
-          Log.i("RESE", "jaber" + throwable.toString());
+  private void loadMore(int index) {
+
+    Call<ArrayList<PostItem>> call = api.getMainItem(index);
+    call.enqueue(new Callback<ArrayList<PostItem>>() {
+      @Override
+      public void onResponse(Call<ArrayList<PostItem>> call, Response<ArrayList<PostItem>> response) {
+        if (response.isSuccessful()) {
+          ArrayList<PostItem> result = response.body();
+          if (result.size() > 0) {
+            movies.addAll(result);
+            cardLoading.setVisibility(View.GONE);
+            ref.setRefreshing(false);
+            pb.setVisibility(View.GONE);
+          } else {
+            pb.setVisibility(View.GONE);
+            pb.setTag("1");
+          }
+          adapter.notifyDataChanged();
+        } else {
         }
-      });
-    } catch (Exception e) {
-      Log.i("ERR", e.getMessage());
-      //Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-    }
+      }
+
+      @Override
+      public void onFailure(Call<ArrayList<PostItem>> call, Throwable t) {
+      }
+    });
+  }
+
+  public void deleteTen(){
+    movies=new ArrayList<>();
+    //adapter.notifyDataChanged();
+    page=0;
+
   }
 }

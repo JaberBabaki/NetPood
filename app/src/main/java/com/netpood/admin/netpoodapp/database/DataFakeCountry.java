@@ -2,8 +2,6 @@ package com.netpood.admin.netpoodapp.database;
 
 import android.content.Context;
 
-import com.netpood.admin.netpoodapp.adapter.CountryItem;
-
 import java.util.ArrayList;
 
 /**

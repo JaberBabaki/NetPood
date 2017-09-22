@@ -17,9 +17,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 import com.netpood.admin.netpoodapp.Activity.ActivityDetailPost;
 import com.netpood.admin.netpoodapp.Base;
 import com.netpood.admin.netpoodapp.R;
@@ -81,7 +78,7 @@ public class AdapterMessagePood extends RecyclerView.Adapter<RecyclerView.ViewHo
       int n = rand.nextInt(9) + 1;
       PostItem postp = movies.get(n);
       Log.i("TYP", "" +postp.getPicMain());
-      Glide.with(Base.getContext())
+     /* Glide.with(Base.getContext())
         .load(postp.getPicMain())
         .placeholder(new ColorDrawable(Base.getContext().getResources().getColor(R.color.colorToolbar)))
         .listener(new RequestListener<String, GlideDrawable>() {
@@ -99,7 +96,7 @@ public class AdapterMessagePood extends RecyclerView.Adapter<RecyclerView.ViewHo
         })
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .fitCenter()
-        .into(holderBanner.imgPersonal);
+        .into(holderBanner.imgPersonal);*/
 
       /*Glide.with(Base.getContext()).load(post.getUrlImageMain())
         .crossFade()
@@ -169,7 +166,7 @@ public class AdapterMessagePood extends RecyclerView.Adapter<RecyclerView.ViewHo
       });
     } else {
       holderBanner = (NewsViewHolderBanner) holde;
-
+      holderBanner.LayProp.setVisibility(View.GONE);
 
     }
   }

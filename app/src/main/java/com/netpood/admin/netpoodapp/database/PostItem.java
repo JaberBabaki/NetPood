@@ -15,6 +15,7 @@ public class PostItem {
   private String urlImageUserIdea;
   private String txtUserIdea;
   private String txtAllIdea;
+  private String picMain;
   private int likeItem;
 
   public int getId() {
@@ -104,5 +105,13 @@ public class PostItem {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public String getPicMain() {
+    return picMain;
+  }
+
+  public void setPicMain(String picMain) {
+    this.picMain = picMain;
   }
 }

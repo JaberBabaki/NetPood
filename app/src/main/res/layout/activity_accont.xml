@@ -51,9 +51,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:layout_alignParentTop="true"
-            android:text="Phone Number"
+            android:text="صفحه ورود"
             android:textColor="#ffffff"
-            android:textSize="15dp"
+            android:textSize="13dp"
             android:gravity="center"
             android:layout_marginBottom="16dp"/>
 
@@ -80,7 +80,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="38dp"
                     android:id="@+id/edt_choice_country"
-                    android:hint="Choose a country"
+                    android:hint="انتخاب کشور"
                     android:layoutDirection="rtl"
                     android:textSize="14dp"
                     android:layout_alignParentTop="true"
@@ -147,7 +147,7 @@
                     android:layout_height="38dp"
                     android:id="@+id/edt_phone_number"
                     android:layout_marginRight="40dp"
-                    android:hint="Phone number"
+                    android:hint="شماره موبایل"
                     android:layoutDirection="rtl"
                     android:textSize="14dp"
                     android:layout_alignParentTop="true"
@@ -167,11 +167,11 @@
                 android:id="@+id/txt_m1"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:text="Please confirm your country code and enter your phone number"
+                android:text="لطفا کشور مورد نظر را انتخاب کنید و شماره موبایل را وارد کنید"
                 android:textColor="#ffffff"
-                android:textSize="14dp"
+                android:textSize="12dp"
                 android:visibility="visible"
-                android:gravity="left|center"
+                android:gravity="center"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="40dp"
@@ -183,8 +183,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
             android:visibility="gone"
             android:id="@+id/lay_vertification"
             android:adjustViewBounds="true">
@@ -195,25 +194,49 @@
                 android:id="@+id/txt_m10"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
-                android:text="We&apos;ve sent an SMS with an activation code to your phone :"
+                android:text="کد 6 رقمی به شماره"
                 android:textColor="#ffffff"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:gravity="center"
                 android:visibility="visible"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="2dp"/>
 
             <com.netpood.admin.framework.widget.CustomeTextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_m2"
+                android:id="@+id/txt_number_recived"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:text="+98 09384904562"
                 android:textColor="#ffffff"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:gravity="center"
-                android:visibility="visible"/>
+                android:visibility="visible"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="2dp"/>
+            <com.netpood.admin.framework.widget.CustomeTextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_m36"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:text="ارسال شد"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:layout_marginTop="2dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lay_code"
+            android:visibility="gone">
 
             <EditText
                 android:layout_width="fill_parent"
@@ -221,7 +244,7 @@
                 android:id="@+id/edt_pass"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:hint="Code"
+                android:hint="کد 6 رقمی را وارد کنید"
                 android:layoutDirection="rtl"
                 android:textSize="14sp"
                 android:layout_centerHorizontal="true"
@@ -239,6 +262,102 @@
                 android:singleLine="true"
                 android:numeric="integer"/>
 
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:id="@+id/lay_edit">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:gravity="right">
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txt_edit"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:text="ویرایش شماره موبایل"
+                        android:textColor="#ffffff"
+                        android:textSize="12dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:id="@+id/img_edit"
+                        android:src="@drawable/tic_filter_w"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:id="@+id/lay_forgot"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:gravity="right">
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/txt_forgot"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:text="رمز عبور را فراموش کردم"
+                        android:textColor="#ffffff"
+                        android:textSize="12dp"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:id="@+id/img_forgot"
+                        android:src="@drawable/tic_filter_w"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lay_will"
+            android:visibility="gone">
 
             <com.netpood.admin.framework.widget.CustomeTextView
                 android:layout_width="fill_parent"
@@ -251,22 +370,8 @@
                 android:textSize="13dp"
                 android:gravity="center"
                 android:visibility="visible"
-                android:layout_marginTop="8dp"/>
-
-            <com.netpood.admin.framework.widget.CustomeTextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txt_edit"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
-                android:text="Edit phone number"
-                android:textColor="#E76F6D"
-                android:textSize="15dp"
-                android:visibility="visible"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="8dp"/>
-
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="42dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -274,12 +379,12 @@
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:gravity="center"
-            android:layout_weight="0.3">
+            android:layout_weight="0.2">
 
             <Button
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:text="NEXT"
+                android:text="بعدی "
                 android:id="@+id/btn_sign_up_account"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"

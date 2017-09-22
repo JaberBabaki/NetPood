@@ -41,9 +41,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/user_name_pesonal_page"
+                android:text="غزل حریری نت پود چیان"
                 android:textColor="#1B1B1B"
-                android:textSize="16dip"
+                android:textSize="13dp"
                 />
 
             <com.netpood.admin.framework.widget.CustomeTextView
@@ -51,10 +51,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/short_name_pesonal"
+                android:text="طراح حرفه ای لباس"
                 android:textColor="#B3B3B3"
-                android:textSize="14dip"
+                android:textSize="12dp"
                 />
+            <com.netpood.admin.framework.widget.CustomeTextView
+                android:id="@+id/txt_long_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="از میان 217 ایده رسیده به دبیرخانه رویداد بین‌المللی Falling Walls Lab Tehran در تهران،"
+                android:textColor="#B3B3B3"
+                android:textSize="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"/>
 
         </LinearLayout>
 
@@ -88,41 +99,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/posts"
+                    android:text="پین شده ها"
                     android:textColor="#B3B3B3"
                     android:textSize="11dip"
                     android:visibility="visible"
                     android:layout_marginTop="2dip"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.33"
-                android:orientation="vertical" android:gravity="center" android:layout_marginLeft="2dip"
-                android:id="@+id/lay_followers">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:id="@+id/txt_followers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="30K"
-                    android:textColor="#000000"
-                    android:textSize="16dip"
-                    android:visibility="visible"
-                    android:textStyle="bold"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:id="@+id/NewControlTextView06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/followers"
-                    android:textColor="#B3B3B3"
-                    android:textSize="11dip"
-                    android:visibility="visible" android:layout_marginTop="2dip"/>
 
             </LinearLayout>
 
@@ -149,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/following"
+                    android:text="دوستان"
                     android:textColor="#B3B3B3"
                     android:textSize="11dip"
                     android:visibility="visible" android:layout_marginTop="2dip"/>
@@ -179,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="@string/poods"
+                    android:text="پود ها"
                     android:textColor="#B3B3B3"
                     android:textSize="11dip"
                     android:visibility="visible" android:layout_marginTop="2dip"/>

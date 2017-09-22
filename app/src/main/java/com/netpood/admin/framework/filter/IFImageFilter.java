@@ -11,9 +11,6 @@ import java.util.List;
 import jp.co.cyberagent.android.gpuimage.GPUImageFilter;
 import jp.co.cyberagent.android.gpuimage.OpenGlUtils;
 
-/**
- * Created by sam on 14-8-9.
- */
 public class IFImageFilter extends GPUImageFilter {
     private int filterInputTextureUniform2;
     private int filterInputTextureUniform3;
@@ -182,6 +179,5 @@ public class IFImageFilter extends GPUImageFilter {
             });
         }
     }
-
-
 }
+

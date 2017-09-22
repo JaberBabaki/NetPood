@@ -2,25 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="horizontal"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
-              android:gravity="bottom|center"
-              android:layoutDirection="ltr">
+              android:layout_height="100dp"
+              android:gravity="center"
+             >
 
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="100dp"
-        android:gravity="top|center"
-        android:layout_gravity="center">
+        android:gravity="center"
+        >
 
         <com.netpood.admin.framework.widget.CustomeTextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txt_main_item"
-            android:text="             Please enter the phone number correctly"
+            android:text="Please enter the phone number correctly"
             android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"/>
+            android:layoutDirection="rtl"
+           />
     </LinearLayout>
 </LinearLayout>

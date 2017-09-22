@@ -1,15 +1,16 @@
 package com.netpood.admin.netpoodapp.database;
 
-import android.graphics.drawable.Drawable;
-
 /**
  * Created by jaber babaki on 7/21/2016.
  */
 public class PoodItem {
     private int id;
     private String name;
-    private String shortName;
-    private Drawable pic;
+    private String pic;
+    private int countUsers;
+    private int countPost;
+    private int like;
+
 
     public int getId() {
         return id;
@@ -27,20 +28,35 @@ public class PoodItem {
         this.name = name;
     }
 
-    public String getShortName() {
-        return shortName;
-    }
-
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
-    }
-
-
-    public Drawable getPic() {
+    public String getPic() {
         return pic;
     }
 
-    public void setPic(Drawable pic) {
+    public void setPic(String pic) {
         this.pic = pic;
+    }
+
+    public int getCountUsers() {
+        return countUsers;
+    }
+
+    public void setCountUsers(int countUsers) {
+        this.countUsers = countUsers;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
+
+    public int getCountPost() {
+        return countPost;
+    }
+
+    public void setCountPost(int countPost) {
+        this.countPost = countPost;
     }
 }

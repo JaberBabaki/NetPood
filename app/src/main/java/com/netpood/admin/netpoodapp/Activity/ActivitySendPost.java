@@ -38,7 +38,7 @@ public class ActivitySendPost extends UAppCompatActivity {
     final Button btnSend = (Button) findViewById(R.id.btn_send);
     ImageView imgBack = (ImageView) findViewById(R.id.img_back_send_post);
     final LinearLayout layMain = (LinearLayout) findViewById(R.id.lay_main_send_post);
-    final CardView layPre = (CardView) findViewById(R.id.card_item);
+    final CardView layPre = (CardView) findViewById(R.id.card_item_message);
     final ImageView imgMain = (ImageView) findViewById(R.id.img_main_item);
 
     imgSend.setImageBitmap(Base.bit);

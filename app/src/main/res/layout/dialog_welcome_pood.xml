@@ -6,12 +6,13 @@
     android:layout_height="wrap_content"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layoutDirection="ltr">
+    android:layoutDirection="ltr"
+    android:gravity="center">
 
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card_item"
-        android:layout_width="fill_parent"
+        android:id="@+id/card_item_message"
+        android:layout_width="320dp"
         android:layout_height="400dp"
         card_view:cardCornerRadius="4dp"
         card_view:cardBackgroundColor="#ffffff"
@@ -20,91 +21,52 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             >
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/scrollView2"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="4dip"
+                    android:layout_weight="1">
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ffffff"
+                        android:lineSpacingExtra="12dp"
+                        android:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+                        android:textSize="12dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="24dp"/>
+
+                </LinearLayout>
+            </ScrollView>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:visibility="visible"
                 android:gravity="top"
                 android:background="#E8E8E8">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    android:gravity="center"
-                    android:id="@+id/linearLayout">
-
-                    <EditText
-                        android:layout_width="0dip"
-                        android:layout_height="match_parent"
-                        android:hint="نام شهيد را وارد کنيد..."
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:id="@+id/editText"
-                        android:textSize="14dp"
-                        android:textColor="#ffffff"
-                        android:textColorHint="#ffffff"/>
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:src="@drawable/close"
-                        android:layout_margin="16dp"
-                        android:id="@+id/imageView29"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="left|center"
-                    android:visibility="visible"
-                    android:id="@+id/linearLayout2">
-
-                    <ImageView
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:src="@drawable/abc_ic_search_api_mtrl_alpha"
-                        android:layout_marginLeft="16dp"
-                        android:id="@+id/imageView31"/>
-
-                    <EditText
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/edt_search_country"
-                        android:hint="Search...."
-                        android:textColor="#ffffff"
-                        android:textColorHint="#ffffff"
-                        android:layout_marginLeft="8dp"/>
-
-                </LinearLayout>
-
                 <Button
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="send"
-                    android:id="@+id/button4"
+                    android:text="تاييد"
+                    android:id="@+id/btn_ok"
                     android:background="#f1f1f1"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginLeft="4dip"
-                android:layout_weight="1">
-
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#ffffff"
-                    />
-
             </LinearLayout>
 
         </LinearLayout>

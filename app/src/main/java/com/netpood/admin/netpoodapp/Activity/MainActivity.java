@@ -1,5 +1,6 @@
 package com.netpood.admin.netpoodapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentTransaction;
@@ -13,8 +14,9 @@ import android.widget.TextView;
 import com.netpood.admin.framework.activity.UAppCompatActivity;
 import com.netpood.admin.netpoodapp.Base;
 import com.netpood.admin.netpoodapp.R;
-import com.netpood.admin.netpoodapp.fragment.FragmentPersonalPage;
 import com.netpood.admin.netpoodapp.fragment.FragmentMain;
+import com.netpood.admin.netpoodapp.fragment.FragmentPersonalPage;
+import com.netpood.admin.netpoodapp.fragment.FragmentPood;
 
 public class MainActivity extends UAppCompatActivity {
   DrawerLayout drawer;
@@ -52,9 +54,7 @@ public class MainActivity extends UAppCompatActivity {
     setContentView(R.layout.activity_main_a);
     setUpItemNavigation();
 
-
     Base.fragmentManager = getSupportFragmentManager();
-
     layHomeBottom = (LinearLayout) findViewById(R.id.lay_home_bottom);
     imgHomeBottom = (ImageView) findViewById(R.id.img_home_bottom);
     txtHomeBottom = (TextView) findViewById(R.id.txt_home_bottom);
@@ -67,13 +67,14 @@ public class MainActivity extends UAppCompatActivity {
     imgProfileBottom = (ImageView) findViewById(R.id.img_profile_bottom);
     txtProfileBottom = (TextView) findViewById(R.id.txt_profile_bottom);
 
+    layAddPost = (LinearLayout) findViewById(R.id.lay_add_post_bottom);
+    imgAddPost = (ImageView) findViewById(R.id.img_add_post_bottom);
 
     imgHomeBottom.setImageResource(R.drawable.homedark);
    // txtHomeBottom.setVisibility(View.VISIBLE);
     Base.fragment = new FragmentMain();
     final FragmentTransaction transaction = Base.fragmentManager.beginTransaction();
     transaction.replace(R.id.main_container, Base.fragment).commit();
-
 
     layProfile.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -83,7 +84,7 @@ public class MainActivity extends UAppCompatActivity {
           final FragmentTransaction transaction = Base.fragmentManager.beginTransaction();
           transaction.replace(R.id.main_container, Base.fragment).commit();
           imgProfileBottom.setImageResource(R.drawable.profiledark);
-          //txtProfileBottom.setVisibility(View.VISIBLE);
+          imgPoodBottom.setImageResource(R.drawable.poods);
           imgHomeBottom.setImageResource(R.drawable.home);
           //txtHomeBottom.setVisibility(View.GONE);
           profile = 1;
@@ -103,13 +104,48 @@ public class MainActivity extends UAppCompatActivity {
           final FragmentTransaction transaction = Base.fragmentManager.beginTransaction();
           transaction.replace(R.id.main_container, Base.fragment).commit();
           imgHomeBottom.setImageResource(R.drawable.homedark);
-          //txtHomeBottom.setVisibility(View.VISIBLE);
+          imgPoodBottom.setImageResource(R.drawable.poods);
           imgProfileBottom.setImageResource(R.drawable.profile);
           //txtProfileBottom.setVisibility(View.GONE);
           profile = 0;
           home = 1;
           post = 0;
           pood = 0;
+
+        }
+      }
+    });
+
+    layAddPost.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (post == 0) {
+
+          Intent intent=new Intent(MainActivity.this,ActivityEditCamera.class);
+          MainActivity.this.startActivity(intent);
+          profile = 0;
+          home = 1;
+          post = 0;
+          pood = 0;
+
+        }
+      }
+    });
+    layPoods.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (pood == 0) {
+            Base.fragment = new FragmentPood();
+            final FragmentTransaction transaction = Base.fragmentManager.beginTransaction();
+            transaction.replace(R.id.main_container, Base.fragment).commit();
+            imgHomeBottom.setImageResource(R.drawable.home);
+            imgProfileBottom.setImageResource(R.drawable.profile);
+            imgPoodBottom.setImageResource(R.drawable.poodsdark);
+            profile = 0;
+            home = 0;
+            post = 0;
+            pood = 1;
+
 
         }
       }

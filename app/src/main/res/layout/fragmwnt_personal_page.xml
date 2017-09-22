@@ -1,540 +1,215 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#ffffff"
-              android:orientation="vertical">
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="48dip"
-        android:gravity="center"
-        android:background="#F9F9F9">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="4dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorToolbar"
+            android:gravity="right"
+            android:layoutDirection="rtl"
+            app:layout_scrollFlags="scroll|enterAlways"
+            >
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lay_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/img_drawer"
+                        android:layout_width="24dp"
+                        android:layout_height="27dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/index"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_back"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/lay_search_p"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/edt_search"
+                            android:layout_width="0dp"
+                            android:layout_height="38dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edt_bg_selector"
+                            android:focusableInTouchMode="true"
+                            android:gravity="center"
+                            android:hint="جستجو..."
+                            android:layoutDirection="rtl"
+                            android:padding="8dp"
+                            android:singleLine="true"
+                            android:textColor="#000000"
+                            android:textColorHint="#000000"
+                            android:textCursorDrawable="@color/color_cur"
+                            android:textSize="13dp"
+                            android:visibility="visible"/>
+
+                        <ImageView
+                            android:id="@+id/img_cancel_search"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/close"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_search"
+                        android:layout_width="24dp"
+                        android:layout_height="27dp"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/settings"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
 
         <ImageView
-            android:layout_width="24dip"
-            android:layout_height="24dip"
-            android:id="@+id/imageView17"
-            android:src="@drawable/left_arrow_b"
-            android:layout_margin="8dip"/>
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:id="@+id/imageView37"
+            android:src="@drawable/sli2"
+            android:scaleType="fitXY"
+            android:visibility="gone"/>
 
-        <com.netpood.admin.framework.widget.CustomeTextView
-            android:layout_width="0dip"
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_item_frg_main"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:id="@+id/view8"
-            android:text="Message"
-            android:textColor="#000000"
-            android:layout_weight="1"
-            android:layout_marginLeft="4dip"/>
-
-        <ImageView
-            android:layout_width="24dip"
-            android:layout_height="24dip"
-            android:id="@+id/imageView18"
-            android:src="@drawable/add_circular"
-            android:layout_margin="8dip"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView14"
-                android:src="@drawable/women"
-                android:layout_margin="4dip"/>
+            android:layout_centerInParent="true"
+            android:layout_margin="8dp"
+            android:background="#00000000"
+            card_view:cardBackgroundColor="#ffffff"
+            card_view:cardCornerRadius="4dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
+                android:background="#00000000"
+                android:orientation="vertical">
 
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Achraf Hakimi"
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="8dp"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="ohhhhhhh"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
+                    <com.netpood.admin.framework.widget.InsLoadingView
+                        android:id="@+id/loading_view"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/logon"
+                        app:status="loading"
+                        />
+
+                    <com.netpood.admin.framework.widget.CustomeTextView
+                        android:id="@+id/txt_m3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="left"
+                        android:text="Please Wait...."
+                        android:textColor="#000000"
+                        android:textSize="13dp"
+                        android:visibility="visible"/>
+
+                </LinearLayout>
+
             </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
+        </android.support.v7.widget.CardView>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView15"
-                android:src="@drawable/w2"
-                android:layout_margin="4dip"/>
+            <com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
 
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text=" Coentr Defender "
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="56dp"
+                    android:background="#f1f1f1"
+                    android:fillViewport="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="very good"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
-            </LinearLayout>
 
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
+            </com.netpood.admin.framework.widget.refresh.RecyclerRefreshLayout >
+
+
+            <com.netpood.admin.framework.widget.CustomLoading
+                android:layout_width="fill_parent"
+                android:layout_height="48dp"
+                android:id="@+id/pb"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                />
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
+    </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
 
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView14"
-                android:src="@drawable/apple"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Modric Midfielder "
-                    android:textColor="#000000"
-                    android:textSize="12dip"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="i am programer"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView15"
-                android:src="@drawable/w5"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Modric Luka Modric"
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="jumpiiiing"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView14"
-                android:src="@drawable/ja"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Jaber Babaki"
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="good employer"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView15"
-                android:src="@drawable/w3"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Achraf Hakimi"
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="ohhhhhhh"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    android:textSize="12dip"/>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="42dip"
-                android:layout_height="42dip"
-                android:id="@+id/imageView14"
-                android:src="@drawable/women"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Achraf Hakimi"
-                    android:textColor="#000000"
-                    android:textSize="13dip"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="ohhhhhhh"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="24dip"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="58dip"
-        android:gravity="center">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="48dip"
-                android:layout_height="48dip"
-                android:id="@+id/imageView15"
-                android:src="@drawable/w2"
-                android:layout_margin="4dip"/>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dip"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="left|center"
-                android:layout_marginLeft="4dip">
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view6"
-                    android:text="Achraf Hakimi"
-                    android:textColor="#000000"/>
-
-                <com.netpood.admin.framework.widget.CustomeTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view7"
-                    android:text="ohhhhhhh"
-                    android:textColor="#000000"
-                    android:layout_marginTop="4dip"
-                    />
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView15"
-                android:src="@drawable/ca"
-                android:layout_marginRight="8dip"/>
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:id="@+id/imageView16"
-            android:src="#DEDEDE"
-            android:elevation="1dip"
-            android:layout_marginLeft="8dip"
-            android:layout_marginRight="8dip"/>
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -11,10 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.netpood.admin.netpoodapp.Base;
-import com.netpood.admin.netpoodapp.fragment.FragmentFollowers;
-import com.netpood.admin.netpoodapp.fragment.FragmentFollowing;
 import com.netpood.admin.netpoodapp.R;
 import com.netpood.admin.netpoodapp.database.PostItem;
+import com.netpood.admin.netpoodapp.fragment.FragmentFollowing;
 
 import java.util.List;
 
@@ -77,14 +76,6 @@ public class AdapterPersonaltem extends RecyclerView.Adapter<RecyclerView.ViewHo
       //holder.urlImageMain.setImageDrawable(post.getUrlImageMain());
     }else{
       final NewsViewHolderBanner holder = (NewsViewHolderBanner) hold;
-      holder.layFollowers.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-          Base.fragment = new FragmentFollowers();
-          final FragmentTransaction transaction = Base.fragmentManager.beginTransaction();
-          transaction.replace(R.id.main_container, Base.fragment).commit();
-        }
-      });
       holder.layFollowing.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {

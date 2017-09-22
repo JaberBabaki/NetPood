@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.hardware.Camera;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -36,15 +37,14 @@ import com.netpood.admin.framework.filter.IFWaldenFilter;
 import com.netpood.admin.framework.filter.IFXprollFilter;
 import com.netpood.admin.framework.widget.StartPointSeekBar;
 import com.netpood.admin.netpoodapp.Base;
+import com.netpood.admin.netpoodapp.R;
 import com.netpood.admin.netpoodapp.classs.CameraHardWare;
 import com.netpood.admin.netpoodapp.classs.CameraHelper;
-import com.netpood.admin.netpoodapp.R;
 
 import jp.co.cyberagent.android.gpuimage.GPUImage;
 import jp.co.cyberagent.android.gpuimage.GPUImageBrightnessFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageContrastFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageHighlightShadowFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageSaturationFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageView;
 
@@ -55,7 +55,6 @@ import jp.co.cyberagent.android.gpuimage.GPUImageView;
 
 public class ActivityEditCamera extends UAppCompatActivity {
 
-
   private CameraHelper mImageSurfaceView;
   private Camera camera;
 
@@ -64,7 +63,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
   private ImageView flipCamera;
   private ImageView flash;
   private boolean on = false;
-
 
   Bitmap src;
   String nameImage;
@@ -78,7 +76,7 @@ public class ActivityEditCamera extends UAppCompatActivity {
   LinearLayout layEdit;
 
   HorizontalScrollView scrollViewFilter;
-  HorizontalScrollView scrollViewEdit;
+  LinearLayout scrollViewEdit;
 
   LinearLayout layBrightness;
   LinearLayout laySeekBar;
@@ -99,7 +97,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
   TextView txtEdit;
   TextView txtShowValue;
 
-
   ImageView imgNormal;
   ImageView imgAmaro;
   ImageView imgBrannan;
@@ -118,7 +115,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
   ImageView imgWalden;
   ImageView imgXproll;
   ImageView imgN1977;
-
   TextView txtNormal;
   TextView txtAmaro;
   TextView txtBrannan;
@@ -138,28 +134,39 @@ public class ActivityEditCamera extends UAppCompatActivity {
   TextView txtXproll;
   TextView txtN1977;
 
+  TextView txtSat;
+  TextView txtBri;
+  TextView txtCon;
+
   LinearLayout layCameraa;
   LinearLayout layEditt;
-
   CameraHardWare cameraCustom;
   Bitmap gpu;
   GPUImage mGPUImage1 = new GPUImage(Base.getContext());
-
   Bitmap bitNormal;
   Bitmap bitSec;
 
+  SeekBar sekbarBri;
+  SeekBar sekbarContrast;
+  SeekBar sekbarVig;
 
   int Bri;
   int Con;
   int Sat;
   int Vig;
 
+  final int CAMERA_CAPTURE = 1;
+  final int CROP_PIC = 2;
+  private Uri picUri;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.edit_picture);
-    setUpHeader();
+    tarefControl();
+
+
 
     layBackEffect.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -172,11 +179,79 @@ public class ActivityEditCamera extends UAppCompatActivity {
     layNextEffect.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        Intent intent = new Intent(Base.getCurrentActivity(), ActivitySendPost.class);
-        Base.bit=imgEditPic.getGPUImage().getBitmapWithFilterApplied();
-        Base.getCurrentActivity().startActivity(intent);
+        /*Intent intent = new Intent(Base.getCurrentActivity(), ActivitySendPost.class);
+        Base.bit = imgEditPic.getGPUImage().getBitmapWithFilterApplied();
+        Base.getCurrentActivity().startActivity(intent);*/
+
       }
     });
+  }
+
+  public void tarefControl() {
+    //tartef header activity
+    layBackEffect = (LinearLayout) findViewById(R.id.layBackEffect);
+    layNextEffect = (LinearLayout) findViewById(R.id.layNextEffect);
+    layHeaderEffect = (LinearLayout) findViewById(R.id.layHeaderEffect);
+    txtHeaderEffect = (TextView) findViewById(R.id.txtHeaderEffect);
+
+    // taref kol box payin
+    imgSelectFilter = (ImageView) findViewById(R.id.imgSelectFilter);
+    imgEdit = (ImageView) findViewById(R.id.imgEdit);
+    layFilter = (LinearLayout) findViewById(R.id.layFilter);
+    layEdit = (LinearLayout) findViewById(R.id.layEdit);
+    scrollViewFilter = (HorizontalScrollView) findViewById(R.id.scrollViewFilter);
+    scrollViewEdit = (LinearLayout) findViewById(R.id.lay_edit_ad);
+    txtFilter = (TextView) findViewById(R.id.txtFilter);
+    txtEdit = (TextView) findViewById(R.id.txtEdit);
+
+    //taref image view filter amadeh
+    imgNormal = (ImageView) findViewById(R.id.normal);
+    imgAmaro = (ImageView) findViewById(R.id.amaro);
+    imgBrannan = (ImageView) findViewById(R.id.brannan);
+    imgEarlybird = (ImageView) findViewById(R.id.earlybird);
+    imgHefe = (ImageView) findViewById(R.id.hefe);
+    imgHudson = (ImageView) findViewById(R.id.hudson);
+    imgLnkwell = (ImageView) findViewById(R.id.lnkwell);
+    imgLomo = (ImageView) findViewById(R.id.lomo);
+    imgLordKelvin = (ImageView) findViewById(R.id.lordKelvin);
+    imgNashvill = (ImageView) findViewById(R.id.nashvill);
+    imgRise = (ImageView) findViewById(R.id.rise);
+    imgSierra = (ImageView) findViewById(R.id.sierra);
+    imgSutro = (ImageView) findViewById(R.id.sutro);
+    imgToaster = (ImageView) findViewById(R.id.toaster);
+    imgValencia = (ImageView) findViewById(R.id.valencia);
+    imgWalden = (ImageView) findViewById(R.id.walden);
+    imgXproll = (ImageView) findViewById(R.id.xproll);
+    imgN1977 = (ImageView) findViewById(R.id.n1977);
+
+//taref textView filter amadeh
+    txtNormal = (TextView) findViewById(R.id.txt_normal);
+    txtAmaro = (TextView) findViewById(R.id.txt_amaro);
+    txtBrannan = (TextView) findViewById(R.id.txt_brannam);
+    txtEarlybird = (TextView) findViewById(R.id.txt_earybird);
+    txtHefe = (TextView) findViewById(R.id.txt_hefe);
+    txtHudson = (TextView) findViewById(R.id.txt_hudson);
+    txtLnkwell = (TextView) findViewById(R.id.txt_lnkwell);
+    txtLomo = (TextView) findViewById(R.id.txt_lomo);
+    txtLordKelvin = (TextView) findViewById(R.id.txt_lordKelvin);
+    txtNashvill = (TextView) findViewById(R.id.txt_nashvill);
+    txtRise = (TextView) findViewById(R.id.txt_rise);
+    txtSierra = (TextView) findViewById(R.id.txt_sierra);
+    txtSutro = (TextView) findViewById(R.id.txt_sutro);
+    txtToaster = (TextView) findViewById(R.id.txt_toaster);
+    txtValencia = (TextView) findViewById(R.id.txt_valencia);
+    txtWalden = (TextView) findViewById(R.id.txt_walden);
+    txtXproll = (TextView) findViewById(R.id.txt_xproll);
+    txtN1977 = (TextView) findViewById(R.id.txt_n1977);
+
+    sekbarBri = (SeekBar) findViewById(R.id.seekbar_brigthness);
+    sekbarContrast = (SeekBar) findViewById(R.id.seekbar_contrast);
+    sekbarVig = (SeekBar) findViewById(R.id.seekbar_vignette);
+
+    txtSat = (TextView) findViewById(R.id.txt_satu);
+    txtCon = (TextView) findViewById(R.id.txt_con);
+    txtBri = (TextView) findViewById(R.id.txt_bri);
+
   }
 
   @Override
@@ -201,55 +276,22 @@ public class ActivityEditCamera extends UAppCompatActivity {
     super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == CameraHardWare.REQUEST_TAKE_PHOTO) {
       src = cameraCustom.getCameraBitmap();
-      Base.bit = src;
+      Log.i("DAT",""+data);
       if (src != null) {
         imgEditPic = (GPUImageView) findViewById(R.id.imgEditPic);
         imgEditPic.setScaleType(GPUImage.ScaleType.CENTER_INSIDE);
         imgEditPic.setImage(src);
+       // picUri =data.getData();
         //Base.bit = ((BitmapDrawable) imgEditPic.getDrawable()).getBitmap();
         startEdit();
-      } else {
+      }  else {
         finish();
       }
+
     }
   }
-
-  @Override
-  protected void onDestroy() {
-    super.onDestroy();
-    cameraCustom.deleteImage();
-  }
-
-
   public void startEdit() {
-    setUpBoxEdit();
-
-    filterControl();
-    setImageThum();
-
-
-    sek.setProgress(0);
-    sek.setOnSeekBarChangeListener(new StartPointSeekBar.OnSeekBarChangeListener() {
-      @Override
-      public void onOnSeekBarValueChange(StartPointSeekBar bar, double value) {
-
-
-        if (txtHeaderEffect.getText().equals("Brightness")) {
-          runFilterBrightness((int) value, 0);
-        } else if (txtHeaderEffect.getText().equals("Contrast")) {
-          runFilterContrast((int) value, 0);
-        } else if (txtHeaderEffect.getText().equals("Saturation")) {
-          runFilterSaturation((int) value, 0);
-        } else if (txtHeaderEffect.getText().equals("Vignette")) {
-          runFilterVignette((int) value, 0);
-        }
-
-        txtShowValue.setText("" + (int) value);
-        Log.i("PPP", "" + value);
-      }
-    });
-
-
+    setFilterImagethumbnail();
     layFilter.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -258,8 +300,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
         } else {
           selectFilter();
         }
-
-
       }
     });
     layEdit.setOnClickListener(new View.OnClickListener() {
@@ -272,47 +312,123 @@ public class ActivityEditCamera extends UAppCompatActivity {
         }
       }
     });
-
   }
 
-  public void runFilterBrightness(int i, int set) {
-    float valueOfBrightness = (float) (i * 0.01);
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    cameraCustom.deleteImage();
+  }
+
+  public void runFilterBrightness(int i) {
+    float valueOfBrightness = (float) (i * 0.005);
     Log.i("BRI", "" + valueOfBrightness);
     Log.i("BRI", "" + valueOfBrightness);
     imgEditPic.setFilter(new GPUImageBrightnessFilter(valueOfBrightness));
   }
 
-  public void runFilterContrast(int i, int set) {
-    float valueOfContrastPlus = (float) (i * 0.04);
-    float valueOfContrastMines = (float) (i * 0.01) + 1;
-    Log.i("CON", "" + valueOfContrastPlus);
-    if (set == 0) {
-      if (valueOfContrastPlus > 1) {
-        imgEditPic.setFilter(new GPUImageContrastFilter(valueOfContrastPlus));
-      } else if (i < 0) {
-        imgEditPic.setFilter(new GPUImageContrastFilter(valueOfContrastMines));
+  public void runFilterContrast(int i) {
+    if (i > 50) {
+      if (i > 50 && i<=52) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.1f));
+      } else if (i > 52 && i<=55) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.15f));
+      } else if (i > 55 && i<=57) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.2f));
+      } else if (i > 57 && i<=60) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.25f));
+      } else if (i > 60 && i<=62) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.3f));
+      } else if (i > 62 && i<=65) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.35f));
+      } else if (i > 65 && i<=67) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.4f));
+      } else if (i > 67&& i<=70) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.45f));
+      } else if (i > 70 && i<=73) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.5f));
+      } else if (i > 73 && i<=75) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.55f));
+      } else if (i > 75 && i<=80) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.6f));
+      } else if (i > 80 && i<=100) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(1.65f));
       }
+    } else if (i < 50) {
+      if (i < 50 && i>=42) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.9f));
+      } else if (i < 42 && i>=40) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.85f));
+      } else if (i < 40 && i>=37) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.8f));
+      } else if (i < 37 && i>=35) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.75f));
+      } else if (i < 35 && i>=32) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.7f));
+      } else if (i < 32 && i>=30) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.65f));
+      } else if (i < 30 && i>=20) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.6f));
+      } else if (i < 20 && i>=10) {
+        imgEditPic.setFilter(new GPUImageContrastFilter(0.55f));
+      }
+    } else if (i == 50) {
+      imgEditPic.setFilter(new GPUImageContrastFilter(1f));
     }
   }
-
-  public void runFilterSaturation(int i, int set) {
-    float valueSaturationFilter = (float) (i * 0.02);
-    Log.i("SAT", "" + valueSaturationFilter);
-    imgEditPic.setFilter(new GPUImageSaturationFilter(valueSaturationFilter));
-  }
-  public void runFilterVignette(int i, int set) {
-    float valueVignetteFilter = (float) (i * 0.02);
-    Log.i("SAT", "" + valueVignetteFilter);
-    mGPUImage1.setImage(src);
-    mGPUImage1.setFilter(new GPUImageHighlightShadowFilter());
-    Bitmap mFilteredBitmap = mGPUImage1.getBitmapWithFilterApplied(src);
-    imgEditPic.setImage(mFilteredBitmap);
+  public void runFilterSaturation(int i) {
+    if (i > 50) {
+      if (i > 50 && i<=52) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.1f));
+      } else if (i > 52 && i<=55) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.15f));
+      } else if (i > 55 && i<=57) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.2f));
+      } else if (i > 57 && i<=60) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.25f));
+      } else if (i > 60 && i<=62) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.3f));
+      } else if (i > 62 && i<=65) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.35f));
+      } else if (i > 65 && i<=67) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.4f));
+      } else if (i > 67&& i<=70) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.45f));
+      } else if (i > 70 && i<=73) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.5f));
+      } else if (i > 73 && i<=75) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.55f));
+      } else if (i > 75 && i<=80) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.6f));
+      } else if (i > 80 && i<=100) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(1.65f));
+      }
+    } else if (i < 50) {
+      if (i < 50 && i>=42) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.9f));
+      } else if (i < 42 && i>=40) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.85f));
+      } else if (i < 40 && i>=37) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.8f));
+      } else if (i < 37 && i>=35) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.75f));
+      } else if (i < 35 && i>=32) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.7f));
+      } else if (i < 32 && i>=30) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.65f));
+      } else if (i < 30 && i>=20) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.6f));
+      } else if (i < 20 && i>=10) {
+        imgEditPic.setFilter(new GPUImageSaturationFilter(0.55f));
+      }
+    } else if (i == 50) {
+      imgEditPic.setFilter(new GPUImageSaturationFilter(1f));
+    }
   }
 
   public void editClicked(View v) {
     readyToSeekEffect(v);
   }
-
 
   public void selectEdit() {
 
@@ -323,6 +439,61 @@ public class ActivityEditCamera extends UAppCompatActivity {
     imgEdit.setBackgroundColor(t);
     scrollViewFilter.setVisibility(View.GONE);
     scrollViewEdit.setVisibility(View.VISIBLE);
+    sekbarBri.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+      @Override
+      public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        Log.i("FIL", "" + i);
+        txtBri.setText(""+i);
+        runFilterBrightness(i);
+      }
+
+      @Override
+      public void onStartTrackingTouch(SeekBar seekBar) {
+
+      }
+
+      @Override
+      public void onStopTrackingTouch(SeekBar seekBar) {
+
+      }
+    });
+
+    sekbarContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+      @Override
+      public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        Log.i("FIL", "" + i);
+        txtCon.setText(""+i);
+          runFilterContrast(i);
+      }
+
+      @Override
+      public void onStartTrackingTouch(SeekBar seekBar) {
+
+      }
+
+      @Override
+      public void onStopTrackingTouch(SeekBar seekBar) {
+
+      }
+    });
+    sekbarVig.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+      @Override
+      public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+        Log.i("FIL", "" + i);
+        txtSat.setText(""+i);
+        runFilterSaturation(i);
+      }
+
+      @Override
+      public void onStartTrackingTouch(SeekBar seekBar) {
+
+      }
+
+      @Override
+      public void onStopTrackingTouch(SeekBar seekBar) {
+
+      }
+    });
 
   }
 
@@ -396,8 +567,8 @@ public class ActivityEditCamera extends UAppCompatActivity {
     //Base.bit= imgEditPic.getGPUImage().getBitmapWithFilterApplied();
     //imgEditPic.setImage(Base.bit);
 
-    src=imgEditPic.getGPUImage().getBitmapWithFilterApplied();
-    imgEditPic.setFilter(new  GPUImageFilter());
+    src = imgEditPic.getGPUImage().getBitmapWithFilterApplied();
+    imgEditPic.setFilter(new GPUImageFilter());
     imgEditPic.setImage(src);
 
   }
@@ -564,63 +735,22 @@ public class ActivityEditCamera extends UAppCompatActivity {
   }
 
 
-  public void filterControl() {
-    imgNormal = (ImageView) findViewById(R.id.normal);
-    imgAmaro = (ImageView) findViewById(R.id.amaro);
-    imgBrannan = (ImageView) findViewById(R.id.brannan);
-    imgEarlybird = (ImageView) findViewById(R.id.earlybird);
-    imgHefe = (ImageView) findViewById(R.id.hefe);
-    imgHudson = (ImageView) findViewById(R.id.hudson);
-    imgLnkwell = (ImageView) findViewById(R.id.lnkwell);
-    imgLomo = (ImageView) findViewById(R.id.lomo);
-    imgLordKelvin = (ImageView) findViewById(R.id.lordKelvin);
-    imgNashvill = (ImageView) findViewById(R.id.nashvill);
-    imgRise = (ImageView) findViewById(R.id.rise);
-    imgSierra = (ImageView) findViewById(R.id.sierra);
-    imgSutro = (ImageView) findViewById(R.id.sutro);
-    imgToaster = (ImageView) findViewById(R.id.toaster);
-    imgValencia = (ImageView) findViewById(R.id.valencia);
-    imgWalden = (ImageView) findViewById(R.id.walden);
-    imgXproll = (ImageView) findViewById(R.id.xproll);
-    imgN1977 = (ImageView) findViewById(R.id.n1977);
-
-
-    txtNormal = (TextView) findViewById(R.id.txt_normal);
-    txtAmaro = (TextView) findViewById(R.id.txt_amaro);
-    txtBrannan = (TextView) findViewById(R.id.txt_brannam);
-    txtEarlybird = (TextView) findViewById(R.id.txt_earybird);
-    txtHefe = (TextView) findViewById(R.id.txt_hefe);
-    txtHudson = (TextView) findViewById(R.id.txt_hudson);
-    txtLnkwell = (TextView) findViewById(R.id.txt_lnkwell);
-    txtLomo = (TextView) findViewById(R.id.txt_lomo);
-    txtLordKelvin = (TextView) findViewById(R.id.txt_lordKelvin);
-    txtNashvill = (TextView) findViewById(R.id.txt_nashvill);
-    txtRise = (TextView) findViewById(R.id.txt_rise);
-    txtSierra = (TextView) findViewById(R.id.txt_sierra);
-    txtSutro = (TextView) findViewById(R.id.txt_sutro);
-    txtToaster = (TextView) findViewById(R.id.txt_toaster);
-    txtValencia = (TextView) findViewById(R.id.txt_valencia);
-    txtWalden = (TextView) findViewById(R.id.txt_walden);
-    txtXproll = (TextView) findViewById(R.id.txt_xproll);
-    txtN1977 = (TextView) findViewById(R.id.txt_n1977);
-  }
-
-  public void setImageThum() {
+  public void setFilterImagethumbnail() {
 
     int nh = (int) (src.getHeight() * (512.0 / src.getWidth()));
     Bitmap scaled = Bitmap.createScaledBitmap(src, 512, nh, true);
-
     bitNormal = Bitmap.createScaledBitmap(src, src.getWidth(), src.getHeight(), true);
     bitSec = src.copy(src.getConfig(), true);
 
     imgNormal.setImageBitmap(scaled);
 
     GPUImage mGPUImage = new GPUImage(this);
+
     mGPUImage.deleteImage();
     mGPUImage.setFilter(new IFAmaroFilter(this));
     Bitmap bp = mGPUImage.getBitmapWithFilterApplied(scaled);
     imgAmaro.setImageBitmap(bp);
-
+    // imgAmaro.setImageResource(R.drawable.a1);
 
     mGPUImage.deleteImage();
     mGPUImage.setFilter(new IFBrannanFilter(this));
@@ -703,35 +833,5 @@ public class ActivityEditCamera extends UAppCompatActivity {
     imgN1977.setImageBitmap(bp);
   }
 
-  public void setUpHeader() {
-    laySeekBar = (LinearLayout) findViewById(R.id.laySeekBar);
-    layBackEffect = (LinearLayout) findViewById(R.id.layBackEffect);
-    layBrightness = (LinearLayout) findViewById(R.id.lay_brightness);
-    layNextEffect = (LinearLayout) findViewById(R.id.layNextEffect);
-    layHeaderEffect = (LinearLayout) findViewById(R.id.layHeaderEffect);
-    txtHeaderEffect = (TextView) findViewById(R.id.txtHeaderEffect);
-  }
 
-  public void setUpBoxEdit() {
-    imgSelectFilter = (ImageView) findViewById(R.id.imgSelectFilter);
-    imgEdit = (ImageView) findViewById(R.id.imgEdit);
-    layFilter = (LinearLayout) findViewById(R.id.layFilter);
-    layEdit = (LinearLayout) findViewById(R.id.layEdit);
-    scrollViewFilter = (HorizontalScrollView) findViewById(R.id.scrollViewFilter);
-    scrollViewEdit = (HorizontalScrollView) findViewById(R.id.scrollViewEdit);
-    txtFilter = (TextView) findViewById(R.id.txtFilter);
-    txtEdit = (TextView) findViewById(R.id.txtEdit);
-    sek = (StartPointSeekBar) findViewById(R.id.seek_midle);
-    seekbar = (SeekBar) findViewById(R.id.sek);
-    txtShowValue = (TextView) findViewById(R.id.txt_seek_value);
-
-  }
-
-  @Override
-  public void onBackPressed() {
-    super.onBackPressed();
-    Base.title=null;
-    Base.tag=null;
-    Base.matn=null;
-  }
 }

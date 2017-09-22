@@ -43,37 +43,21 @@ public class ActivityWelcome extends UAppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
-    // Checking for first time launch - before calling setContentView()
-    /*prefManager = new PrefManager(this);
-    if (!prefManager.isFirstTimeLaunch()) {
-      launchHomeScreen();
-      finish();
-    }*/
-
-    // Making notification bar transparent
     setupStatusBar();
 
     setContentView(R.layout.activity_welcome);
-    GetCountryZipCode();
+   // GetCountryZipCode();
     viewPager = (ViewPager) findViewById(R.id.view_pager);
     dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
     btnSkip = (Button) findViewById(R.id.btn_skip);
-    btnNext = (Button) findViewById(R.id.btn_next);
 
-
-    // layouts of all welcome sliders
-    // add few more layouts if you want
     layouts = new int[]{
       R.layout.welcome_slide1,
       R.layout.welcome_slide2,
       R.layout.welcome_slide3,
       R.layout.welcome_slide4};
 
-    // adding bottom dots
     addBottomDots(0);
-
-    // making notification bar transparent
     changeStatusBarColor();
 
     myViewPagerAdapter = new MyViewPagerAdapter();
@@ -83,9 +67,11 @@ public class ActivityWelcome extends UAppCompatActivity {
     btnSkip.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        launchHomeScreen();
+        startActivity(new Intent(ActivityWelcome.this, AccontActivity.class));
+        finish();
       }
     });
+
     dotsLayout.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -94,20 +80,6 @@ public class ActivityWelcome extends UAppCompatActivity {
       }
     });
 
-    btnNext.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        // checking for last page
-        // if last page home screen will be launched
-        int current = getItem(+1);
-        if (current < layouts.length) {
-          // move to next screen
-          viewPager.setCurrentItem(current);
-        } else {
-          launchHomeScreen();
-        }
-      }
-    });
   }
 
   public void setupStatusBar() {
@@ -117,7 +89,6 @@ public class ActivityWelcome extends UAppCompatActivity {
       View view = getWindow().getDecorView();
       view.setSystemUiVisibility(view.getSystemUiVisibility() | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
       getWindow().setStatusBarColor(Color.parseColor("#908B9DAF"));
-
     }
   }
 
@@ -144,12 +115,6 @@ public class ActivityWelcome extends UAppCompatActivity {
     return viewPager.getCurrentItem() + i;
   }
 
-  private void launchHomeScreen() {
-    //prefManager.setFirstTimeLaunch(false);
-    startActivity(new Intent(ActivityWelcome.this, AccontActivity.class));
-    finish();
-  }
-
   //  viewpager change listener
   ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
@@ -157,16 +122,6 @@ public class ActivityWelcome extends UAppCompatActivity {
     public void onPageSelected(int position) {
       addBottomDots(position);
       btnSkip.setBackgroundColor(colorsInactive[position]);
-      // changing the next button text 'NEXT' / 'GOT IT'
-     /* if (position == layouts.length - 1) {
-        // last page. make button text to GOT IT
-        btnNext.setText(getString(R.string.start));
-        btnSkip.setVisibility(View.GONE);
-      } else {
-        // still pages are left
-        btnNext.setText(getString(R.string.next));
-        btnSkip.setVisibility(View.VISIBLE);
-      }*/
     }
 
     @Override
@@ -208,7 +163,6 @@ public class ActivityWelcome extends UAppCompatActivity {
     SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
     SharedPreferences.Editor editor = prefs.edit();
     editor.putString(langPref, lang);
-
   }
 
   public void GetCountryZipCode() {
@@ -235,11 +189,8 @@ public class ActivityWelcome extends UAppCompatActivity {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
       layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
       View view = layoutInflater.inflate(layouts[position], container, false);
-
       container.addView(view);
-
       return view;
     }
 
