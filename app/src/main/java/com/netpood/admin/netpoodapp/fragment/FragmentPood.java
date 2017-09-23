@@ -28,7 +28,6 @@ import com.netpood.admin.netpoodapp.Base;
 import com.netpood.admin.netpoodapp.R;
 import com.netpood.admin.netpoodapp.adapter.AdapterPoodItem;
 import com.netpood.admin.netpoodapp.adapter.AdapterSelectedPoodItem;
-import com.netpood.admin.netpoodapp.adapter.OnItemClickListener;
 import com.netpood.admin.netpoodapp.database.PoodItem;
 import com.netpood.admin.netpoodapp.webService.ApiClient;
 import com.netpood.admin.netpoodapp.webService.ApiInterface;
@@ -244,13 +243,6 @@ public class FragmentPood extends Fragment {
         layFilter.setVisibility(View.GONE);
       }
 
-    }
-  };
-  private OnItemClickListener.OnItemClickCallback onItemClickCallback = new OnItemClickListener.OnItemClickCallback() {
-    @Override
-    public void onItemClicked(View view, int position) {
-      countPood = countPood + 1;
-      layGoMain.setVisibility(View.VISIBLE);
     }
   };
 

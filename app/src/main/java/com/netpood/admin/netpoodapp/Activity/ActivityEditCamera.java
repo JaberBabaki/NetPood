@@ -179,9 +179,9 @@ public class ActivityEditCamera extends UAppCompatActivity {
     layNextEffect.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        /*Intent intent = new Intent(Base.getCurrentActivity(), ActivitySendPost.class);
+        Intent intent = new Intent(Base.getCurrentActivity(), ActivitySendPost.class);
         Base.bit = imgEditPic.getGPUImage().getBitmapWithFilterApplied();
-        Base.getCurrentActivity().startActivity(intent);*/
+        Base.getCurrentActivity().startActivity(intent);
 
       }
     });
@@ -281,8 +281,8 @@ public class ActivityEditCamera extends UAppCompatActivity {
         imgEditPic = (GPUImageView) findViewById(R.id.imgEditPic);
         imgEditPic.setScaleType(GPUImage.ScaleType.CENTER_INSIDE);
         imgEditPic.setImage(src);
-       // picUri =data.getData();
-        //Base.bit = ((BitmapDrawable) imgEditPic.getDrawable()).getBitmap();
+
+
         startEdit();
       }  else {
         finish();
@@ -295,21 +295,15 @@ public class ActivityEditCamera extends UAppCompatActivity {
     layFilter.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        if (txtFilter.getText().equals("Cancel")) {
-          cancelSeekEffect();
-        } else {
           selectFilter();
-        }
+
       }
     });
     layEdit.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        if (txtEdit.getText().equals("Done")) {
-          doneSeelectEffect();
-        } else {
           selectEdit();
-        }
+
       }
     });
   }
@@ -325,7 +319,7 @@ public class ActivityEditCamera extends UAppCompatActivity {
     Log.i("BRI", "" + valueOfBrightness);
     Log.i("BRI", "" + valueOfBrightness);
     imgEditPic.setFilter(new GPUImageBrightnessFilter(valueOfBrightness));
-  }
+}
 
   public void runFilterContrast(int i) {
     if (i > 50) {
@@ -426,10 +420,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
     }
   }
 
-  public void editClicked(View v) {
-    readyToSeekEffect(v);
-  }
-
   public void selectEdit() {
 
     // vaghti ke edit entekhab shod clik
@@ -509,115 +499,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
 
   }
 
-  public void cancelSeekEffect() {
-
-    // vaghti ke cancel clik shod v bargardim be EDIT
-    scrollViewEdit.setVisibility(View.VISIBLE);
-    laySeekBar.setVisibility(View.GONE);
-
-    txtEdit.setText("EDIT");
-    txtFilter.setText("FILTER");
-
-    layBackEffect.setVisibility(View.VISIBLE);
-    layNextEffect.setVisibility(View.VISIBLE);
-    layHeaderEffect.setVisibility(View.GONE);
-
-    int t2 = Color.parseColor("#ffffff");
-    int t1 = Color.parseColor("#000000");
-    imgSelectFilter.setBackgroundColor(t2);
-    imgEdit.setBackgroundColor(t1);
-
-    Log.i("CANS", "" + src.equals(bitNormal));
-    Log.i("CANS", "" + src.equals(bitSec));
-
-    //imgEditPic.setImage(bitNormal);
-
-  }
-
-  public void doneSeelectEffect() {
-
-    if (txtHeaderEffect.getText().equals("Brightness")) {
-      Log.i("DBR", "" + Bri);
-      Bri = Integer.parseInt(txtShowValue.getText().toString());// (int) (valueOfBrightness * 100);
-    } else if (txtHeaderEffect.getText().equals("Contrast")) {
-      Log.i("DBR", "" + Con);
-      Con = Integer.parseInt(txtShowValue.getText().toString());
-    } else if (txtHeaderEffect.getText().equals("Saturation")) {
-      Log.i("DBR", "" + Sat);
-      Sat = Integer.parseInt(txtShowValue.getText().toString());
-    } else if (txtHeaderEffect.getText().equals("Vignette")) {
-      Log.i("DBR", "" + Vig);
-      Vig = Integer.parseInt(txtShowValue.getText().toString());
-    }
-    scrollViewEdit.setVisibility(View.VISIBLE);
-    laySeekBar.setVisibility(View.GONE);
-
-    txtEdit.setText("EDIT");
-    txtFilter.setText("FILTER");
-
-    layBackEffect.setVisibility(View.VISIBLE);
-    layNextEffect.setVisibility(View.VISIBLE);
-    layHeaderEffect.setVisibility(View.GONE);
-
-    int t2 = Color.parseColor("#ffffff");
-    int t1 = Color.parseColor("#000000");
-    imgSelectFilter.setBackgroundColor(t2);
-    imgEdit.setBackgroundColor(t1);
-
-    //Base.bit= imgEditPic.getGPUImage().getBitmapWithFilterApplied();
-    //imgEditPic.setImage(Base.bit);
-
-    src = imgEditPic.getGPUImage().getBitmapWithFilterApplied();
-    imgEditPic.setFilter(new GPUImageFilter());
-    imgEditPic.setImage(src);
-
-  }
-
-  public void readyToSeekEffect(View v) {
-
-    // vaghti ke roy yeki az edit ha clik shod v bayad seekbar load besheh
-    //imgEditPic.setImage(src);
-
-    scrollViewEdit.setVisibility(View.GONE);
-    laySeekBar.setVisibility(View.VISIBLE);
-
-    txtEdit.setText("Done");
-    txtFilter.setText("Cancel");
-
-    layBackEffect.setVisibility(View.GONE);
-    layNextEffect.setVisibility(View.GONE);
-    layHeaderEffect.setVisibility(View.VISIBLE);
-
-    int t2 = Color.parseColor("#ffffff");
-    imgSelectFilter.setBackgroundColor(t2);
-    imgEdit.setBackgroundColor(t2);
-
-    TextView b = null;
-    LinearLayout ll = (LinearLayout) v;
-    final int childCount = ll.getChildCount();
-    for (int i = 0; i < childCount; i++) {
-      View ch = ll.getChildAt(i);
-      if (ch instanceof TextView) {
-        b = (TextView) ch;
-      }
-    }
-
-    txtHeaderEffect.setText(b.getText());
-    if (txtHeaderEffect.getText().equals("Brightness")) {
-      Log.i("SEE", "B  " + Bri);
-      txtShowValue.setText(Bri + "");
-      sek.setProgress(Bri);
-    } else if (txtHeaderEffect.getText().equals("Contrast")) {
-      txtShowValue.setText(Con + "");
-      sek.setProgress(Con);
-    } else if (txtHeaderEffect.getText().equals("Saturation")) {
-      txtShowValue.setText(Sat + "");
-      sek.setProgress(Sat);
-    }
-    bitSec = Bitmap.createBitmap(src);
-
-  }
-
   public void buttonClicked(View v) {
 
     if (v.getId() == R.id.normal) {
@@ -689,14 +570,6 @@ public class ActivityEditCamera extends UAppCompatActivity {
 
   private void saveBitmap(GPUImageFilter imgFilter, int i) {
 
-    /*
-    GPUImage gpuImage=new GPUImage(Base.getContext());
-    gpuImage.setImage(src);
-    gpuImage.setFilter(imgFilter);
-    gpuImage.requestRender();
-    imgEditPic.setImage(gpuImage.getBitmapWithFilterApplied());
-    gpuImage.deleteImage();
-    */
 
     mGPUImage1.deleteImage();
     mGPUImage1.setImage(src);

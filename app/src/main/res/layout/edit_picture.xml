@@ -129,10 +129,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dip"
                     android:layout_alignParentBottom="true"
-                    android:visibility="gone"
+                    android:layout_weight="1"
                     android:scrollIndicators="none"
                     android:scrollbars="none"
-                    android:layout_weight="1">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -141,615 +141,616 @@
                         >
 
 
-
                         <LinearLayout
-                            android:orientation="horizontal"
+                            android:id="@+id/layFilterSelect"
                             android:layout_width="match_parent"
                             android:layout_height="fill_parent"
-                            android:id="@+id/layFilterSelect"
-                            android:layout_marginTop="8dip">
+                            android:layout_marginTop="8dip"
+                            android:orientation="horizontal">
 
-                            123 <LinearLayout
-                            android:orientation="vertical"
-                            android:layout_width="100dp"
-                            android:layout_height="120dp"
-                            android:gravity="center"
-                            android:id="@+id/lay1"
-                            android:visibility="visible"
-                            android:layout_marginLeft="4dip"
-                            android:layout_marginTop="4dip"
-                            android:layout_marginRight="2dip">
-
-                            <com.netpood.admin.framework.widget.CustomeTextView
-                                android:layout_width="fill_parent"
-                                android:layout_height="18dip"
-                                android:id="@+id/txt_normal"
-                                android:text="Normal"
-                                android:textColor="#000000"
-                                android:gravity="center"
-                                android:textSize="13dp"
-                                android:layout_gravity="top"
-                                android:layout_marginBottom="2dip"/>
-
-                            <ImageView
-                                android:id="@+id/normal"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dip"
-                                android:padding="2dp"
-                                android:onClick="buttonClicked"
-                                android:layout_weight="1"
-                                android:scaleType="fitXY"/>
-
-                        </LinearLayout>
+                            123
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay1"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:gravity="center"
-                                android:id="@+id/lay3"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
+                                android:layout_marginLeft="4dip"
                                 android:layout_marginRight="2dip"
-                                android:layout_marginBottom="4dip">
+                                android:layout_marginTop="4dip"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="visible">
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_normal"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
+                                    android:layout_gravity="top"
+                                    android:layout_marginBottom="2dip"
+                                    android:gravity="center"
+                                    android:text="Normal"
+                                    android:textColor="#000000"
+                                    android:textSize="13dp"/>
+
+                                <ImageView
+                                    android:id="@+id/normal"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dip"
+                                    android:layout_weight="1"
+                                    android:onClick="buttonClicked"
+                                    android:padding="2dp"
+                                    android:scaleType="fitXY"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lay3"
+                                android:layout_width="100dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <com.netpood.admin.framework.widget.CustomeTextView
                                     android:id="@+id/txt_amaro"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="18dip"
+                                    android:layout_gravity="top"
+                                    android:layout_marginBottom="2dip"
+                                    android:gravity="center"
                                     android:text="Amaro"
                                     android:textColor="#ADADAD"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
-                                    android:layout_gravity="top"
-                                    android:layout_marginBottom="2dip"/>
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/amaro"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_brightness"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_brightness"/>
 
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay4"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:gravity="center"
-                                android:id="@+id/lay4"
+                                android:layout_marginBottom="4dip"
                                 android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
                                 android:layout_marginRight="2dip"
-                                android:layout_marginBottom="4dip">
+                                android:layout_marginTop="4dip"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_brannam"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_brannam"
+                                    android:layout_gravity="top"
+                                    android:layout_marginBottom="2dip"
+                                    android:gravity="center"
                                     android:text="Brannan"
                                     android:textColor="#ADADAD"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
-                                    android:layout_gravity="top"
-                                    android:layout_marginBottom="2dip"/>
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/brannan"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_color_depth_32"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_color_depth_32"/>
 
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay5"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:gravity="center"
-                                android:id="@+id/lay5"
+                                android:layout_marginBottom="4dip"
                                 android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
                                 android:layout_marginRight="2dip"
-                                android:layout_marginBottom="4dip">
+                                android:layout_marginTop="4dip"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_earybird"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_earybird"
+                                    android:layout_gravity="top"
+                                    android:layout_marginBottom="2dip"
+                                    android:gravity="center"
                                     android:text="Earlybird"
                                     android:textColor="#ADADAD"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
-                                    android:layout_gravity="top"
-                                    android:layout_marginBottom="2dip"/>
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/earlybird"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_color_depth_64"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_color_depth_64"/>
 
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay6"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:gravity="center"
-                                android:id="@+id/lay6"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:gravity="center"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_hefe"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_hefe"
+                                    android:layout_gravity="top"
+                                    android:layout_marginBottom="2dip"
+                                    android:gravity="center"
                                     android:text="Hefe"
                                     android:textColor="#ADADAD"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
-                                    android:layout_gravity="top"
-                                    android:layout_marginBottom="2dip"/>
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/hefe"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_contrast"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_contrast"/>
 
 
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay14"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay14"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_hudson"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_hudson"
-                                    android:text="Hudson"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Hudson"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/hudson"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_flea"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_flea"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay15"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay15"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_lnkwell"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_lnkwell"
-                                    android:text="Lnkwell"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Lnkwell"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/lnkwell"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_gamma"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_gamma"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay16"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay16"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_lomo"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_lomo"
-                                    android:text="Lomo"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Lomo"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/lomo"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_gaussian_blue"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_gaussian_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay17"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay17"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_lordKelvin"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_lordKelvin"
-                                    android:text="Lord"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Lord"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/lordKelvin"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_grayscale"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_grayscale"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay18"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay18"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_nashvill"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_nashvill"
-                                    android:text="Nashvill"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Nashvill"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/nashvill"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_hue"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_hue"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay19"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay19"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 android:visibility="gone">
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_rise"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_rise"
-                                    android:text="Rise"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Rise"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/rise"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_invert"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_invert"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay20"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay20"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_sierra"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_sierra"
-                                    android:text="Sierra"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Sierra"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/sierra"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_mean_remove"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_mean_remove"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay22"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay22"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_sutro"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_sutro"
-                                    android:text="Sutro"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Sutro"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/sutro"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_saturation"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_saturation"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay23"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay23"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_toaster"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_toaster"
-                                    android:text="Toaster"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Toaster"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/toaster"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_sepia"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_sepia"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay24"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay24"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_valencia"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_valencia"
-                                    android:text="Valencia"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Valencia"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/valencia"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_sepia_blue"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_sepia_blue"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay25"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay25"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_walden"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_walden"
-                                    android:text="Walden"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Walden"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/walden"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_sepia_green"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_sepia_green"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay26"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay26"
-                                android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
-                                android:layout_marginRight="2dip"
                                 android:layout_marginBottom="4dip"
+                                android:layout_marginLeft="2dip"
+                                android:layout_marginRight="2dip"
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical"
                                 >
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_xproll"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_xproll"
-                                    android:text="Xproll"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="Xproll"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/xproll"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_sheding_cyan"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_sheding_cyan"/>
                             </LinearLayout>
 
                             <LinearLayout
-                                android:orientation="vertical"
+                                android:id="@+id/lay27"
                                 android:layout_width="100dp"
                                 android:layout_height="120dp"
-                                android:id="@+id/lay27"
+                                android:layout_marginBottom="4dip"
                                 android:layout_marginLeft="2dip"
-                                android:layout_marginTop="4dip"
                                 android:layout_marginRight="2dip"
-                                android:layout_marginBottom="4dip">
+                                android:layout_marginTop="4dip"
+                                android:orientation="vertical">
 
 
                                 <com.netpood.admin.framework.widget.CustomeTextView
+                                    android:id="@+id/txt_n1977"
                                     android:layout_width="fill_parent"
                                     android:layout_height="18dip"
-                                    android:id="@+id/txt_n1977"
-                                    android:text="1977"
-                                    android:gravity="center"
-                                    android:textSize="13dp"
                                     android:layout_gravity="top"
                                     android:layout_marginBottom="2dip"
-                                    android:textColor="#ADADAD"/>
+                                    android:gravity="center"
+                                    android:text="1977"
+                                    android:textColor="#ADADAD"
+                                    android:textSize="13dp"/>
 
                                 <ImageView
                                     android:id="@+id/n1977"
                                     android:layout_width="fill_parent"
                                     android:layout_height="0dip"
-                                    android:padding="2dp"
+                                    android:layout_weight="1"
                                     android:onClick="buttonClicked"
-                                    android:src="@drawable/effect_sheding_green"
+                                    android:padding="2dp"
                                     android:scaleType="fitXY"
-                                    android:layout_weight="1"/>
+                                    android:src="@drawable/effect_sheding_green"/>
                             </LinearLayout>
 
                         </LinearLayout>
@@ -763,7 +764,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:id="@+id/lay_edit_ad"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:orientation="vertical"
