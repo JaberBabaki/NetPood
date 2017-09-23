@@ -1,1 +1,1 @@
-include ':app', ':libs:lib_gpuimage', ':retrofit-2.3.0', ':okhttp-3.8.1', ':okio-1.13.0', ':gson-2.8.0', ':converter-gsons-2.3.0', ':glide-3.7.0'
+include ':app',':lib_gpuimage',':retrofit-2.3.0', ':okhttp-3.8.1', ':okio-1.13.0', ':gson-2.8.0', ':converter-gsons-2.3.0', ':glide-3.7.0'

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "admin.netpood.com.netpood"
@@ -25,16 +25,16 @@ android {
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:24.1.0'
-    compile 'com.android.support:design:24.1.0'
+    compile 'com.android.support:appcompat-v7:24+'
+    compile 'com.android.support:design:24+'
     compile 'com.android.support:support-v4:24.1.0'
-    compile 'com.android.support:recyclerview-v7:24.1.1'
-    compile 'com.android.support:cardview-v7:24.1.1'
-    compile project(':libs:lib_gpuimage')
+    compile 'com.android.support:recyclerview-v7:24+'
+    compile 'com.android.support:cardview-v7:24+'
     compile project(':retrofit-2.3.0')
     compile project(':okhttp-3.8.1')
     compile project(':okio-1.13.0')
     compile project(':gson-2.8.0')
     compile project(':converter-gsons-2.3.0')
     compile project(':glide-3.7.0')
+    compile project(':lib_gpuimage')
 }
