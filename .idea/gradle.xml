@@ -6,20 +6,6 @@
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../ide/android-studio/gradle/gradle-4.2" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/converter-gsons-2.3.0" />
-            <option value="$PROJECT_DIR$/glide-3.7.0" />
-            <option value="$PROJECT_DIR$/gson-2.8.0" />
-            <option value="$PROJECT_DIR$/lib_gpuimage" />
-            <option value="$PROJECT_DIR$/okhttp-3.8.1" />
-            <option value="$PROJECT_DIR$/okio-1.13.0" />
-            <option value="$PROJECT_DIR$/retrofit-2.3.0" />
-          </set>
-        </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
