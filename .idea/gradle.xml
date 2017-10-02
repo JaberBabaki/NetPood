@@ -5,9 +5,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../../ide/android-studio/gradle/gradle-4.2" />
-<<<<<<< HEAD
-=======
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -21,7 +18,6 @@
             <option value="$PROJECT_DIR$/retrofit-2.3.0" />
           </set>
         </option>
->>>>>>> parent of e769574... vouria 1-7-96 v4 change to v4-24+
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
