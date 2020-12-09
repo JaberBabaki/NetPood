@@ -14,59 +14,59 @@
         android:id="@+id/card_item_message"
         android:layout_width="320dp"
         android:layout_height="400dp"
-        card_view:cardCornerRadius="4dp"
+        android:layout_margin="8dp"
         card_view:cardBackgroundColor="#ffffff"
-        android:layout_margin="8dp">
+        card_view:cardCornerRadius="4dp">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            android:orientation="vertical"
             >
 
             <ScrollView
+                android:id="@+id/scrollView2"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:id="@+id/scrollView2"
                 android:layout_weight="1">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginLeft="4dip"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <com.netpood.admin.framework.widget.CustomeTextView
                         android:id="@+id/recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#ffffff"
-                        android:lineSpacingExtra="12dp"
-                        android:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-                        android:textSize="12dp"
+                        android:layout_marginBottom="24dp"
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:layout_marginTop="24dp"
-                        android:layout_marginBottom="24dp"/>
+                        android:background="#ffffff"
+                        android:lineSpacingExtra="12dp"
+                        android:text="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
+                        android:textSize="12dp"/>
 
                 </LinearLayout>
             </ScrollView>
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible"
+                android:background="#E8E8E8"
                 android:gravity="top"
-                android:background="#E8E8E8">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <Button
+                    android:id="@+id/btn_ok"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="تاييد"
-                    android:id="@+id/btn_ok"
-                    android:background="#f1f1f1"/>
+                    android:background="#f1f1f1"
+                    android:text="تاييد"/>
             </LinearLayout>
 
         </LinearLayout>

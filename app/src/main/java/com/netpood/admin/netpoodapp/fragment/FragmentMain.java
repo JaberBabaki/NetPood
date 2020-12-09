@@ -74,7 +74,6 @@ public class FragmentMain extends Fragment {
       lay.scrollToPositionWithOffset(position, 0);
       Toast.makeText(Base.getCurrentActivity(), "position  " + position, Toast.LENGTH_SHORT).show();
     }
-
     ref = (RecyclerRefreshLayout) view.findViewById(R.id.refresh_layout);
     ref.setRefreshStyle(RecyclerRefreshLayout.RefreshStyle.PINNED);
     ref.setRefreshInitialOffset(35);
@@ -82,7 +81,6 @@ public class FragmentMain extends Fragment {
     ref.setOnRefreshListener(new RecyclerRefreshLayout.OnRefreshListener() {
       @Override
       public void onRefresh() {
-
         //deleteTen();
         loadMore(page++);
 
