@@ -9,7 +9,7 @@ NetPood is a dedicated social network for fashion and clothing
 
 <table style="width:100%">
   <tr>
-    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-4.png" width="250" height="400" /></td>
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-1.jpg" width="250" height="400" /></td>
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-2.jpg" width="250" height="400" /></td>
   </tr>
