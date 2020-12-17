@@ -9,13 +9,18 @@ NetPood is a dedicated social network for fashion and clothing
 
 <table style="width:100%">
   <tr>
-    <td><img src="https://github.com/JaberBabaki/Bakershop/blob/master/pic/1-1.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/Bakershop/blob/master/pic/1.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/Bakershop/blob/master/pic/2.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-1.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-2.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-3.jpg" width="250" height="400" /></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/JaberBabaki/Bakershop/blob/master/pic/3.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/Bakershop/blob/master/pic/4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/2.jpg" width="250" height="400" /></td>
+  </tr>
+    <tr>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/3.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/4.jpg" width="250" height="400" /></td>
   </tr>
 
 </table>
