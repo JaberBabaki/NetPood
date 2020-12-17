@@ -14,13 +14,13 @@ NetPood is a dedicated social network for fashion and clothing
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-3.jpg" width="250" height="400" /></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1-4.png" width="250" height="400" /></td>
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/1.jpg" width="250" height="400" /></td>
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/2.jpg" width="250" height="400" /></td>
   </tr>
     <tr>
     <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/3.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/NetPood/blob/master/picture/5.jpg" width="250" height="400" /></td>
   </tr>
 
 </table>
